@@ -789,27 +789,6 @@ function renderHome() {
               källkodade kärnpositioner
             </span>
           </div>
-
-          <div class="status-line">
-            <strong>
-              ${researchQuestions.length}
-            </strong>
-            <span>
-              precisionsfrågor i forskningskö
-            </span>
-          </div>
-
-          <div class="status-line">
-            <strong>
-              ${
-                meta.readiness?.provisionalKnown ??
-                0
-              }/${activeQuestions.length}
-            </strong>
-            <span>
-              verifierade ÖP-positioner
-            </span>
-          </div>
         </aside>
       </div>
     </section>
