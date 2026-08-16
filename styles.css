@@ -3,12 +3,13 @@
   --ink: #17213a;
   --ink-soft: #46516a;
   --ink-faint: #6c758b;
-  --paper: #f6f7fb;
+  --paper: #f4f5fb;
   --surface: #ffffff;
   --surface-soft: #f0f2f8;
   --line: #dfe3ed;
   --line-strong: #c8cfdf;
   --accent: #4b43b5;
+  --accent-mid: #5b52c9;
   --accent-dark: #352e8d;
   --accent-soft: #eeedff;
   --good: #1f7a55;
@@ -19,8 +20,9 @@
   --danger-soft: #fdecec;
   --info: #265e95;
   --info-soft: #eaf3fc;
-  --shadow-sm: 0 1px 2px rgb(23 33 58 / 0.05), 0 8px 26px rgb(23 33 58 / 0.05);
-  --shadow-md: 0 2px 4px rgb(23 33 58 / 0.06), 0 18px 50px rgb(23 33 58 / 0.09);
+  --shadow-sm: 0 1px 3px rgb(23 33 58 / 0.06), 0 6px 20px rgb(23 33 58 / 0.06);
+  --shadow-md: 0 2px 6px rgb(23 33 58 / 0.07), 0 16px 44px rgb(23 33 58 / 0.10);
+  --shadow-lg: 0 4px 8px rgb(23 33 58 / 0.08), 0 24px 60px rgb(23 33 58 / 0.13);
   --radius-sm: 10px;
   --radius: 16px;
   --radius-lg: 26px;
@@ -44,9 +46,10 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 88% -5%, rgb(75 67 181 / 0.09), transparent 30rem),
-    linear-gradient(180deg, #fbfbfe 0, var(--paper) 26rem);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    radial-gradient(ellipse at 90% -10%, rgb(75 67 181 / 0.13), transparent 34rem),
+    radial-gradient(ellipse at 5% 60%, rgb(75 67 181 / 0.05), transparent 28rem),
+    linear-gradient(180deg, #fafaff 0, var(--paper) 30rem);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.62;
   text-rendering: optimizeLegibility;
@@ -182,10 +185,10 @@ pre code {
   gap: 2rem;
   min-height: 68px;
   padding: 0.8rem max(1.1rem, calc((100vw - var(--content)) / 2));
-  border-bottom: 1px solid rgb(223 227 237 / 0.86);
-  background: rgb(255 255 255 / 0.88);
-  box-shadow: 0 1px 0 rgb(255 255 255 / 0.8);
-  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgb(210 215 232 / 0.7);
+  background: rgb(255 255 255 / 0.90);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.9), 0 2px 18px rgb(23 33 58 / 0.05);
+  backdrop-filter: blur(20px) saturate(1.4);
 }
 
 .brand {
@@ -209,9 +212,9 @@ pre code {
   height: 34px;
   place-items: center;
   border-radius: 11px;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-mid), var(--accent-dark));
   color: white;
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.18), 0 6px 18px rgb(75 67 181 / 0.22);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.25), 0 6px 20px rgb(75 67 181 / 0.30);
   font-size: 1.05rem;
   font-weight: 900;
 }
@@ -223,23 +226,29 @@ pre code {
 }
 
 .topbar nav a {
-  padding: 0.58rem 0.82rem;
+  padding: 0.52rem 0.78rem;
   border-radius: 9px;
   color: var(--ink-soft);
-  font-size: 0.94rem;
-  font-weight: 650;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-decoration: none;
   transition: color var(--transition), background var(--transition);
 }
 
 .topbar nav a:hover,
 .topbar nav a:focus-visible {
-  background: var(--surface-soft);
-  color: var(--ink);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
 }
 
 .app {
   min-height: calc(100vh - 180px);
+  animation: page-fade 0.3s ease both;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .page {
@@ -288,10 +297,11 @@ small {
 }
 
 .card {
-  border: 1px solid var(--line);
+  border: 1px solid rgb(223 227 237 / 0.8);
   border-radius: var(--radius);
-  background: rgb(255 255 255 / 0.93);
+  background: rgb(255 255 255 / 0.96);
   box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
 }
 
 .grid {
@@ -357,15 +367,15 @@ small {
 }
 
 .button.primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-mid) 0%, var(--accent-dark) 100%);
   color: white;
-  box-shadow: 0 8px 22px rgb(75 67 181 / 0.2);
+  box-shadow: 0 4px 14px rgb(75 67 181 / 0.25), inset 0 1px 0 rgb(255 255 255 / 0.15);
 }
 
 .button.primary:hover:not(:disabled) {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, var(--accent) 0%, #2a2472 100%);
   color: white;
-  box-shadow: 0 10px 26px rgb(75 67 181 / 0.27);
+  box-shadow: 0 8px 22px rgb(75 67 181 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.15);
 }
 
 .button.secondary {
@@ -427,6 +437,13 @@ summary:focus-visible {
 .hero {
   padding-top: clamp(3.5rem, 9vw, 7.8rem);
   padding-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.hero h1 span {
+  background: linear-gradient(120deg, var(--ink) 30%, var(--accent-mid));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-grid {
@@ -580,13 +597,21 @@ summary:focus-visible {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent), #756ee0);
+  background: linear-gradient(90deg, var(--accent-mid), #8b85e8, var(--accent));
+  background-size: 200% 100%;
+  animation: progress-shimmer 2.5s linear infinite;
   transition: width 300ms ease;
+}
+
+@keyframes progress-shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }
 
 .question-card {
   padding: clamp(1.25rem, 4vw, 2.35rem);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
+  border-color: rgb(210 215 235 / 0.7);
 }
 
 .question-card > h2 {
@@ -644,7 +669,7 @@ legend {
 .choice,
 .importance-choice {
   min-width: 0;
-  border: 1px solid var(--line-strong);
+  border: 1.5px solid var(--line);
   border-radius: 12px;
   background: var(--surface);
   color: var(--ink);
@@ -667,16 +692,16 @@ legend {
 
 .choice:hover,
 .importance-choice:hover:not(:disabled) {
-  transform: translateY(-1px);
-  border-color: #a5acc0;
-  box-shadow: 0 8px 20px rgb(23 33 58 / 0.07);
+  transform: translateY(-2px);
+  border-color: var(--accent-mid);
+  box-shadow: 0 8px 24px rgb(75 67 181 / 0.10);
 }
 
 .choice.selected,
 .importance-choice.selected {
   border-color: var(--accent);
-  background: var(--accent-soft);
-  box-shadow: inset 0 0 0 1px var(--accent), 0 8px 20px rgb(75 67 181 / 0.1);
+  background: linear-gradient(135deg, var(--accent-soft) 0%, #f5f4ff 100%);
+  box-shadow: inset 0 0 0 1.5px var(--accent), 0 6px 18px rgb(75 67 181 / 0.12);
 }
 
 .choice-value {
@@ -802,6 +827,12 @@ legend {
   align-items: center;
   gap: 1.2rem;
   padding: 1rem 1.15rem;
+  transition: background var(--transition);
+  border-radius: var(--radius);
+}
+
+.result-row:hover {
+  background: var(--accent-soft);
 }
 
 .rank {
@@ -1460,7 +1491,7 @@ footer {
   margin-top: clamp(3rem, 8vw, 7rem);
   padding: 2rem max(1.1rem, calc((100vw - var(--content)) / 2));
   border-top: 1px solid var(--line);
-  background: #eef0f6;
+  background: linear-gradient(180deg, #eef0f6, #e8eaf3);
   color: var(--ink-soft);
 }
 
@@ -1524,13 +1555,16 @@ footer {
   }
 
   .topbar {
-    align-items: flex-start;
-    gap: 0.6rem;
-    padding: 0.65rem 0.85rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    min-height: auto;
+    padding: 0.55rem 1rem 0;
   }
 
   .brand {
     font-size: 0.9rem;
+    padding-bottom: 0.55rem;
   }
 
   .brand b {
@@ -1538,17 +1572,24 @@ footer {
   }
 
   .brand-mark {
-    width: 31px;
-    height: 31px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
   }
 
   .topbar nav {
+    width: 100%;
     gap: 0;
+    border-top: 1px solid var(--line);
+    padding: 0.3rem 0;
   }
 
   .topbar nav a {
-    padding: 0.5rem 0.47rem;
-    font-size: 0.78rem;
+    flex: 1;
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+    font-size: 0.82rem;
+    border-radius: 8px;
   }
 
   .page {
@@ -1582,11 +1623,12 @@ footer {
   }
 
   .choice {
-    min-height: 62px;
+    min-height: 68px;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 0.65rem 0.8rem;
+    padding: 0.75rem 1rem;
     text-align: left;
+    border-radius: 10px;
   }
 
   .importance-options {
@@ -1703,13 +1745,8 @@ footer {
 }
 
 @media (max-width: 420px) {
-  .topbar {
-    flex-wrap: wrap;
-  }
-
   .topbar nav {
-    width: 100%;
-    justify-content: space-between;
+    justify-content: stretch;
   }
 
   .topbar nav a {
@@ -1772,4 +1809,5 @@ footer {
 .topbar nav a[aria-current="page"] {
   background: var(--accent-soft);
   color: var(--accent-dark);
+  font-weight: 700;
 }
