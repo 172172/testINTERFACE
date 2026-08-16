@@ -87,12 +87,12 @@ def main() -> int:
         errors.append("Party IDs are not unique.")
     if len(source_id_list) != len(source_ids):
         errors.append("Source IDs are not unique.")
-    if len(questions) != meta.get("totalQuestionCount") or len(questions) != 60:
-        errors.append(f"Expected 60 questions and a matching meta count, got {len(questions)} / {meta.get('totalQuestionCount')}.")
+    if len(questions) != meta.get("totalQuestionCount") or len(questions) != 68:
+        errors.append(f"Expected 68 questions and a matching meta count, got {len(questions)} / {meta.get('totalQuestionCount')}.")
     if len(active) != meta.get("activeQuestionCount") or len(active) != 35:
         errors.append(f"Expected 35 active questions and a matching meta count, got {len(active)} / {meta.get('activeQuestionCount')}.")
-    if len(research) != meta.get("researchQuestionCount") or len(research) != 25:
-        errors.append(f"Expected 25 research questions and a matching meta count, got {len(research)} / {meta.get('researchQuestionCount')}.")
+    if len(research) != meta.get("researchQuestionCount") or len(research) != 33:
+        errors.append(f"Expected 33 research questions and a matching meta count, got {len(research)} / {meta.get('researchQuestionCount')}.")
     if len(parties) != 9 or len(core) != 8 or len(provisional) != 1:
         errors.append(f"Expected 9 parties (8 core + 1 provisional), got {len(parties)} ({len(core)} + {len(provisional)}).")
     if len(positions) != len(questions) * len(parties):

@@ -31,7 +31,7 @@ def main() -> int:
     meta = json.loads((ROOT / "data/meta.json").read_text(encoding="utf-8"))
     standalone = (ROOT / "valkompass-2026-standalone.html").read_text(encoding="utf-8")
 
-    if len(questions) != 60 or len(parties) != 9 or len(positions) != 540:
+    if len(questions) != meta.get("totalQuestionCount") or len(parties) != 9 or len(positions) != len(questions) * len(parties):
         fail("Oväntade datamängder")
     if "window.__VALKOMPASS_DATA__=" not in standalone:
         fail("Standalone-filen saknar inbäddat dataset")
