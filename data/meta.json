@@ -1,0 +1,7 @@
+{
+  "datasetVersion":"0.1.0-research-preview",
+  "verifiedThrough":"2026-08-16",
+  "electionDate":"2026-09-13",
+  "rankingCoverageThreshold":0.70,
+  "note":"Forskningspreview. Webbapplikationen och frågebanken är kompletta; partipositioner publiceras endast när en källa har verifierats. Okända positioner räknas inte som antagna svar."
+}

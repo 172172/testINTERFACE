@@ -1,0 +1,322 @@
+[
+  {
+    "id": "q01",
+    "area": "Ekonomi och skatter",
+    "text": "Skatten på arbete bör sänkas under nästa mandatperiod."
+  },
+  {
+    "id": "q02",
+    "area": "Ekonomi och skatter",
+    "text": "Sverige bör införa en statlig skatt på stora privata förmögenheter."
+  },
+  {
+    "id": "q03",
+    "area": "Ekonomi och skatter",
+    "text": "Brytpunkten för statlig inkomstskatt bör höjas."
+  },
+  {
+    "id": "q04",
+    "area": "Ekonomi och skatter",
+    "text": "Det offentliga bör prioritera ökade välfärdsutgifter framför generella skattesänkningar när statsfinanserna kräver ett val."
+  },
+  {
+    "id": "q05",
+    "area": "Brott och rättsväsende",
+    "text": "Straffen för grova våldsbrott bör skärpas ytterligare."
+  },
+  {
+    "id": "q06",
+    "area": "Brott och rättsväsende",
+    "text": "Polisen bör få större möjligheter att använda preventiva tvångsmedel mot personer som ännu inte är misstänkta för ett konkret brott."
+  },
+  {
+    "id": "q07",
+    "area": "Brott och rättsväsende",
+    "text": "Fler unga lagöverträdare bör kunna dömas till frihetsberövande påföljder."
+  },
+  {
+    "id": "q08",
+    "area": "Brott och rättsväsende",
+    "text": "Kriminalvården bör lägga större vikt vid rehabilitering även om det kräver ökade resurser per intagen."
+  },
+  {
+    "id": "q09",
+    "area": "Migration och integration",
+    "text": "Sverige bör ta emot färre asylsökande än EU:s genomsnitt per invånare."
+  },
+  {
+    "id": "q10",
+    "area": "Migration och integration",
+    "text": "Kraven för svenskt medborgarskap bör skärpas genom språk- och samhällskunskapskrav."
+  },
+  {
+    "id": "q11",
+    "area": "Migration och integration",
+    "text": "Personer som saknar laglig rätt att stanna i Sverige bör i större utsträckning kunna få ekonomiskt stöd för frivillig återvandring."
+  },
+  {
+    "id": "q12",
+    "area": "Migration och integration",
+    "text": "Arbetskraftsinvandring från länder utanför EU bör bli enklare för fler yrkesgrupper."
+  },
+  {
+    "id": "q13",
+    "area": "Energi och kärnkraft",
+    "text": "Sverige bör bygga nya kärnkraftsreaktorer med statligt ekonomiskt stöd eller riskdelning."
+  },
+  {
+    "id": "q14",
+    "area": "Energi och kärnkraft",
+    "text": "Utbyggnad av havsbaserad vindkraft bör underlättas även om staten behöver stå för en större del av nätanslutningen."
+  },
+  {
+    "id": "q15",
+    "area": "Energi och kärnkraft",
+    "text": "Kommunernas inflytande över etablering av ny vindkraft bör minska."
+  },
+  {
+    "id": "q16",
+    "area": "Energi och kärnkraft",
+    "text": "Energipolitiken bör prioritera planerbar elproduktion framför lägsta möjliga kostnad per producerad kilowattimme."
+  },
+  {
+    "id": "q17",
+    "area": "Klimat och miljö",
+    "text": "Sverige bör ha nationella klimatmål som går längre än EU:s gemensamma minimikrav."
+  },
+  {
+    "id": "q18",
+    "area": "Klimat och miljö",
+    "text": "Skatten på fossila drivmedel bör höjas om det krävs för att nå klimatmålen."
+  },
+  {
+    "id": "q19",
+    "area": "Klimat och miljö",
+    "text": "Staten bör öka stödet till hushåll och företag för elektrifiering och energieffektivisering."
+  },
+  {
+    "id": "q20",
+    "area": "Klimat och miljö",
+    "text": "Mer skog bör skyddas från avverkning även om det minskar tillgången på skogsråvara."
+  },
+  {
+    "id": "q21",
+    "area": "Sjukvård",
+    "text": "Staten bör ta över ett större ansvar för styrningen av sjukvården från regionerna."
+  },
+  {
+    "id": "q22",
+    "area": "Sjukvård",
+    "text": "Privata vårdgivare bör kunna göra vinst när vården finansieras med skattemedel."
+  },
+  {
+    "id": "q23",
+    "area": "Sjukvård",
+    "text": "Patienter bör få starkare rätt att söka offentligt finansierad vård i en annan region när väntetiden är lång."
+  },
+  {
+    "id": "q24",
+    "area": "Sjukvård",
+    "text": "Tandvårdens högkostnadsskydd bör närma sig det som gäller för övrig sjukvård."
+  },
+  {
+    "id": "q25",
+    "area": "Skola",
+    "text": "Vinstuttag i fristående skolor bör förbjudas eller kraftigt begränsas."
+  },
+  {
+    "id": "q26",
+    "area": "Skola",
+    "text": "Staten bör ta över huvudansvaret för den svenska skolan från kommunerna."
+  },
+  {
+    "id": "q27",
+    "area": "Skola",
+    "text": "Betyg bör införas tidigare än i dag."
+  },
+  {
+    "id": "q28",
+    "area": "Skola",
+    "text": "Skolor bör få större möjligheter att använda ordningsomdömen eller liknande bedömningar av elevers uppförande."
+  },
+  {
+    "id": "q29",
+    "area": "Arbetsmarknad",
+    "text": "Lagen om anställningsskydd bör ge arbetsgivare större flexibilitet vid uppsägningar."
+  },
+  {
+    "id": "q30",
+    "area": "Arbetsmarknad",
+    "text": "Sverige bör på sikt införa en generell arbetstidsförkortning med bibehållen lön."
+  },
+  {
+    "id": "q31",
+    "area": "Arbetsmarknad",
+    "text": "A-kassan bör ge högre ersättning än i dag även om avgifter eller offentliga utgifter ökar."
+  },
+  {
+    "id": "q32",
+    "area": "Arbetsmarknad",
+    "text": "Det bör ställas tydligare krav på deltagande i arbete, utbildning eller andra aktiviteter för den som får ekonomiskt bistånd."
+  },
+  {
+    "id": "q33",
+    "area": "Företagande",
+    "text": "Arbetsgivaravgifterna bör sänkas för små och växande företag."
+  },
+  {
+    "id": "q34",
+    "area": "Företagande",
+    "text": "Regelbördan för småföretag bör minska även om det innebär färre obligatoriska rapporteringskrav."
+  },
+  {
+    "id": "q35",
+    "area": "Företagande",
+    "text": "Staten bör kunna gå in med kapital i strategiskt viktiga industriprojekt när privata investeringar inte räcker."
+  },
+  {
+    "id": "q36",
+    "area": "Företagande",
+    "text": "Offentlig upphandling bör i större utsträckning kunna premiera svenska eller europeiska leverantörer av beredskaps- och säkerhetsskäl."
+  },
+  {
+    "id": "q37",
+    "area": "Bostäder",
+    "text": "Marknadshyror bör kunna införas i nyproducerade hyresrätter."
+  },
+  {
+    "id": "q38",
+    "area": "Bostäder",
+    "text": "Ränteavdraget för bolån bör trappas ned."
+  },
+  {
+    "id": "q39",
+    "area": "Bostäder",
+    "text": "Staten bör ge större ekonomiskt stöd till byggande av hyresrätter med lägre hyror."
+  },
+  {
+    "id": "q40",
+    "area": "Bostäder",
+    "text": "Det bör bli lättare att bygga bostäder även när det innebär svagare möjligheter för närboende att stoppa projekt genom överklaganden."
+  },
+  {
+    "id": "q41",
+    "area": "Familj och socialpolitik",
+    "text": "Barnbidraget bör höjas generellt för alla barnfamiljer."
+  },
+  {
+    "id": "q42",
+    "area": "Familj och socialpolitik",
+    "text": "Föräldraförsäkringen bör delas mer lika mellan vårdnadshavare genom fler reserverade månader."
+  },
+  {
+    "id": "q43",
+    "area": "Familj och socialpolitik",
+    "text": "Kommuner bör få större möjlighet att ställa motprestationskrav för försörjningsstöd."
+  },
+  {
+    "id": "q44",
+    "area": "Familj och socialpolitik",
+    "text": "Staten bör öka det ekonomiska stödet till personer med varaktigt låga inkomster även om det ökar de offentliga utgifterna."
+  },
+  {
+    "id": "q45",
+    "area": "Försvar och säkerhet",
+    "text": "Sveriges försvarsutgifter bör ligga på minst 3 procent av BNP under nästa mandatperiod."
+  },
+  {
+    "id": "q46",
+    "area": "Försvar och säkerhet",
+    "text": "Värnplikten bör omfatta fler personer än i dag."
+  },
+  {
+    "id": "q47",
+    "area": "Försvar och säkerhet",
+    "text": "Sverige bör bygga upp större statliga beredskapslager av livsmedel, läkemedel och bränsle."
+  },
+  {
+    "id": "q48",
+    "area": "Försvar och säkerhet",
+    "text": "Säkerhetslagstiftningen bör ge myndigheter större möjligheter att ingripa mot verksamhet som bedöms hota rikets säkerhet, även om det begränsar vissa individuella friheter."
+  },
+  {
+    "id": "q49",
+    "area": "Nato och Ukraina",
+    "text": "Sverige bör fortsätta vara medlem i Nato."
+  },
+  {
+    "id": "q50",
+    "area": "Nato och Ukraina",
+    "text": "Sverige bör tillåta permanent stationering av andra Nato-länders militära förband i landet."
+  },
+  {
+    "id": "q51",
+    "area": "Nato och Ukraina",
+    "text": "Sverige bör fortsätta ge omfattande militärt stöd till Ukraina även om det innebär högre svenska försvarsutgifter."
+  },
+  {
+    "id": "q52",
+    "area": "Nato och Ukraina",
+    "text": "Sverige bör vara berett att skicka svensk militär personal till en internationell fredsbevarande eller avskräckande insats i Ukraina efter ett eventuellt fredsavtal."
+  },
+  {
+    "id": "q53",
+    "area": "EU",
+    "text": "Sverige bör införa euron som valuta."
+  },
+  {
+    "id": "q54",
+    "area": "EU",
+    "text": "EU bör få större gemensam beslutanderätt på utrikes- och säkerhetspolitikens område."
+  },
+  {
+    "id": "q55",
+    "area": "EU",
+    "text": "Sverige bör acceptera att EU får större egna skatteintäkter för att finansiera gemensamma satsningar."
+  },
+  {
+    "id": "q56",
+    "area": "EU",
+    "text": "Sverige bör verka för att fler beslut flyttas tillbaka från EU till medlemsstaterna."
+  },
+  {
+    "id": "q57",
+    "area": "Infrastruktur",
+    "text": "Staten bör prioritera nya stambanor för höghastighetståg mellan storstadsregionerna."
+  },
+  {
+    "id": "q58",
+    "area": "Infrastruktur",
+    "text": "Mer statliga pengar bör gå till underhåll av befintlig järnväg framför nya stora järnvägsprojekt."
+  },
+  {
+    "id": "q59",
+    "area": "Infrastruktur",
+    "text": "Investeringar i nya motorvägar bör minska till förmån för järnväg och kollektivtrafik."
+  },
+  {
+    "id": "q60",
+    "area": "Infrastruktur",
+    "text": "Inrikesflygets tillgänglighet bör stödjas med offentliga medel när det bedöms viktigt för regional utveckling."
+  },
+  {
+    "id": "q61",
+    "area": "Demokrati och personlig integritet",
+    "text": "Anonyma konton på stora sociala plattformar bör i större utsträckning kunna kopplas till en verifierad identitet hos plattformen."
+  },
+  {
+    "id": "q62",
+    "area": "Demokrati och personlig integritet",
+    "text": "Myndigheter bör få använda automatiserad ansiktsigenkänning på fler offentliga platser för att bekämpa allvarlig brottslighet."
+  },
+  {
+    "id": "q63",
+    "area": "Demokrati och personlig integritet",
+    "text": "Grundlagsskyddet för den personliga integriteten bör stärkas även om det begränsar vissa brottsbekämpande metoder."
+  },
+  {
+    "id": "q64",
+    "area": "Demokrati och personlig integritet",
+    "text": "Partiernas finansiering och större privata donationer bör redovisas mer detaljerat offentligt än i dag."
+  }
+]
