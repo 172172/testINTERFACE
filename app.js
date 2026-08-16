@@ -874,36 +874,6 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="page section-space">
-      <article class="card feature">
-        <div class="eyebrow">
-          Miljöfördjupning
-        </div>
-
-        <h2>
-          Miljöfrågorna är en del av
-          den poänggivande kompassen
-        </h2>
-
-        <p>
-          Klimat och miljö har nu
-          ${meta.activeAreaCounts?.["Klimat och miljö"] ?? 10}
-          aktiva frågor. De räknas i
-          resultatet men området
-          normaliseras så att det inte
-          automatiskt får större
-          totalvikt än andra områden.
-        </p>
-
-        <a
-          class="button secondary"
-          href="#/audit/questions"
-        >
-          Visa alla frågor
-        </a>
-      </article>
-    </section>
-
     <section class="page section-space split">
       <article>
         <div class="eyebrow">
@@ -3481,44 +3451,6 @@ function renderMethod() {
         </article>
       </section>
 
-      <section class="method-section">
-        <div class="eyebrow">
-          Frågeurval
-        </div>
-
-        <h2>
-          ${activeQuestions.length}
-          poänggivande frågor
-        </h2>
-
-        <p>
-          Klimat och miljö kan ha fler
-          frågor än andra områden eftersom
-          poängmodellen normaliserar
-          varje politikområde.
-        </p>
-
-        <p>
-          Det innebär att användaren får
-          möjlighet att uttrycka mer
-          detaljerade miljöpreferenser
-          utan att miljöområdet
-          automatiskt får större
-          matematisk vikt.
-        </p>
-      </section>
-
-      <div class="callout info">
-        <strong>
-          Integritet:
-        </strong>
-
-        ${escapeHtml(meta.note)}
-
-        Alla personliga svar och
-        beräkningar stannar lokalt
-        i webbläsaren.
-      </div>
     </section>
   `;
 }
