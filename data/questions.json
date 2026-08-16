@@ -1,898 +1,1396 @@
 [
   {
-    "id": "q01",
-    "area": "Ekonomi och skatter",
-    "text": "Nya skattesänkningar på arbetsinkomster bör även omfatta personer som betalar statlig inkomstskatt (55 033kr i månaden).",
-    "scope": "Avser om kommande skattesänkningar på lön ska omfatta även inkomster över brytpunkten för statlig inkomstskatt, inte bara låg- och medelinkomster.",
+    "id": "q001",
+    "area": "Brott och rättsväsende",
+    "text": "Barn som har fyllt 13 år och begår grova brott bör kunna dömas till fängelse.",
+    "scope": "Avser om fängelse ska finnas som straffrättslig påföljd redan från 13 års ålder vid grova brott, inte placering enligt sociallagstiftning.",
+    "status": "active",
+    "score": true,
+    "order": 1,
+    "reviewStatus": "verified-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 1,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Barn från 13 år som begår grova brott ska kunna dömas till fängelse",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
   },
   {
-    "id": "q02",
+    "id": "q002",
+    "area": "Skola",
+    "text": "Vinstdrivande aktiebolag bör förbjudas att driva skolor.",
+    "scope": "Avser ett förbud kopplat till bolagsformen och möjligheten att dela ut vinst, inte ett förbud mot alla fristående eller idéburna skolor.",
+    "status": "active",
+    "score": true,
+    "order": 2,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 2,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Vinstdrivande aktiebolag ska inte få driva skolor",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q003",
+    "area": "Bostäder",
+    "text": "Hyresrätter bör byggas i områden som i dag domineras av villor för att minska boendesegregationen.",
+    "scope": "Avser att blanda upplåtelseformer i befintliga villaområden som ett verktyg mot segregation.",
+    "status": "active",
+    "score": true,
+    "order": 3,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 3,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Bygg hyresrätter i villaområden för att minska segregationen",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q004",
+    "area": "Ekonomi och skatter",
+    "text": "Det ekonomiska avståndet mellan att arbeta och att leva på bidrag bör bli större.",
+    "scope": "Avser utfallet i disponibel inkomst. Påståendet bestämmer inte om skillnaden ska skapas genom högre arbetsinkomster, lägre skatt, bidragstak eller lägre ersättningar.",
+    "status": "active",
+    "score": true,
+    "order": 4,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 4,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Skillnaden i inkomst mellan de som arbetar och de som får bidrag ska öka",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q005",
+    "area": "Företagande och industri",
+    "text": "Det bör bli enklare att starta gruvor och annan industri även i områden där rennäring bedrivs.",
+    "scope": "Avser lättare etablering eller tillståndsgivning när industriella intressen möter rennäringens markanvändning.",
+    "status": "active",
+    "score": true,
+    "order": 5,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 5,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Det ska bli enklare att starta gruvor och annan industri i områden där rennäring bedrivs",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q006",
+    "area": "Klimat och miljö",
+    "text": "Sveriges klimatmål bör vara mer ambitiösa än EU:s gemensamma mål.",
+    "scope": "Avser om Sverige ska gå längre eller snabbare än den gemensamma EU-nivån, inte om Sverige ska följa EU:s beslutade krav.",
+    "status": "active",
+    "score": true,
+    "order": 6,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 6,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Sverige ska ha mer ambitiösa klimatmål än övriga EU",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q007",
+    "area": "Migration och integration",
+    "text": "Redan beviljade permanenta uppehållstillstånd bör ersättas med tidsbegränsade tillstånd.",
+    "scope": "Avser en generell omvandling av befintliga permanenta tillstånd, inte bara återkallelse efter brott, fusk eller individuellt ändrade omständigheter.",
+    "status": "active",
+    "score": true,
+    "order": 7,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 7,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Permanenta uppehållstillstånd ska rivas upp och ersättas med tillfälliga",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q008",
+    "area": "Försvar och säkerhet",
+    "text": "Sverige bör lämna Nato på längre sikt.",
+    "scope": "Avser ett framtida svenskt utträde ur Nato, inte kritik mot enskilda Nato-beslut eller villkor för samarbetet.",
+    "status": "active",
+    "score": true,
+    "order": 8,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 8,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Sverige ska på sikt lämna Nato",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q009",
+    "area": "Demokrati, medier och kultur",
+    "text": "Public service bör få ett mer begränsat uppdrag och mindre finansiering.",
+    "scope": "Båda delarna ingår: ett smalare innehållsuppdrag och lägre resurser än i dag.",
+    "status": "active",
+    "score": true,
+    "order": 9,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 9,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Public service ska ha ett smalare uppdrag och mindre resurser",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q010",
+    "area": "Arbetsmarknad och socialförsäkring",
+    "text": "Karensavdraget vid sjukfrånvaro bör tas bort.",
+    "scope": "Avser att anställda inte ska förlora ersättning genom dagens karensavdrag när en sjukperiod börjar.",
+    "status": "active",
+    "score": true,
+    "order": 10,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 10,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Karensavdraget vid sjukdom ska avskaffas",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q011",
+    "area": "Skola",
+    "text": "Skolan bör införa betyg för elevers ordning och uppförande.",
+    "scope": "Avser en särskild formell bedömning av beteende, utöver kunskapsbetygen.",
+    "status": "active",
+    "score": true,
+    "order": 11,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 11,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Betyg i ordning och uppförande ska införas i skolan",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q012",
+    "area": "Familj och socialpolitik",
+    "text": "Pensionsåldern bör inte höjas ytterligare.",
+    "scope": "Avser den generella pensionsålderns fortsatta utveckling, inte särskilda möjligheter till tidigare pension för vissa yrken eller individer.",
+    "status": "active",
+    "score": true,
+    "order": 12,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 12,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Pensionsåldern ska inte höjas",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q013",
+    "area": "Sjukvård och folkhälsa",
+    "text": "Vin och starköl bör få säljas i vanliga livsmedelsbutiker.",
+    "scope": "Avser att bryta Systembolagets detaljhandelsmonopol för vin och starköl.",
+    "status": "active",
+    "score": true,
+    "order": 13,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 13,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Tillåt försäljning av starköl och vin i livsmedelsbutiker",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q014",
+    "area": "Företagande och industri",
+    "text": "Staten bör öka sina investeringar i gröna industriprojekt.",
+    "scope": "Avser mer statligt kapital, stöd eller risktagande i industriprojekt som motiveras av klimatomställningen.",
+    "status": "active",
+    "score": true,
+    "order": 14,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 14,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Staten ska investera mer pengar i gröna industriprojekt",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q015",
+    "area": "EU och utrikespolitik",
+    "text": "Sverige bör byta valuta från kronan till euron.",
+    "scope": "Avser ett svenskt införande av euron, inte enbart en ny utredning eller framtida omprövning utan ställningstagande.",
+    "status": "active",
+    "score": true,
+    "order": 15,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 15,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Sverige bör införa euro som valuta",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q016",
+    "area": "EU och utrikespolitik",
+    "text": "Sveriges internationella bistånd bör öka.",
+    "scope": "Avser den sammanlagda svenska biståndsnivån, inte endast omfördelningar mellan mottagarländer eller ändamål.",
+    "status": "active",
+    "score": true,
+    "order": 16,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 16,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Sverige ska öka det internationella biståndet",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q017",
+    "area": "Bostäder",
+    "text": "Nya hyresrätter bör få fri eller marknadsbaserad hyressättning.",
+    "scope": "Avser nyproducerade hyresrätter. Befintliga hyreskontrakt och hyror ingår inte i påståendet.",
+    "status": "active",
+    "score": true,
+    "order": 17,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 17,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Marknadshyror ska införas på nya hyresrätter",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q018",
+    "area": "Skola",
+    "text": "Skolan bör ta ett större ansvar för undervisning om HBTQI-frågor.",
+    "scope": "Avser skolans undervisningsuppdrag och kunskapsinnehåll, inte särskilda regler för enskilda elevers identitet.",
+    "status": "active",
+    "score": true,
+    "order": 18,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 18,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Skolan ska ta större ansvar för undervisning om HBTQI-frågor",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q019",
+    "area": "Brott och rättsväsende",
+    "text": "Gängkriminella bör kunna få sitt svenska medborgarskap återkallat.",
+    "scope": "Avser möjlighet till återkallelse på grund av gängrelaterad grov kriminalitet. Konstitutionella villkor, exempelvis förbud mot statslöshet, kan begränsa vilka personer som omfattas.",
+    "status": "active",
+    "score": true,
+    "order": 19,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 19,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Det ska vara möjligt att dra tillbaka medborgarskap för gängkriminella",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q020",
+    "area": "Arbetsmarknad och socialförsäkring",
+    "text": "Den normala heltidsveckan bör kortas genom lagstiftning.",
+    "scope": "Avser en lagstadgad generell arbetstidsförkortning, inte enbart kollektivavtal eller lokala försök.",
+    "status": "active",
+    "score": true,
+    "order": 20,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 20,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Lagstifta om kortare veckoarbetstid",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q021",
+    "area": "Energi och transporter",
+    "text": "Bensin och diesel bör beskattas lägre än i dag.",
+    "scope": "Avser lägre skatt på fossila drivmedel. Andra åtgärder som pressar pumppriset utan skattesänkning räknas inte automatiskt som stöd.",
+    "status": "active",
+    "score": true,
+    "order": 21,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 21,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Skatten på bensin och diesel ska sänkas",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q022",
+    "area": "EU och utrikespolitik",
+    "text": "Sverige bör arbeta för att fler länder erkänner Palestina som stat.",
+    "scope": "Avser aktiv svensk diplomati för fler erkännanden, inte enbart Sveriges eget redan gjorda erkännande.",
+    "status": "active",
+    "score": true,
+    "order": 22,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 22,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Sverige ska verka för att fler länder erkänner Palestina som stat",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q023",
+    "area": "Demokrati, medier och kultur",
+    "text": "Det offentliga ekonomiska stödet till kulturverksamhet bör minska.",
+    "scope": "Avser den samlade offentliga finansieringen av kultur, inte om stödet ska omfördelas mellan olika kulturformer.",
+    "status": "active",
+    "score": true,
+    "order": 23,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 23,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Det offentliga stödet till kulturverksamheter ska minska",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q024",
+    "area": "Sjukvård och folkhälsa",
+    "text": "Tandvård bör vara avgiftsfri för alla som ännu inte fyllt 23 år.",
+    "scope": "Avser generell avgiftsfri tandvård till och med 22 års ålder, inte endast förstärkt tandvårdsbidrag.",
+    "status": "active",
+    "score": true,
+    "order": 24,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 24,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Tandvård för personer under 23 år ska vara gratis",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q025",
+    "area": "Brott och rättsväsende",
+    "text": "Livstids fängelse bör finnas i straffskalan för grova sexuella övergrepp mot barn.",
+    "scope": "Avser att den strängaste påföljden ska kunna användas i de grövsta fallen, inte att alla sådana brott automatiskt ska ge livstid.",
+    "status": "active",
+    "score": true,
+    "order": 25,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 25,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Grova sexuella övergrepp mot barn ska kunna leda till livstids fängelse",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q026",
+    "area": "Ekonomi och skatter",
+    "text": "Den tillfälligt sänkta momsen på mat bör behållas även efter den beslutade perioden.",
+    "scope": "Avser en förlängning när den nu beslutade perioden löper ut, inte att momsnivån aldrig får ändras i framtiden.",
+    "status": "active",
+    "score": true,
+    "order": 26,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 26,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Den tillfälligt sänkta momsen på mat ska vara kvar",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q027",
+    "area": "Energi och transporter",
+    "text": "Staten bör ge ekonomiskt stöd till byggandet av nya kärnkraftsreaktorer.",
+    "scope": "Avser statligt ekonomiskt stöd eller risktagande för ny kärnkraft, inte endast ändrade tillståndsregler.",
+    "status": "active",
+    "score": true,
+    "order": 27,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 27,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Staten ska ge ekonomiskt stöd till byggandet av nya kärnkraftverk",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q028",
+    "area": "Energi och transporter",
+    "text": "Kommuner bör inte längre kunna stoppa planerade vindkraftsetableringar.",
+    "scope": "Avser att avskaffa kommunernas särskilda möjlighet att säga nej till ny vindkraft.",
+    "status": "active",
+    "score": true,
+    "order": 28,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 28,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Kommunerna ska inte längre kunna stoppa ny vindkraft",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q029",
+    "area": "Sjukvård och folkhälsa",
+    "text": "Huvudansvaret för sjukvården bör flyttas från regionerna till staten.",
+    "scope": "Avser ett statligt huvudmannaskap, inte enbart mer statlig finansiering, tillsyn eller nationell samordning.",
+    "status": "active",
+    "score": true,
+    "order": 29,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 29,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Staten ska ta över ansvaret för sjukvården",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q030",
+    "area": "Bostäder",
+    "text": "Staten bör ge ekonomiskt stöd till byggandet av fler hyresrätter med låga hyror.",
+    "scope": "Avser riktat statligt byggstöd kopplat till lägre hyror, inte enbart generella regelförenklingar för bostadsbyggande.",
+    "status": "active",
+    "score": true,
+    "order": 30,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 30,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Staten bör ge ekonomiskt stöd för att bygga fler billiga hyresrätter",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q031",
+    "area": "Familj och socialpolitik",
+    "text": "De reserverade månaderna för pappor i föräldraförsäkringen bör avskaffas.",
+    "scope": "Avser att ta bort de dagar som inte kan överlåtas från pappan till den andra föräldern.",
+    "status": "active",
+    "score": true,
+    "order": 31,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 31,
+    "sourceQuestionType": "proposition",
+    "sourcePrompt": "Pappamånaderna i föräldraförsäkringen ska tas bort",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q032",
+    "area": "Försvar och säkerhet",
+    "text": "Sverige bör ha ett närmare ekonomiskt och militärt samarbete med USA än i dag.",
+    "scope": "Avser riktningen jämfört med dagens samarbetsnivå. Frågan säger inte vilken särskild överenskommelse som ska ändras.",
+    "sourceQuestionType": "directional-slider",
+    "sourceTransformation": "Källans femgradiga mer–mindre-skala har kodats från −2 till +2 med dagens nivå som 0.",
+    "status": "active",
+    "score": true,
+    "order": 32,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 32,
+    "sourcePrompt": "Hur nära ekonomiskt och militärt samarbete ska Sverige ha med USA?",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q033",
+    "area": "Ekonomi och skatter",
+    "text": "Personer med höga inkomster bör betala mer skatt än de gör i dag.",
+    "scope": "Avser den samlade skatten för höginkomsttagare jämfört med dagens nivå, utan att låsa vilket skatteinstrument som används.",
+    "sourceQuestionType": "directional-slider",
+    "sourceTransformation": "Källans femgradiga mer–mindre-skala har kodats från −2 till +2 med dagens nivå som 0.",
+    "status": "active",
+    "score": true,
+    "order": 33,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 33,
+    "sourcePrompt": "Hur mycket ska höginkomsttagare betala i skatt?",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q034",
+    "area": "Migration och integration",
+    "text": "Sverige bör vara mer öppet än i dag för att ta emot asylsökande.",
+    "scope": "Avser riktningen för det svenska asylmottagandet jämfört med dagens nivå.",
+    "sourceQuestionType": "directional-slider",
+    "sourceTransformation": "Källans femgradiga mer–mindre-skala har kodats från −2 till +2 med dagens nivå som 0.",
+    "status": "active",
+    "score": true,
+    "order": 34,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 34,
+    "sourcePrompt": "Hur öppet ska Sverige vara för att ta emot asylsökande?",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "q035",
+    "area": "Klimat och miljö",
+    "text": "En större andel av Sveriges skog bör skyddas mot avverkning än i dag.",
+    "scope": "Avser andelen skyddad skog jämfört med dagens nivå, inte hur skyddet fördelas mellan formella reservat och frivilliga avsättningar.",
+    "sourceQuestionType": "directional-slider",
+    "sourceTransformation": "Källans femgradiga mer–mindre-skala har kodats från −2 till +2 med dagens nivå som 0.",
+    "status": "active",
+    "score": true,
+    "order": 35,
+    "reviewStatus": "verified-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": "svt-2026-national-party-answers",
+    "sourceQuestionOrdinal": 35,
+    "sourcePrompt": "Hur mycket av skogen i Sverige ska skyddas från avverkning?",
+    "sourceReference": "https://valkompass.svt.se/2026/",
+    "wordingMethod": "Självständig neutral parafras av motsvarande källpåstående; riktning och saklig avgränsning ska vara oförändrade."
+  },
+  {
+    "id": "r001",
+    "area": "Ekonomi och skatter",
+    "text": "Nya skattesänkningar på arbetsinkomster bör även omfatta personer som betalar statlig inkomstskatt.",
+    "scope": "Avser om kommande skattesänkningar på lön ska omfatta även inkomster över brytpunkten för statlig inkomstskatt, inte bara låg- och medelinkomster.",
+    "status": "research",
+    "score": false,
+    "order": 36,
+    "reviewStatus": "awaiting-common-matrix",
+    "codingRule": {
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
+    },
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
+  },
+  {
+    "id": "r002",
     "area": "Ekonomi och skatter",
     "text": "Sverige bör införa en statlig skatt på stora privata nettoförmögenheter.",
     "scope": "Avser en återkommande skatt på stora privata nettoförmögenheter efter avdrag för skulder, inte fastighetsavgift, kapitalvinstskatt eller arvsskatt.",
+    "status": "research",
+    "score": false,
+    "order": 37,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q03",
-    "area": "Ekonomi och skatter",
-    "text": "Brytpunkten för statlig inkomstskatt bör höjas så att färre löntagare betalar statlig inkomstskatt.",
-    "scope": "Avser just brytpunkten för statlig inkomstskatt, inte jobbskatteavdrag eller kommunalskatt.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q04",
+    "id": "r003",
     "area": "Ekonomi och skatter",
     "text": "Staten bör varaktigt öka de generella statsbidragen till kommuner och regioner även om det minskar utrymmet för nya skattesänkningar.",
-    "scope": "Avser ett uttryckligt budgetval mellan högre generella välfärdsbidrag och utrymme för nya skattesänkningar.",
+    "scope": "Avser permanenta, generella tillskott till kommunsektorn och den uttryckliga prioriteringen framför nya skattesänkningar.",
+    "status": "research",
+    "score": false,
+    "order": 38,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q05",
-    "area": "Brott och rättsväsende",
-    "text": "Minimistraffen för grova våldsbrott bör höjas ytterligare under nästa mandatperiod.",
-    "scope": "Avser lagstadgade minimistraff för grova våldsbrott, inte fler poliser eller högre upptäcktsrisk.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q06",
+    "id": "r004",
     "area": "Brott och rättsväsende",
     "text": "Polisen bör få använda hemliga preventiva tvångsmedel mot personer som inte är misstänkta för ett konkret brott när det finns risk för grov organiserad brottslighet.",
-    "scope": "Avser preventiva hemliga tvångsmedel före konkret brottsmisstanke; inte tvångsmedel mot redan misstänkta.",
+    "scope": "Avser preventiva hemliga tvångsmedel före en konkret brottsmisstanke, inte användning mot redan misstänkta personer.",
+    "status": "research",
+    "score": false,
+    "order": 39,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q07",
-    "area": "Brott och rättsväsende",
-    "text": "Barn under 15 år som begår mycket allvarliga brott bör kunna dömas till en frihetsberövande straffrättslig påföljd.",
-    "scope": "Avser straffrättsligt frihetsberövande för personer under dagens straffmyndighetsålder, inte socialtjänstens placeringar.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q08",
+    "id": "r005",
     "area": "Brott och rättsväsende",
     "text": "Straffreduktionen när en person döms för flera brott samtidigt bör minska ytterligare.",
-    "scope": "Avser den så kallade mängdrabatten vid flerfaldig brottslighet, inte ungdomsrabatt eller villkorlig frigivning.",
+    "scope": "Avser den så kallade mängdrabatten vid flerbrottslighet, inte ungdomsreduktion eller villkorlig frigivning.",
+    "status": "research",
+    "score": false,
+    "order": 40,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q09",
+    "id": "r006",
     "area": "Migration och integration",
-    "text": "Sveriges asylmottagande bör långsiktigt ligga lägre per invånare än genomsnittet i EU.",
-    "scope": "Avser nivån på asylmottagandet per invånare jämfört med EU, inte arbetskraftsinvandring eller kvotflyktingar specifikt.",
+    "text": "Godkänt språkprov i svenska bör vara ett krav för svenskt medborgarskap, med medicinskt motiverade undantag.",
+    "scope": "Avser ett formellt språkkrav för medborgarskap och uttryckliga undantag när en person av medicinska skäl inte kan genomföra provet.",
+    "status": "research",
+    "score": false,
+    "order": 41,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q10",
+    "id": "r007",
     "area": "Migration och integration",
-    "text": "Godkänt språkprov i svenska bör vara ett krav för att få svenskt medborgarskap, med undantag för personer som av medicinska skäl inte kan genomföra provet.",
-    "scope": "Avser ett obligatoriskt språkprov som medborgarskapskrav och ett avgränsat medicinskt undantag.",
+    "text": "Återvandringsbidraget bör vara så högt att det ger ett tydligt ekonomiskt incitament att frivilligt lämna Sverige permanent.",
+    "scope": "Avser storleken och incitamentseffekten i ett frivilligt bidrag, inte tvångsutvisning eller återkallelse av tillstånd.",
+    "status": "research",
+    "score": false,
+    "order": 42,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q11",
+    "id": "r008",
     "area": "Migration och integration",
-    "text": "Det statliga återvandringsbidraget bör vara så högt att det kan ge ett tydligt ekonomiskt incitament för personer med laglig rätt att bo i Sverige att frivilligt flytta permanent till ett annat land.",
-    "scope": "Avser ekonomiskt stöd till frivillig återvandring för personer som får bo i Sverige; inte verkställighet av utvisningsbeslut.",
+    "text": "Arbetstillstånd bör kunna beviljas för jobb under medianlönen när villkoren följer kollektivavtal eller etablerad branschpraxis.",
+    "scope": "Avser om ett centralt lönegolv ska kunna underskridas när branschens normala avtal och villkor ändå uppfylls.",
+    "status": "research",
+    "score": false,
+    "order": 43,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q12",
-    "area": "Migration och integration",
-    "text": "Arbetstillstånd bör kunna beviljas för jobb under den nationella medianlönen när lön och villkor ändå följer kollektivavtal eller etablerad branschpraxis.",
-    "scope": "Avser lönegolvet för arbetskraftsinvandring från länder utanför EU/EES, inte fri rörlighet inom EU.",
+    "id": "r009",
+    "area": "Energi",
+    "text": "Staten bör betala en större del av nätanslutningen för ny havsbaserad vindkraft.",
+    "scope": "Avser statlig finansiering av anslutningskostnaden till elnätet, inte generella stöd till själva vindkraftverken.",
+    "status": "research",
+    "score": false,
+    "order": 44,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q13",
-    "area": "Energi och kärnkraft",
-    "text": "Staten bör använda kreditgarantier, lån eller annan riskdelning för att möjliggöra byggandet av nya kärnkraftsreaktorer.",
-    "scope": "Avser statlig ekonomisk riskdelning för ny kärnkraft, inte enbart att juridiskt tillåta kärnkraft.",
+    "id": "r010",
+    "area": "Energi",
+    "text": "Sveriges långsiktiga elplanering bör innehålla ett särskilt mål för mängden planerbar elproduktion.",
+    "scope": "Avser ett kvantifierat mål för produktion som kan styras efter behov, inte enbart ett teknikneutralt mål för total elproduktion.",
+    "status": "research",
+    "score": false,
+    "order": 45,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q14",
-    "area": "Energi och kärnkraft",
-    "text": "Staten bör betala en större del av kostnaden för nätanslutningen till ny havsbaserad vindkraft.",
-    "scope": "Avser kostnadsansvaret för anslutning av havsbaserad vindkraft till elnätet.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q15",
-    "area": "Energi och kärnkraft",
-    "text": "Kommunernas möjlighet att stoppa nya vindkraftsetableringar genom det kommunala vetot bör begränsas.",
-    "scope": "Avser det kommunala vetot mot vindkraft, inte kommunal planering i allmänhet.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q16",
-    "area": "Energi och kärnkraft",
-    "text": "Sveriges långsiktiga elplanering bör innehålla ett särskilt mål för hur mycket planerbar elproduktion som ska finnas i elsystemet.",
-    "scope": "Avser ett kvantifierat eller bindande planeringsmål för planerbar produktion, utöver mål för total elproduktion eller fossilfrihet.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q17",
+    "id": "r011",
     "area": "Klimat och miljö",
-    "text": "Sverige bör behålla nationella klimatmål som kräver snabbare utsläppsminskningar än vad EU:s gemensamma minimikrav kräver.",
-    "scope": "Avser svenska klimatmål utöver bindande EU-miniminivåer.",
+    "text": "Staten bör införa en bred köpbonus för privatpersoner som köper nya elbilar.",
+    "scope": "Avser ett generellt inköpsstöd för nya elbilar, inte endast riktade stöd till vissa hushåll eller landsbygdsområden.",
+    "status": "research",
+    "score": false,
+    "order": 46,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q18",
-    "area": "Klimat och miljö",
-    "text": "Skatten på bensin och diesel bör höjas om det bedöms nödvändigt för att Sverige ska nå sina klimatmål.",
-    "scope": "Avser drivmedelsskatt som klimatstyrmedel, inte råoljepris eller reduktionsplikt.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q19",
-    "area": "Klimat och miljö",
-    "text": "Staten bör återinföra eller införa en bred köpbonus för privatpersoner som köper nya elbilar.",
-    "scope": "Avser direkt ekonomisk köpbonus till privatpersoner för nya elbilar, inte laddinfrastruktur eller företagsbilar.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q20",
-    "area": "Klimat och miljö",
-    "text": "En större andel produktiv skogsmark bör undantas permanent från kommersiell avverkning för att skydda biologisk mångfald.",
-    "scope": "Avser permanent skydd av produktiv skogsmark och den avvägningen mot tillgång på skogsråvara.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q21",
+    "id": "r012",
     "area": "Sjukvård",
-    "text": "Staten bör ta över huvudansvaret för finansiering och styrning av sjukvården från regionerna.",
-    "scope": "Avser ett verkligt huvudmannaskifte eller motsvarande statligt huvudansvar, inte bara fler nationella riktlinjer.",
+    "text": "Vinstdrivande företag bör få dela ut vinst från skattefinansierad vård när de uppfyller samma kvalitetskrav som andra vårdgivare.",
+    "scope": "Avser rätten till vinstutdelning efter uppfyllda kvalitetskrav, inte enbart rätten att bedriva vård.",
+    "status": "research",
+    "score": false,
+    "order": 47,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q22",
+    "id": "r013",
     "area": "Sjukvård",
-    "text": "Vinstdrivande företag bör även fortsättningsvis få dela ut vinst från skattefinansierad vård om de uppfyller samma kvalitetskrav som andra vårdgivare.",
-    "scope": "Avser möjligheten till vinstutdelning i skattefinansierad vård, inte om privata vårdgivare över huvud taget får finnas.",
+    "text": "Patienter som inte får specialistvård inom vårdgarantin bör ha rätt till offentligt finansierad vård hos en annan godkänd vårdgivare.",
+    "scope": "Avser en nationellt fungerande rätt att få vård någon annanstans när tidsgränsen överskrids.",
+    "status": "research",
+    "score": false,
+    "order": 48,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q23",
+    "id": "r014",
     "area": "Sjukvård",
-    "text": "Patienter som inte får specialistvård inom vårdgarantins tidsgräns bör ha en nationellt garanterad rätt att få offentligt finansierad vård i en annan region eller hos annan godkänd vårdgivare.",
-    "scope": "Avser en individuell, nationellt fungerande rätt vid överskriden vårdgaranti.",
+    "text": "Vuxentandvården bör på sikt få ett ekonomiskt högkostnadsskydd som liknar övrig sjukvård.",
+    "scope": "Avser ett brett högkostnadsskydd för vuxna, inte endast ett högre tandvårdsbidrag eller stöd till vissa åldersgrupper.",
+    "status": "research",
+    "score": false,
+    "order": 49,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q24",
-    "area": "Sjukvård",
-    "text": "Tandvård för vuxna bör omfattas av ett högkostnadsskydd som på sikt ger ungefär samma ekonomiska skydd som övrig sjukvård.",
-    "scope": "Avser patientens maximala egen kostnadsrisk för nödvändig tandvård, inte fri estetisk tandvård.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q25",
-    "area": "Skola",
-    "text": "Vinstutdelning från skattefinansierade förskolor och skolor bör förbjudas.",
-    "scope": "Avser vinstutdelning till ägare; inte om fristående skolor utan vinstutdelning får finnas.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q26",
+    "id": "r015",
     "area": "Skola",
     "text": "Staten bör ta över huvudmannaskapet för grundskolan från kommunerna.",
-    "scope": "Avser formellt huvudmannaskap för grundskolan, inte bara statlig finansiering eller nationella regler.",
+    "scope": "Avser ett statligt huvudmannaskap, inte bara mer nationell finansiering, reglering eller tillsyn.",
+    "status": "research",
+    "score": false,
+    "order": 50,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q27",
+    "id": "r016",
     "area": "Skola",
     "text": "Nationella terminsbetyg bör ges från årskurs 4 i grundskolan.",
-    "scope": "Avser ordinarie nationella betyg från årskurs 4, inte frivilliga försök eller omdömen utan betygsskala.",
+    "scope": "Avser betyg från årskurs 4 för alla elever, inte frivilliga försök eller skriftliga omdömen utan betygsskala.",
+    "status": "research",
+    "score": false,
+    "order": 51,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q28",
-    "area": "Skola",
-    "text": "Elevers ordning och uppförande bör redovisas i ett separat ordningsomdöme som följer med terminsbetyget.",
-    "scope": "Avser ett formellt ordningsomdöme skilt från ämnesbetygen.",
+    "id": "r017",
+    "area": "Arbetsmarknad och socialförsäkring",
+    "text": "Arbetsgivare bör få undanta fler anställda än i dag från principen sist in–först ut vid arbetsbrist.",
+    "scope": "Avser fler undantag från turordningsreglerna vid uppsägning på grund av arbetsbrist.",
+    "status": "research",
+    "score": false,
+    "order": 52,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q29",
-    "area": "Arbetsmarknad",
-    "text": "Turordningsreglerna vid arbetsbrist bör ändras så att arbetsgivare får undanta fler anställda än i dag från principen sist in–först ut.",
-    "scope": "Avser fler lagliga undantag från turordningen vid arbetsbrist än dagens regler medger.",
+    "id": "r018",
+    "area": "Arbetsmarknad och socialförsäkring",
+    "text": "Den inkomstbaserade a-kassan bör ge högre ersättning under arbetslöshetens första månader än dagens system.",
+    "scope": "Avser ersättningsnivån i början av arbetslösheten, inte medlemsvillkor eller hur snabbt ersättningen senare trappas ned.",
+    "status": "research",
+    "score": false,
+    "order": 53,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q30",
-    "area": "Arbetsmarknad",
-    "text": "Sverige bör införa en generell arbetstidsförkortning mot cirka 35 timmars normal heltidsvecka utan motsvarande lönesänkning.",
-    "scope": "Avser en bred förkortning av heltidsnormen med bibehållen heltidslön, inte lokala arbetstidsförsök.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q31",
-    "area": "Arbetsmarknad",
-    "text": "Den inkomstbaserade a-kassan bör ha en högre ersättningsnivå under de första månaderna av arbetslöshet än dagens system.",
-    "scope": "Avser ersättningsnivån i arbetslöshetsförsäkringen, inte bara medlemskap eller administration.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q32",
-    "area": "Arbetsmarknad",
-    "text": "Den som får försörjningsstöd och kan arbeta bör som huvudregel vara skyldig att delta i heltidsaktivitet, arbete, praktik eller utbildning.",
-    "scope": "Avser ett nationellt aktivitetskrav för arbetsföra mottagare av försörjningsstöd.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q33",
-    "area": "Företagande",
+    "id": "r019",
+    "area": "Företagande och industri",
     "text": "Arbetsgivaravgiften bör sänkas särskilt för små företag när de anställer sina första medarbetare.",
-    "scope": "Avser riktad nedsättning för de första anställningarna i små eller växande företag, inte generell sänkning för alla arbetsgivare.",
+    "scope": "Avser en riktad nedsättning vid de första anställningarna, inte en generell sänkning för alla arbetsgivare.",
+    "status": "research",
+    "score": false,
+    "order": 54,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q34",
-    "area": "Företagande",
-    "text": "När staten inför ett nytt administrativt rapporteringskrav för småföretag bör den som huvudregel ta bort eller förenkla ett befintligt krav med jämförbar kostnad.",
-    "scope": "Avser en konkret regel för att hålla nere den samlade administrativa regelbördan, inte avskaffande av sakliga miljö- eller arbetsmiljökrav i sig.",
+    "id": "r020",
+    "area": "Företagande och industri",
+    "text": "Offentlig upphandling bör få premiera produktion i Sverige eller EU för samhällskritiska varor även när ett globalt alternativ är billigare.",
+    "scope": "Avser leveranssäkerhet och geografisk produktion för samhällskritiska varor, med möjlig högre kostnad som följd.",
+    "status": "research",
+    "score": false,
+    "order": 55,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q35",
-    "area": "Företagande",
-    "text": "Staten bör kunna gå in som långsiktig delägare eller medfinansiär i strategiska industriprojekt när privata investerare inte ensamma vill bära risken.",
-    "scope": "Avser statligt kapital eller riskbärande medfinansiering i strategisk industri, inte vanliga forskningsbidrag.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q36",
-    "area": "Företagande",
-    "text": "Offentlig upphandling bör få premiera leverantörer med produktion i Sverige eller EU när det gäller samhällskritiska varor, även om ett globalt alternativ är billigare.",
-    "scope": "Avser försörjningssäkerhet som upphandlingskriterium för samhällskritiska varor.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q37",
-    "area": "Bostäder",
-    "text": "Fri hyressättning bör tillåtas i nyproducerade hyresrätter.",
-    "scope": "Avser hyran när en ny hyresrätt först hyrs ut, inte befintliga kontrakt.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q38",
-    "area": "Bostäder",
-    "text": "Ränteavdraget för privata bolån bör trappas ned under nästa mandatperiod.",
-    "scope": "Avser skattereduktionen för bolåneräntor, inte amorteringskrav eller fastighetsskatt.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q39",
-    "area": "Bostäder",
-    "text": "Staten bör återinföra eller införa investeringsstöd till nybyggda hyresrätter i utbyte mot krav på lägre hyror.",
-    "scope": "Avser direkt statligt byggstöd kopplat till hyresvillkor.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q40",
-    "area": "Bostäder",
-    "text": "Möjligheten för närboende att överklaga lagakraftnära detaljplaner och byggprojekt bör begränsas för att korta byggtiderna.",
-    "scope": "Avser begränsning av överklaganderätten i plan- och byggprocessen, inte sänkta tekniska byggkrav.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q41",
-    "area": "Familj och socialpolitik",
-    "text": "Det allmänna barnbidraget bör höjas för alla barnfamiljer, även för hushåll med höga inkomster.",
-    "scope": "Avser en generell höjning av barnbidraget utan inkomstsprövning.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q42",
-    "area": "Familj och socialpolitik",
-    "text": "Fler dagar i föräldraförsäkringen bör reserveras för vardera föräldern och inte kunna överlåtas till den andra.",
-    "scope": "Avser ökad kvotering av föräldradagar mellan två vårdnadshavare.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q43",
-    "area": "Familj och socialpolitik",
-    "text": "Ett nationellt bidragstak bör begränsa hur mycket ett hushåll sammanlagt kan få i vissa behovsprövade bidrag i förhållande till inkomsten från arbete.",
-    "scope": "Avser ett samlat tak för vissa bidrag, inte enskilda ersättningars kvalifikationsregler.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q44",
-    "area": "Familj och socialpolitik",
-    "text": "Karensavdraget i sjukförsäkringen bör avskaffas så att anställda får sjuklön från första sjukdagen.",
-    "scope": "Avser karensavdraget vid kort sjukfrånvaro för anställda.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q45",
+    "id": "r021",
     "area": "Försvar och säkerhet",
-    "text": "Sveriges militära försvarsutgifter bör varaktigt uppgå till minst 3,5 procent av BNP, utöver andra civila beredskapsutgifter.",
-    "scope": "Avser den militära delen av försvarsutgifterna och skiljer den från civila totalförsvarsinvesteringar.",
+    "text": "Sveriges militära försvarsutgifter bör varaktigt uppgå till minst 3,5 procent av BNP, utöver civila beredskapsutgifter.",
+    "scope": "Avser den militära delen av försvarsutgifterna och en varaktig miniminivå, inte ett tillfälligt tillskott.",
+    "status": "research",
+    "score": false,
+    "order": 56,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q46",
+    "id": "r022",
     "area": "Försvar och säkerhet",
-    "text": "Antalet personer som varje år genomför grundutbildning med värnplikt bör öka tydligt under nästa mandatperiod.",
-    "scope": "Avser fler årligen inkallade till militär grundutbildning, inte bara större yrkesförsvar.",
+    "text": "Sverige bör fortsätta ge omfattande militärt stöd till Ukraina även om andra svenska statsutgifter då måste bli högre eller prioriteras ned.",
+    "scope": "Avser uthålligt militärt stöd och den uttryckliga budgetmässiga kostnaden.",
+    "status": "research",
+    "score": false,
+    "order": 57,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q47",
-    "area": "Försvar och säkerhet",
-    "text": "Staten bör bygga upp obligatoriska nationella beredskapslager av läkemedel, livsmedel och drivmedel för längre störningar i import och distribution.",
-    "scope": "Avser fysiska beredskapslager med nationella krav, inte enbart företagens frivilliga lager.",
+    "id": "r023",
+    "area": "EU och utrikespolitik",
+    "text": "EU bör fatta fler utrikes- och säkerhetspolitiska beslut med kvalificerad majoritet i stället för nationellt veto.",
+    "scope": "Avser minskat krav på enhällighet inom EU:s utrikes- och säkerhetspolitik.",
+    "status": "research",
+    "score": false,
+    "order": 58,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q48",
-    "area": "Försvar och säkerhet",
-    "text": "Civilplikten bör byggas ut så att fler kan kallas till utbildning och tjänstgöring inom exempelvis sjukvård, räddningstjänst och energiförsörjning.",
-    "scope": "Avser utökad pliktbaserad personalförsörjning i det civila totalförsvaret.",
+    "id": "r024",
+    "area": "Bostäder och infrastruktur",
+    "text": "Staten bör återuppta planeringen av separata höghastighetsbanor mellan Stockholm, Göteborg och Malmö.",
+    "scope": "Avser nya separata stambanor för höghastighetståg, inte endast upprustning av befintlig järnväg.",
+    "status": "research",
+    "score": false,
+    "order": 59,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   },
   {
-    "id": "q49",
-    "area": "Nato och Ukraina",
-    "text": "Sverige bör förbli medlem i Nato.",
-    "scope": "Avser fortsatt svenskt Nato-medlemskap.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q50",
-    "area": "Nato och Ukraina",
-    "text": "Sverige bör tillåta permanent eller långvarig stationering av andra Nato-länders stridande förband på svenskt territorium även i fredstid.",
-    "scope": "Avser varaktig stationering i fredstid, inte tillfälliga övningar eller besök.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q51",
-    "area": "Nato och Ukraina",
-    "text": "Sverige bör fortsätta ge omfattande militärt stöd till Ukraina även om det kräver att svenska försvarsanslag eller statliga utgifter blir högre än de annars hade varit.",
-    "scope": "Avser fortsatt omfattande militärt stöd trots en faktisk svensk budgetkostnad.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q52",
-    "area": "Nato och Ukraina",
-    "text": "Efter ett eventuellt freds- eller vapenvileavtal bör Sverige kunna bidra med beväpnad militär personal i Ukraina inom en internationell säkerhetsstyrka.",
-    "scope": "Avser svensk beväpnad personal på ukrainskt territorium efter ett avtal, inte utbildningsinsatser i andra länder.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q53",
-    "area": "EU",
-    "text": "Sverige bör införa euron som valuta under kommande mandatperiod eller inleda en bindande process för att göra det.",
-    "scope": "Avser faktiskt införande eller en bindande anslutningsprocess, inte bara en ny utredning.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q54",
-    "area": "EU",
-    "text": "EU bör kunna fatta fler beslut om utrikes- och säkerhetspolitik med kvalificerad majoritet i stället för att varje medlemsland har veto.",
-    "scope": "Avser övergång från enhällighet till kvalificerad majoritet inom delar av utrikes- och säkerhetspolitiken.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q55",
-    "area": "EU",
-    "text": "EU bör få egna permanenta skatteintäkter som tas ut enligt gemensamma EU-regler för att finansiera gemensamma utgifter.",
-    "scope": "Avser nya egna EU-skatter eller motsvarande permanenta egna skattebaser, inte Sveriges vanliga medlemsavgift.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q56",
-    "area": "EU",
-    "text": "Sverige bör aktivt verka för fördragsändringar som flyttar tillbaka beslutanderätt från EU till medlemsstaterna inom vissa politikområden.",
-    "scope": "Avser faktisk återföring av EU-befogenheter genom fördrags- eller lagändring, inte bara subsidiaritetsprincipen inom dagens ordning.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q57",
-    "area": "Infrastruktur",
-    "text": "Staten bör återuppta planeringen av nya separata stambanor för höghastighetståg mellan Stockholm, Göteborg och Malmö.",
-    "scope": "Avser nya separata höghastighetsstambanor mellan de tre storstadsregionerna, inte enskilda kapacitetsförstärkningar.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q58",
-    "area": "Infrastruktur",
-    "text": "När järnvägsbudgeten är begränsad bör underhåll och upprustning av befintlig järnväg prioriteras före nya stora järnvägsprojekt.",
-    "scope": "Avser prioriteringsordningen inom en given järnvägsbudget.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q59",
-    "area": "Infrastruktur",
-    "text": "Statens investeringar i nya motorvägssträckor bör minska så att mer av investeringsbudgeten kan gå till järnväg och kollektivtrafik.",
-    "scope": "Avser omfördelning av investeringsmedel från nya motorvägar till järnväg och kollektivtrafik.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q60",
-    "area": "Infrastruktur",
-    "text": "Staten bör subventionera flyglinjer till mindre regionala flygplatser när linjerna bedöms nödvändiga för grundläggande tillgänglighet.",
-    "scope": "Avser offentligt upphandlad eller subventionerad regional flygtrafik av tillgänglighetsskäl.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q61",
+    "id": "r025",
     "area": "Demokrati och personlig integritet",
-    "text": "Stora sociala plattformar bör vara skyldiga att verifiera identiteten bakom användarkonton även om användaren fortfarande får visa ett pseudonymt namn offentligt.",
-    "scope": "Avser identitetskontroll hos plattformen, inte förbud mot pseudonymer inför andra användare.",
+    "text": "Sverige bör motsätta sig generell automatisk skanning av privata digitala meddelanden innan det finns konkret misstanke mot användaren.",
+    "scope": "Avser generell förhandsgranskning av privata meddelanden, inte riktad avlyssning efter beslut i ett konkret ärende.",
+    "status": "research",
+    "score": false,
+    "order": 60,
+    "reviewStatus": "awaiting-common-matrix",
     "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
+      "+2": "Tydligt stöd för påståendet eller en starkare version.",
+      "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
+      "0": "Uttryckligt stöd för ungefär dagens nivå eller en verklig mellanposition. Avsaknad av källa är aldrig 0.",
+      "-1": "Motstånd mot riktningen, men med undantag eller stöd för en svagare närliggande reform.",
+      "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
+      "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q62",
-    "area": "Demokrati och personlig integritet",
-    "text": "Polisen bör få använda automatiserad ansiktsigenkänning i realtid på offentliga platser för att söka efter personer misstänkta för allvarliga brott.",
-    "scope": "Avser biometrisk realtidsidentifiering i offentliga miljöer för brottsbekämpning.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q63",
-    "area": "Demokrati och personlig integritet",
-    "text": "Sverige bör motsätta sig regler som innebär generell automatisk skanning av privata digitala meddelanden för att upptäcka olagligt innehåll innan det finns konkret misstanke mot användaren.",
-    "scope": "Avser generell innehållsskanning av privata meddelanden utan individuell misstanke, inklusive förslag av typen klient- eller serverbaserad masskanning.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
-  },
-  {
-    "id": "q64",
-    "area": "Demokrati och personlig integritet",
-    "text": "Politiska partier bör offentligt redovisa identiteten bakom större privata donationer och donationernas belopp i ett öppet sökbart register.",
-    "scope": "Avser öppen redovisning av större privata partidonationer, inte små gåvor under en lagstadgad gräns.",
-    "codingRule": {
-      "+2": "Partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version och vill genomföra den.",
-      "+1": "Partiet stödjer riktningen men med tydligare begränsningar, villkor, lägre ambitionsnivå eller längre tidshorisont.",
-      "0": "Partiet intar uttryckligen en mellanposition eller vill i huvudsak behålla nuvarande ordning. Avsaknad av källa kodas aldrig som 0.",
-      "-1": "Partiet motsätter sig riktningen men accepterar delar av den, ett snävare undantag eller en mildare motsatt linje.",
-      "-2": "Partiet motsätter sig uttryckligen reformen och driver en tydligt motsatt ordning."
-    },
-    "unknownRule": "Om aktuell officiell källa inte räcker för att placera partiet på skalan ska positionen vara null/okänd."
+    "sourceSet": null,
+    "sourceQuestionOrdinal": null,
+    "sourceQuestionType": "proposition",
+    "wordingMethod": "Egen precisionsfråga. Får inte aktiveras förrän alla jämförelsepartier har verifierats mot exakt samma avgränsning."
   }
 ]

@@ -1,83 +1,140 @@
 [
   {
-    "party":"s",
-    "title":"Socialdemokraterna – Val 2026: Plan för Sverige",
-    "url":"https://www.socialdemokraterna.se/val-2026",
-    "type":"official-election-platform",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Primär ingång för partiets nationella 2026-politik. Enskilda positioner måste ändå beläggas med den sida eller det dokument som uttryckligen behandlar sakfrågan."
+    "id": "svt-2026-main",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026",
+    "url": "https://valkompass.svt.se/2026/",
+    "sourceType": "established-compass",
+    "note": "Översikt över SVT:s nationella och lokala valkompasser samt de åtta deltagande riksdagspartierna.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"m",
-    "title":"Moderaterna – Vallöften 2026",
-    "url":"https://moderaterna.se/valloften-2026/",
-    "type":"official-election-promises",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Officiell 2026-sida. Kompletteras med partiets sakpolitiska sidor och senare valmanifest när det krävs för en exakt fråga."
+    "id": "svt-2026-method",
+    "publisher": "SVT Nyheter",
+    "title": "Frågor och svar om SVT:s valkompasser",
+    "url": "https://www.svt.se/nyheter/inrikes/fragor-och-svar-om-svts-valkompasser",
+    "sourceType": "methodology",
+    "note": "Beskriver frågeurval, partiernas egna svar och hur SVT tog fram 2026 års kompass tillsammans med Indikator Opinion.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"sd",
-    "title":"Sverigedemokraterna – Val 2026",
-    "url":"https://val2026.sd.se/",
-    "type":"official-election-platform",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Officiell 2026-valsida. Partiets dokumentarkiv och valplattform används som primärkälla för detaljkodning."
+    "id": "svt-2026-s",
+    "party": "s",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Socialdemokraterna",
+    "url": "https://valkompass.svt.se/2026/parti/socialdemokraterna/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"v",
-    "title":"Vänsterpartiet – Val 2026",
-    "url":"https://www.vansterpartiet.se/val2026/",
-    "type":"official-election-platform",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Officiell valsida med länk till partiets valplattform 2026."
+    "id": "svt-2026-m",
+    "party": "m",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Moderaterna",
+    "url": "https://valkompass.svt.se/2026/parti/moderaterna/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"c",
-    "title":"Centerpartiet – Valmanifest 2026: Sverige kan mer",
-    "url":"https://val2026.centerpartiet.se/",
-    "type":"official-election-manifesto",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Officiellt nationellt valmanifest 2026 med konkreta reformförslag."
+    "id": "svt-2026-sd",
+    "party": "sd",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Sverigedemokraterna",
+    "url": "https://valkompass.svt.se/2026/parti/sverigedemokraterna/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"kd",
-    "title":"Kristdemokraterna – Vår politik / valåret 2026",
-    "url":"https://kristdemokraterna.se/var-politik/",
-    "type":"official-policy-hub",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Ingen enda komplett nationell 2026-manifestsida har använts som universalkälla. Exakta positioner måste beläggas med aktuell officiell KD-källa, exempelvis sakpolitisk sida, budgetförslag eller 2026-uttalande."
+    "id": "svt-2026-v",
+    "party": "v",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Vänsterpartiet",
+    "url": "https://valkompass.svt.se/2026/parti/vansterpartiet/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"l",
-    "title":"Liberalerna – Valmanifest 2026: För din frihet",
-    "url":"https://www.liberalerna.se/nyheter/liberalerna-presenterar-valmanifest-2026-for-din-frihet",
-    "type":"official-election-manifesto",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Officiell presentation och ingång till Liberalernas valmanifest 2026."
+    "id": "svt-2026-c",
+    "party": "c",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Centerpartiet",
+    "url": "https://valkompass.svt.se/2026/parti/centerpartiet/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"mp",
-    "title":"Miljöpartiet – Politiskt handlingsprogram 2026–2030",
-    "url":"https://www.mp.se/politik/politiskt-handlingsprogram-2026/",
-    "type":"official-policy-program",
-    "status":"active",
-    "verified":"2026-08-16",
-    "note":"Officiellt politiskt handlingsprogram för mandatperioden 2026–2030."
+    "id": "svt-2026-kd",
+    "party": "kd",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Kristdemokraterna",
+    "url": "https://valkompass.svt.se/2026/parti/kristdemokraterna/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
   },
   {
-    "party":"op",
-    "title":"Örebropartiet – Valprogram 2026",
-    "url":"https://orebropartiet.se/var-politik/",
-    "type":"official-election-program",
-    "status":"developing",
-    "verified":"2026-08-16",
-    "note":"Partiet uppger självt att valprogrammet publiceras successivt och kan kompletteras fram till valdagen. Därför ska saknade rikspositioner lämnas okända tills relevant programdel publicerats."
+    "id": "svt-2026-l",
+    "party": "l",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Liberalerna",
+    "url": "https://valkompass.svt.se/2026/parti/liberalerna/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "svt-2026-mp",
+    "party": "mp",
+    "publisher": "SVT Nyheter",
+    "title": "Valkompass 2026 – Miljöpartiet",
+    "url": "https://valkompass.svt.se/2026/parti/miljopartiet/",
+    "sourceType": "party-self-report-established-compass",
+    "note": "Partiets egna svar på samma nationella sakfrågor. Appens formulering är en självständig neutral parafras med bevarad riktning och avgränsning.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "op-2026-program",
+    "party": "op",
+    "publisher": "Örebropartiet",
+    "title": "Valprogram 2026 – ingångssida",
+    "url": "https://orebropartiet.se/var-politik/",
+    "sourceType": "official-election-program",
+    "note": "Partiet uppger att 2026-programmet publiceras successivt och kan kompletteras fram till valdagen.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "op-2026-energy",
+    "party": "op",
+    "publisher": "Örebropartiet",
+    "title": "Energi och bränsle",
+    "url": "https://orebropartiet.se/var-politik/energi-och-br%C3%A4nsle/",
+    "sourceType": "official-election-program",
+    "note": "Officiell programdel om kärnkraft, vindkraft, gröna industriprojekt och drivmedelsskatter.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "op-2026-dental",
+    "party": "op",
+    "publisher": "Örebropartiet",
+    "title": "Tandvård",
+    "url": "https://orebropartiet.se/var-politik/tandv%C3%A5rd/",
+    "sourceType": "official-election-program",
+    "note": "Officiell programdel om avgiftsfri tandvård på nationell nivå.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "op-2026-migration",
+    "party": "op",
+    "publisher": "Örebropartiet",
+    "title": "Migrationspolitik",
+    "url": "https://orebropartiet.se/var-politik/migrationspolitik/",
+    "sourceType": "official-election-program",
+    "note": "Officiell programdel om asyl, medborgarskap, uppehållstillstånd och återvandring.",
+    "verified": "2026-08-16"
   }
 ]

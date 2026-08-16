@@ -1,0 +1,88 @@
+{
+  "batch": 3,
+  "verified": "2026-08-16",
+  "questions": [
+    {
+      "id": "r021",
+      "status": "reviewed-consensus",
+      "note": "Alla åtta riksdagspartier står bakom den blocköverskridande uppgörelsen om att Sverige ska nå Natos nya mål om 3,5 procent av BNP till militärt försvar. Frågan är faktamässigt väl belagd men har nästan ingen partiskiljande kraft och bör därför inte ges stor vikt i rankingen.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "S ingår i den blocköverskridande överenskommelsen om att nå 3,5 procent av BNP till militärt försvar."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "M-regeringen står bakom överenskommelsen om 3,5 procent militärt försvar."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "SD ingår i den blocköverskridande överenskommelsen."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "V ingår i den blocköverskridande överenskommelsen."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "C ingår i den blocköverskridande överenskommelsen."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "KD-regeringen står bakom överenskommelsen."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "L-regeringen står bakom överenskommelsen."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/06/blockoverskridande-overenskommelse-om-det-militara-och-civila-forsvaret/", "reason": "MP ingår i den blocköverskridande överenskommelsen."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad 2026-position om 3,5-procentsmålet har verifierats."}
+      }
+    },
+    {
+      "id": "r022",
+      "status": "reviewed-consensus",
+      "note": "Samtliga åtta riksdagspartier stöder fortsatt omfattande stöd till Ukraina. Exakt formulering om vilken annan svensk utgift som ska trängas undan är inte lika uttrycklig hos alla. Frågan har låg partiskiljande kraft och bör ersättas eller användas endast som transparensfråga.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.socialdemokraterna.se/nyheter/nyheter/2026-02-24-tva-ar-av-fullskaligt-krig---sveriges-stod-till-ukraina-maste-fortsatta", "reason": "S beskriver fortsatt starkt och uthålligt stöd till Ukraina som nödvändigt."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-och-sverigedemokraterna-overens-om-nytt-ramverk-for-militart-stod-till-ukraina/", "reason": "Regeringen och SD har en flerårig ram för mycket omfattande militärt stöd."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-och-sverigedemokraterna-overens-om-nytt-ramverk-for-militart-stod-till-ukraina/", "reason": "SD står bakom den fleråriga ramen för omfattande militärt stöd."},
+        "v": {"position": 1, "confidence": "high", "source": "https://www.vansterpartiet.se/var-politik/politik-a-o/ukraina/", "reason": "V står bakom militärt, ekonomiskt och humanitärt stöd till Ukraina. Den uttryckliga budgetmässiga undanträngningen i frågan är inte lika direkt belagd."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.centerpartiet.se/press/pressmeddelande/nyhetsarkiv-2026/2026-02-23-centerpartiet-vill-ge-en-procent-av-bnp-i-arligt-stod-till-ukraina", "reason": "C vill ge omkring en procent av BNP per år och har föreslagit finansiering utanför ordinarie budgetram, vilket tydligt accepterar en stor statsfinansiell kostnad."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-och-sverigedemokraterna-overens-om-nytt-ramverk-for-militart-stod-till-ukraina/", "reason": "KD-regeringen står bakom den fleråriga ramen."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/regeringen-och-sverigedemokraterna-overens-om-nytt-ramverk-for-militart-stod-till-ukraina/", "reason": "L-regeringen står bakom den fleråriga ramen."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.mp.se/just-nu/miljopartiet-vill-se-ett-mer-omfattande-och-langsiktigt-stod-till-ukraina/", "reason": "MP vill se mer omfattande och långsiktigt stöd till Ukraina."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad 2026-position har verifierats."}
+      }
+    },
+    {
+      "id": "r023",
+      "recommendedText": "EU bör kunna fatta beslut med kvalificerad majoritet i stället för enhällighet i vissa utrikespolitiska frågor, exempelvis sanktioner och människorättsfrågor.",
+      "status": "reviewed-strong",
+      "note": "Den ursprungliga formuleringen 'fler utrikes- och säkerhetspolitiska beslut' var för bred. Den rekommenderade formuleringen motsvarar aktuella riksdags- och regeringskällor och skiljer tydligt mellan partier.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/verksamheten-i-europeiska-unionen-under-2025_hd01uu10/", "reason": "S-motion 2025/26:3623 yrkande 33 vill ha kvalificerad majoritet i vissa utrikespolitiska frågor såsom sanktioner och mänskliga rättigheter."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/eu-namndens-uppteckningar/torsdagen-den-8-januari_hd0a20/", "reason": "Statsminister Ulf Kristersson (M) säger att Sverige och likasinnade har drivit att kvalificerad majoritet oftare bör gälla i sådana utrikespolitiska ställningstaganden."},
+        "sd": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/verksamheten-i-europeiska-unionen-under-2025_hd01uu10/", "reason": "SD:s särskilda yttrande anger att partiet vill behålla kravet på enhällighet i delar av den gemensamma utrikes- och säkerhetspolitiken."},
+        "v": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/verksamheten-i-europeiska-unionen-under-2025_hd01uu10/", "reason": "V:s reservation i samma betänkande behandlar andra utrikespolitiska frågor. Den exakta 2026-positionen om kvalificerad majoritet behöver en direkt källa och lämnas därför okänd."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/verksamheten-i-europeiska-unionen-under-2025_hd01uu10/", "reason": "C-motion 2025/26:3729 vill att utrikespolitiken inom EU i ökad utsträckning ska beslutas genom majoritetsbeslut."},
+        "kd": {"position": 1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/eu-namndens-uppteckningar/_hd0a31/", "reason": "KD lyfter uttryckligen behovet av att diskutera kvalificerad majoritet när enskilda länder blockerar utrikespolitiska beslut, men den granskade källan är mindre bindande än ett motionsyrkande."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "En direkt aktuell partikälla för exakt avgränsning har inte verifierats i denna genomgång."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "En direkt aktuell partikälla för exakt avgränsning har inte verifierats i denna genomgång."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad 2026-position har verifierats."}
+      }
+    },
+    {
+      "id": "r024",
+      "recommendedText": "Staten bör återuppta planeringen av nya sammanhängande stambanor för tågtrafik i södra Sverige, i stället för att begränsa utbyggnaden till enskilda sträckor.",
+      "status": "reviewed-strong",
+      "note": "Den ursprungliga formuleringen blandade 'nya stambanor' med ett specifikt höghastighetsprojekt Stockholm–Göteborg–Malmö. 2026 års riksdagsbeslut ger däremot en mycket tydlig skiljelinje om nya sammanhängande stambanor.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/omrostning/nya-stambanor~0c31b7a1-df59-402e-8dd5-7487cd07b7dd/", "reason": "S röstade för reservationen om nya stambanor."},
+        "m": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/omrostning/nya-stambanor~0c31b7a1-df59-402e-8dd5-7487cd07b7dd/", "reason": "M röstade för utskottets avslag på motionerna om nya stambanor."},
+        "sd": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/", "reason": "SD röstade mot reservationen; i debatten avvisar partiet ett nytt sammanhängande höghastighets-/stambanenät men stödjer vissa enskilda sträckor."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/omrostning/nya-stambanor~0c31b7a1-df59-402e-8dd5-7487cd07b7dd/", "reason": "V röstade för reservationen om nya stambanor."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/omrostning/nya-stambanor~0c31b7a1-df59-402e-8dd5-7487cd07b7dd/", "reason": "C röstade för reservationen om nya stambanor."},
+        "kd": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/", "reason": "KD röstade mot reservationen och beskriver det tidigare sammanhängande projektet som ekonomiskt orimligt, samtidigt som enskilda nya sträckor kan byggas."},
+        "l": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/omrostning/nya-stambanor~0c31b7a1-df59-402e-8dd5-7487cd07b7dd/", "reason": "L röstade mot reservationen om nya stambanor."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/infrastrukturfragor_hd01tu20/omrostning/nya-stambanor~0c31b7a1-df59-402e-8dd5-7487cd07b7dd/", "reason": "MP röstade för reservationen om nya stambanor."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad nationell 2026-position har verifierats."}
+      }
+    },
+    {
+      "id": "r025",
+      "status": "reviewed-partial",
+      "note": "Här används bara källor som faktiskt handlar om Chat Control/CSAM-förordningens innehållsskanning. När en partikälla bara talar allmänt om brottsbekämpning eller kryptering lämnas positionen okänd.",
+      "positions": {
+        "s": {"position": -1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/protokoll/protokoll-202526124-mandagen-den-25-maj_hd09124/html/", "reason": "I riksdagsdebatten kontrasterar C sitt nej mot Socialdemokraternas linje. Exakt stöd för varje teknisk variant av generell skanning är dock inte fastställt, därför endast -1 och medium säkerhet."},
+        "m": {"position": -1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/protokoll/protokoll-202526124-mandagen-den-25-maj_hd09124/html/", "reason": "C anger att Tidöpartierna, till skillnad från C, inte säger nej till chat control. Exakt teknisk omfattning behöver fortfarande en egen M-källa."},
+        "sd": {"position": -1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/protokoll/protokoll-202526124-mandagen-den-25-maj_hd09124/html/", "reason": "Samma riksdagsdebatt placerar Tidöpartierna på andra sidan C:s nej; exakt variant behöver partikälla."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/polisfragor_hd01juu16/", "reason": "V och MP reserverade sig gemensamt i utskottet till stöd för linjen att Sverige ska säga nej till Chat Control."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/protokoll/protokoll-202526124-mandagen-den-25-maj_hd09124/html/", "reason": "C säger uttryckligen nej till Chat Control och beskriver förslaget som massövervakning."},
+        "kd": {"position": -1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/protokoll/protokoll-202526124-mandagen-den-25-maj_hd09124/html/", "reason": "C:s riksdagsanförande placerar Tidöpartierna på andra sidan C:s nej; exakt teknisk omfattning behöver egen KD-källa."},
+        "l": {"position": -1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/protokoll/protokoll-202526124-mandagen-den-25-maj_hd09124/html/", "reason": "C:s riksdagsanförande placerar Tidöpartierna på andra sidan C:s nej; exakt teknisk omfattning behöver egen L-källa."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/polisfragor_hd01juu16/", "reason": "MP-motion 2025/26:3778 kräver att Sverige röstar nej till Chat Control; V och MP reserverade sig för detta."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad 2026-position har verifierats."}
+      }
+    }
+  ]
+}

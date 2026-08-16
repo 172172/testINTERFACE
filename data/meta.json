@@ -1,9 +1,73 @@
 {
-  "datasetVersion": "0.2.0-precision-rebuild",
+  "title": "Öppen Valkompass 2026",
+  "datasetVersion": "0.4.0-source-audit",
+  "questionDesignVersion": "3.2",
   "verifiedThrough": "2026-08-16",
   "electionDate": "2026-09-13",
-  "rankingCoverageThreshold": 0.7,
-  "note": "Precisionsombyggd forskningsversion. Alla 64 frågor är avgränsade till en konkret politisk skiljelinje. Samtliga partipositioner har nollställts efter frågeändringen och måste återverifieras mot aktuell officiell källa innan de kan påverka ett resultat.",
-  "questionDesignVersion": "2.0",
-  "positionReverificationRequired": true
+  "dataFingerprintSha256": "a921f5e3edf9bdd8c2140cf21530b946ffff836196d22edc2f086b61a59ac85d",
+  "activeQuestionCount": 35,
+  "researchQuestionCount": 25,
+  "totalQuestionCount": 60,
+  "corePartyIds": [
+    "s",
+    "m",
+    "sd",
+    "v",
+    "c",
+    "kd",
+    "l",
+    "mp"
+  ],
+  "provisionalPartyIds": [
+    "op"
+  ],
+  "minimumAnsweredForResult": 12,
+  "activeAreaCounts": {
+    "Brott och rättsväsende": 3,
+    "Skola": 3,
+    "Bostäder": 3,
+    "Ekonomi och skatter": 3,
+    "Företagande och industri": 2,
+    "Klimat och miljö": 2,
+    "Migration och integration": 2,
+    "Försvar och säkerhet": 2,
+    "Demokrati, medier och kultur": 2,
+    "Arbetsmarknad och socialförsäkring": 2,
+    "Familj och socialpolitik": 2,
+    "Sjukvård och folkhälsa": 3,
+    "EU och utrikespolitik": 3,
+    "Energi och transporter": 3
+  },
+  "scoring": {
+    "positionScale": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "importanceScale": [
+      0,
+      1,
+      2,
+      3,
+      5
+    ],
+    "overall": "Aritmetiskt medel av varje besvarat politikområdes matchningsprocent.",
+    "priority": "Viktad områdesmatchning där användarens genomsnittliga vikt i området styr områdets påverkan.",
+    "unknown": "Okända positioner påverkar inte poängen och får aldrig kodas som 0."
+  },
+  "readiness": {
+    "coreMatrixRequired": 280,
+    "coreMatrixVerified": 280,
+    "provisionalKnown": 6,
+    "researchIncludedInScoring": false
+  },
+  "review": {
+    "coreMatrix": "Mekanisk översättning av partiernas egna svar på samma 35 nationella 2026-frågor; inga manuella poängjusteringar.",
+    "precisionQuestions": "25 frågor är fail-closed och score:false tills en komplett exakt källmatris finns.",
+    "provisionalParty": "Örebropartiet kodas endast när publicerat nationellt 2026-material direkt täcker frågans avgränsning; närliggande politik räcker inte.",
+    "secondReview": "Politisk dubbelgranskning av varje rad är ett fortsatt kvalitetssteg och redovisas inte som genomförd innan den faktiskt är klar."
+  },
+  "note": "Den publika kärnan använder 35 sakfrågor med en komplett och jämförbar matris av partiernas egna 2026-svar för samtliga åtta riksdagspartier. Samma kod betyder samma svarskategori på det exakta påståendet, inte att partiernas övriga politik, motiv eller genomförande är identiska. Ytterligare 25 precisionsfrågor finns i forskningskön men påverkar inte resultatet. Örebropartiet visas separat och preliminärt; endast direkt belagda positioner kodas och närliggande politik lämnas null."
 }

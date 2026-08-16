@@ -1,0 +1,174 @@
+{
+  "batch": 1,
+  "verified": "2026-08-16",
+  "questions": [
+    {
+      "id": "r001",
+      "recommendedText": "Den statliga inkomstskatten på högre arbetsinkomster bör sänkas.",
+      "status": "reviewed-not-yet-scored",
+      "note": "Frågan har preciserats från allmän skatt på arbete till den statliga inkomstskatten, som endast träffar högre inkomster.",
+      "positions": {
+        "s": {"position": -2, "confidence": "high", "source": "https://www.socialdemokraterna.se/var-politik/a-till-o/skatter", "reason": "S säger uttryckligen nej till skattebonusar för dem som tjänar allra mest och vill rikta skattesänkningar till vanligt folk."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/avskaffande-av-statlig-inkomstskatt-och-inforande_hd02437/", "reason": "Moderata riksdagsledamöter föreslår att den statliga inkomstskatten sänks och på sikt avskaffas."},
+        "sd": {"position": 1, "confidence": "medium", "source": "https://www.sd.se/vad-vi-vill/sverige-pa-vag/", "reason": "SD går till val på sänkt skatt på arbete men den använda källan anger inte en separat nivå för statlig inkomstskatt."},
+        "v": {"position": -2, "confidence": "high", "source": "https://www.vansterpartiet.se/val2026/darfor-ska-du-rosta-pa-vansterpartiet/", "reason": "V:s valplattform kritiserar skattesänkningar för de rikaste och vill i stället att höginkomsttagare och stora förmögenheter bidrar mer."},
+        "c": {"position": 1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/yttrande/skattefragor-i-budgetpropositionen-for-2026_hd05sku1y/html/", "reason": "C föreslår ytterligare skattesänkningar på alla löner, särskilt låg- och medelinkomster. Källan ger stöd för riktningen men inte en lika tydlig särskild sänkning av statlig inkomstskatt som L/KD."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://kristdemokraterna.se/var-politik/politikomraden/ekonomi--skatter?open.12_72d9f8c817e8ce3de028d5b=true", "reason": "KD säger att färre ska betala statlig inkomstskatt och att brytpunkten ska höjas."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.liberalerna.se/nyheter/liberalerna-kraver-sankt-statlig-inkomstskatt", "reason": "L går till val 2026 på att halvera den statliga inkomstskatten."},
+        "mp": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/yttrande/skattefragor-i-budgetpropositionen-for-2026_hd05sku1y/html/", "reason": "MP vill återinföra utfasningen av jobbskatteavdraget och införa ytterligare ett steg i statlig inkomstskatt vid högre inkomster."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen tillräckligt exakt offentlig 2026-källa hittad i denna granskning."}
+      }
+    },
+    {
+      "id": "r002",
+      "status": "needs-more-evidence",
+      "note": "Förmögenhetsskatt är en separat skattebas från kapitalinkomst, fastighetsskatt och ISK. Närliggande uttalanden får därför inte användas som automatiska svar.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": "https://www.socialdemokraterna.se/var-politik/a-till-o/skatter", "reason": "S vill höja beskattningen av stora lågt beskattade kapitalinkomster, men källan belägger inte en generell skatt på privat nettoförmögenhet."},
+        "m": {"position": -2, "confidence": "high", "source": "https://moderaterna.se/stockholm/var-politik/ekonomi/", "reason": "Moderaterna anger uttryckligen att en förmögenhetsskatt inte bör återinföras. Källan är regional och ska ersättas av nationell källa om en sådan publiceras."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt 2026-källa fastställd ännu."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.vansterpartiet.se/val2026/darfor-ska-du-rosta-pa-vansterpartiet/", "reason": "V går till val på en miljardärsskatt och att stora förmögenheter ska bidra mer."},
+        "c": {"position": -1, "confidence": "medium", "source": "https://www.centerpartiet.se/centerpartiet-lokalt/vastra-gotaland/vastra-gotalandsregionen/nyheter/nyhetsarkiv/2026-06-05-manniskors-hem-ar-inte-vansterns-skattebank", "reason": "C tar avstånd från högre skatter på sparande och ägande; källan gäller dock främst fastighet/ägande och är regional."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt nationell 2026-källa fastställd ännu."},
+        "l": {"position": null, "confidence": "unknown", "source": "https://www.liberalerna.se/pressmeddelanden/liberalerna-vill-att-den-forsta-halva-miljonen-pa-isk-ska-vara-skattefri", "reason": "L vill sänka skatt på sparande, men det är inte samma sak som ett uttryckligt ställningstagande om nettoförmögenhetsskatt."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt 2026-källa fastställd ännu."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt 2026-källa fastställd ännu."}
+      }
+    },
+    {
+      "id": "r003",
+      "recommendedText": "De generella statsbidragen till kommuner och regioner bör räknas upp långsiktigt när deras kostnader ökar.",
+      "status": "reviewed-partial",
+      "note": "Tradeoff-formuleringen mot skattesänkningar togs bort eftersom den blandade två beslut i en fråga. Den nya formuleringen mäter själva finansieringsprincipen.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://norrbotten.socialdemokraterna.se/norrbotten/val2026/Rapport/svek_valfarden", "reason": "S beskriver inflationsskyddade generella statsbidrag som en bottenplatta för välfärden."},
+        "m": {"position": null, "confidence": "unknown", "source": null, "reason": "Regeringens budget innehåller statsbidrag men ingen källa i denna granskning visar stöd för automatisk/långsiktig kostnadsuppräkning."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt 2026-källa fastställd ännu."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023178/", "reason": "V ökar de generella statsbidragen till kommunsektorn med 8 miljarder i budgetförslaget 2026."},
+        "c": {"position": null, "confidence": "unknown", "source": null, "reason": "Behöver exakt källa för generell långsiktig uppräkning."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt nationell 2026-källa fastställd ännu."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt nationell 2026-källa fastställd ännu."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.mp.se/sodermanland/politik/detta-vill-vi-inom-folkhalsa-sjukvard/", "reason": "MP vill att generella statsbidrag till kommuner och regioner automatiskt räknas upp för kostnadsutvecklingen."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen exakt 2026-källa fastställd ännu."}
+      }
+    },
+    {
+      "id": "r004",
+      "status": "reviewed",
+      "note": "Riksdagsbeslut om preventiva tvångsmedel används som huvudunderlag eftersom det är närmast frågans exakta rättsliga innebörd.",
+      "positions": {
+        "s": {"position": 1, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "S röstade för huvudförslaget om preventiva tvångsmedel men har i andra delar reserverat sig mot bredare utvidgningar."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "M röstade för införandet."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "SD röstade för införandet."},
+        "v": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "V röstade mot huvudförslaget och reserverade sig."},
+        "c": {"position": 1, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "C röstade för huvudförslaget men har reserverat sig mot vissa utvidgningar."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "KD röstade för införandet."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "L röstade för införandet."},
+        "mp": {"position": 1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202324juu24-preventiva_hb19juu24p1/", "reason": "MP röstade för huvudförslaget men har motsatt sig vissa bredare utvidgningar, vilket motiverar försiktigare +1."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    },
+    {
+      "id": "r005",
+      "recommendedText": "När en person döms för flera brott samtidigt bör varje ytterligare brott få större genomslag i det samlade straffet än i det tidigare systemet med så kallad mängdrabatt.",
+      "status": "reviewed-partial",
+      "note": "Formuleringen har knutits till regeringens konkreta 2026-proposition om flerfaldig brottslighet.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": null, "reason": "Avvaktar exakt ställningstagande till prop. 2025/26:297."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/rattsliga-dokument/proposition/2026/07/prop.-202526297", "reason": "Regeringen föreslår att tillkommande brott ska ges större genomslag och att dagens mängdrabatt avskaffas."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.sd.se/vad-vi-vill/sverige-pa-vag/", "reason": "SD anger avskaffad straffrabatt som genomförd/prioriterad kriminalpolitik och har länge drivit minskad mängdrabatt."},
+        "v": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop-202526218-dubbla-straff_hd024119/", "reason": "V kritiserar delar av straffskärpningspaketet, men denna källa räcker inte ensam för exakt position på prop. 2025/26:297."},
+        "c": {"position": null, "confidence": "unknown", "source": null, "reason": "Avvaktar exakt ställningstagande till prop. 2025/26:297."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/rattsliga-dokument/proposition/2026/07/prop.-202526297", "reason": "KD ingår i regeringen bakom propositionen."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/rattsliga-dokument/proposition/2026/07/prop.-202526297", "reason": "L ingår i regeringen bakom propositionen."},
+        "mp": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop-202526297-ett-nytt_hd024223/", "reason": "MP motsätter sig uttryckligen förslaget att i princip slopa mängdrabatten."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    },
+    {
+      "id": "r006",
+      "recommendedText": "Tillräckliga kunskaper i svenska bör vara ett krav för att få svenskt medborgarskap, med undantag när det inte rimligen kan krävas på grund av exempelvis funktionsnedsättning.",
+      "status": "reviewed",
+      "note": "Frågan följer 2026 års antagna lagstiftning och dess undantag.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "S röstade för propositionen som införde kunskapskrav i svenska och samhällskunskap."},
+        "m": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "M röstade för propositionen."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "SD röstade för propositionen."},
+        "v": {"position": -2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "V röstade mot propositionen och stod bakom reservation."},
+        "c": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "C röstade för propositionens huvudförslag."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "KD röstade för propositionen."},
+        "l": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "L röstade för propositionen."},
+        "mp": {"position": -2, "confidence": "high", "source": "https://data.riksdagen.se/dokument/HD19SfU28p1", "reason": "MP röstade mot propositionen och stod bakom reservation."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    },
+    {
+      "id": "r007",
+      "recommendedText": "Det statliga återvandringsbidraget bör vara kraftigt högre än den nivå som gällde före 2026 för att öka frivillig återvandring.",
+      "status": "reviewed-partial",
+      "note": "Formuleringen knyts till den faktiska höjningen från 1 januari 2026 i stället för ett subjektivt ord som 'tydligt incitament'.",
+      "positions": {
+        "s": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202526sfu32-starkt_hd19sfu32p2/", "reason": "S röstade mot regeringens linje i den närliggande 2026-lagstiftningen om stärkt återvändandeverksamhet; kompletterande exakt bidragskälla bör behållas i audit."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/skriftlig-fraga/atervandringsbidrag_hd10120/", "reason": "Migrationsministern beskriver regeringens beslut att kraftigt höja återvandringsbidraget från 1 januari 2026 för att underlätta frivillig återvandring."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.sd.se/vad-vi-vill/", "reason": "SD:s migrationspolitik prioriterar återvandring och partiet är samarbetsparti bakom regeringens reform. Exakt bidragskälla ska kompletteras vid andra granskningen."},
+        "v": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/interpellation/atervandringsbidrag_hd10120/", "reason": "V ifrågasätter och kritiserar den kraftiga höjningen av återvandringsbidraget."},
+        "c": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202526sfu32-starkt_hd19sfu32p2/", "reason": "C röstade mot regeringens närliggande linje om stärkt återvändandeverksamhet; exakt bidragskälla ska kompletteras."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/skriftlig-fraga/atervandringsbidrag_hd10120/", "reason": "KD ingår i regeringen som beslutade om den kraftiga höjningen."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/skriftlig-fraga/atervandringsbidrag_hd10120/", "reason": "L ingår i regeringen som beslutade om den kraftiga höjningen."},
+        "mp": {"position": -1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202526sfu32-starkt_hd19sfu32p2/", "reason": "MP:s röstning och migrationslinje talar mot regeringens återvändandepaket, men en exakt partikälla om själva bidragsbeloppet behöver kompletteras."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    },
+    {
+      "id": "r008",
+      "recommendedText": "Arbetstillstånd bör kunna beviljas för vissa jobb med lön under medianlönen när lönen fortfarande ligger minst på den lagstadgade nivån och villkoren följer kollektivavtal eller branschpraxis.",
+      "status": "reviewed",
+      "note": "Formuleringen knyts till 2026 års lag: 90 procent av medianlönen plus kollektivavtals-/branschvillkor och särskilda undantag.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/nya-regler-for-arbetskraftsinvandring_hd01sfu12/omrostning/ett-nytt-lonekrav-for-arbetstillstand~62f3ded2-7772-4167-aadd-69d8d68a7e74/", "reason": "S röstade för regeringens nya 90-procentskrav, som ligger under medianlönen."},
+        "m": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/nya-regler-for-arbetskraftsinvandring_hd0387/html/", "reason": "M-regeringen föreslog 90 procent av medianlönen och kollektivavtals-/branschvillkor."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/nya-regler-for-arbetskraftsinvandring_hd01sfu12/omrostning/ett-nytt-lonekrav-for-arbetstillstand~62f3ded2-7772-4167-aadd-69d8d68a7e74/", "reason": "SD röstade för förslaget."},
+        "v": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/nya-regler-for-arbetskraftsinvandring_hd01sfu12/omrostning/ett-nytt-lonekrav-for-arbetstillstand~62f3ded2-7772-4167-aadd-69d8d68a7e74/", "reason": "V röstade mot förslaget."},
+        "c": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/nya-regler-for-arbetskraftsinvandring_hd01sfu12/omrostning/ett-nytt-lonekrav-for-arbetstillstand~62f3ded2-7772-4167-aadd-69d8d68a7e74/", "reason": "C röstade mot förslaget och ville ha annan utformning."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/nya-regler-for-arbetskraftsinvandring_hd0387/html/", "reason": "KD ingår i regeringen bakom förslaget."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/nya-regler-for-arbetskraftsinvandring_hd0387/html/", "reason": "L ingår i regeringen bakom förslaget."},
+        "mp": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/nya-regler-for-arbetskraftsinvandring_hd01sfu12/omrostning/ett-nytt-lonekrav-for-arbetstillstand~62f3ded2-7772-4167-aadd-69d8d68a7e74/", "reason": "MP röstade mot förslaget."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    },
+    {
+      "id": "r009",
+      "recommendedText": "Staten bör åter ta ett större ansvar för kostnaden att ansluta ny havsbaserad vindkraft till stamnätet.",
+      "status": "reviewed",
+      "note": "Formuleringen knyts till det tidigare Svenska kraftnät-uppdraget och 2025/26-motioner om att återinföra stödet.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023594", "reason": "S föreslår att Svenska kraftnäts tidigare uppdrag för anslutning av havsbaserad vindkraft ska återupptas."},
+        "m": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svar-pa-skriftlig-fraga/havsbaserad-vindkraft_hd12509/", "reason": "Regeringen avvisar att nätkundskollektivet ska bära samhällsekonomiskt omotiverade anslutningskostnader."},
+        "sd": {"position": -2, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svar-pa-skriftlig-fraga/havsbaserad-vindkraft_hd12509/", "reason": "SD är samarbetsparti bakom den förda energipolitiken, men direkt SD-källa om anslutningskostnaden bör kompletteras."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/energipolitik-for-mer-och-fornybar-el-till-rimliga_hd022797/html/", "reason": "V är uttryckligen positivt till slopad anslutningsavgift för havsbaserad vindkraft."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/ledarskap-for-klimat-och-gron-omstallning_hd023582/html/", "reason": "C vill ge staten ansvar för att bygga ut anslutningspunkter i stamnätet till fossilfri elproduktion, inklusive havsbaserad vindkraft."},
+        "kd": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svar-pa-skriftlig-fraga/havsbaserad-vindkraft_hd12509/", "reason": "KD:s energi- och näringsminister försvarar regeringens princip att anslutaren ska bära kostnaden när statlig finansiering inte är samhällsekonomiskt motiverad."},
+        "l": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svar-pa-skriftlig-fraga/havsbaserad-vindkraft_hd12509/", "reason": "L ingår i regeringen bakom den förda politiken; direkt partikälla kan kompletteras."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023422", "reason": "MP föreslår uttryckligen att stödet för anslutning av havsbaserad vindkraft ska återinföras."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    },
+    {
+      "id": "r010",
+      "recommendedText": "Sveriges elplanering bör ha ett särskilt effektmål för reglerbar eller lagringsbar fossilfri elproduktion som kan balansera elsystemet.",
+      "status": "needs-more-evidence",
+      "note": "Originalets 'mål för mängden planerbar elproduktion' var för odefinierat. MP har ett uttryckligt mål för grön baskraft, medan andra partier använder andra begrepp (leveranssäkerhet, planerbar kraft, effekt). Frågan hålls därför avstängd tills begreppen kan jämföras utan att tvinga fram falsk likhet.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd021316", "reason": "S-ledamöter efterfrågar ny planerbar elproduktion i södra Sverige, men det belägger inte ett särskilt nationellt effektmål."},
+        "m": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/regeringens-politik/sveriges-elforsorjning/mal-for-energipolitiken/", "reason": "Regeringen har planerings- och leveranssäkerhetsmål men källan belägger inte ett separat kvantitativt mål för planerbar produktion."},
+        "sd": {"position": null, "confidence": "unknown", "source": "https://www.sd.se/vad-vi-vill/sverige-pa-vag/", "reason": "SD vill bygga ut kärnkraft men källan belägger inte ett särskilt effektmål."},
+        "v": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/energipolitik_hd01nu13/html/", "reason": "V vill ha siffersatta delmål för el men inte nödvändigtvis ett separat mål för planerbar/reglerbar effekt."},
+        "c": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023745/", "reason": "C vill ha produktionsmål 2030/2035, men inte ett särskilt mål för planerbar effekt i den granskade källan."},
+        "kd": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/pressmeddelanden/2026/06/regeringen-breddar-investeringsstodet-kraftlyftet/", "reason": "Regeringen utreder stöd till planerbar produktion men källan belägger inte ett särskilt mål."},
+        "l": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/regeringens-politik/sveriges-elforsorjning/mal-for-energipolitiken/", "reason": "Regeringslinjen har leveranssäkerhetsmål men inte det exakta särskilda effektmål som frågan avser."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/ett-miljovanligt-robust-och-konkurrenskraftigt_hd023273/html/", "reason": "MP föreslår uttryckligen ett mål om 10 GW grön baskraft till 2030, omfattande reglerbar produktion, lagring och flexibilitet."},
+        "op": {"position": null, "confidence": "unknown", "source": null, "reason": "Ingen direkt 2026-källa."}
+      }
+    }
+  ]
+}

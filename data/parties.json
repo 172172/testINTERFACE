@@ -1,11 +1,65 @@
 [
-  {"id":"s","name":"Socialdemokraterna","short":"S"},
-  {"id":"m","name":"Moderaterna","short":"M"},
-  {"id":"sd","name":"Sverigedemokraterna","short":"SD"},
-  {"id":"v","name":"Vänsterpartiet","short":"V"},
-  {"id":"c","name":"Centerpartiet","short":"C"},
-  {"id":"kd","name":"Kristdemokraterna","short":"KD"},
-  {"id":"l","name":"Liberalerna","short":"L"},
-  {"id":"mp","name":"Miljöpartiet","short":"MP"},
-  {"id":"op","name":"Örebropartiet","short":"ÖP"}
+  {
+    "id": "s",
+    "name": "Socialdemokraterna",
+    "short": "S",
+    "comparisonGroup": "core",
+    "sortOrder": 1
+  },
+  {
+    "id": "m",
+    "name": "Moderaterna",
+    "short": "M",
+    "comparisonGroup": "core",
+    "sortOrder": 2
+  },
+  {
+    "id": "sd",
+    "name": "Sverigedemokraterna",
+    "short": "SD",
+    "comparisonGroup": "core",
+    "sortOrder": 3
+  },
+  {
+    "id": "v",
+    "name": "Vänsterpartiet",
+    "short": "V",
+    "comparisonGroup": "core",
+    "sortOrder": 4
+  },
+  {
+    "id": "c",
+    "name": "Centerpartiet",
+    "short": "C",
+    "comparisonGroup": "core",
+    "sortOrder": 5
+  },
+  {
+    "id": "kd",
+    "name": "Kristdemokraterna",
+    "short": "KD",
+    "comparisonGroup": "core",
+    "sortOrder": 6
+  },
+  {
+    "id": "l",
+    "name": "Liberalerna",
+    "short": "L",
+    "comparisonGroup": "core",
+    "sortOrder": 7
+  },
+  {
+    "id": "mp",
+    "name": "Miljöpartiet",
+    "short": "MP",
+    "comparisonGroup": "core",
+    "sortOrder": 8
+  },
+  {
+    "id": "op",
+    "name": "Örebropartiet",
+    "short": "ÖP",
+    "comparisonGroup": "provisional",
+    "sortOrder": 9
+  }
 ]

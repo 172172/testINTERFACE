@@ -1,0 +1,170 @@
+{
+  "batch": 2,
+  "verified": "2026-08-16",
+  "questions": [
+    {
+      "id": "r011",
+      "status": "reviewed-partial",
+      "note": "Frågan skiljer en bred generell köpbonus från riktade stöd. Regeringen/SD har 2026 en riktad premie för låginkomsthushåll i områden med svag kollektivtrafik; detta får inte kodas som stöd för en bred generell bonus.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/utgiftsomrade-20-klimat-miljo-och-natur_hd023732/html/", "reason": "S beskriver behovet av att fler ska kunna köpa elbil, men den granskade källan fastställer inte en bred generell köpbonus."},
+        "m": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/elbilspremien-startar-den-18-mars/", "reason": "Regeringen stöder en riktad premie. Det visar inte i sig att M motsätter sig eller stöder en bred generell bonus."},
+        "sd": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/stod-till-hushall-till-foljd-av-okade-energipriser/", "reason": "SD står bakom förstärkningen av den riktade premien, men exakt syn på bred generell bonus är inte fastställd."},
+        "v": {"position": 1, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop-202526100-2026-ars_hd024108/html/", "reason": "V vill förstärka elbilspremien och låta den användas för köp av ny eller begagnad elbil eller leasing. Stödet är dock inte belagt som helt generellt."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop-202526100-2026-ars_hd024110/html/", "reason": "C föreslår en bonus om 50 000 kronor för köp av ny eller begagnad elbil eller laddhybrid och avsätter medel för en bred satsning."},
+        "kd": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/pressmeddelanden/2026/03/elbilspremien-startar-den-18-mars/", "reason": "Regeringspolitiken är riktad; exakt KD-position om en bred generell bonus behöver partikälla."},
+        "l": {"position": null, "confidence": "unknown", "source": "https://www.regeringen.se/pressmeddelanden/2025/12/ny-riktad-elbilspremie-med-start-i-mars/", "reason": "Liberal klimatminister presenterade en riktad premie, vilket inte besvarar den breda formuleringen."},
+        "mp": {"position": 1, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/utgiftsomrade-20-klimat-miljo-och-natur_hd023506/html/", "reason": "MP vill ge klimatbonus till rena elbilar, inklusive nya bilar under ett pristak, men utformningen är riktad och därför inte full +2 för en bred generell bonus."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Örebropartiets successivt publicerade 2026-program ger ännu ingen exakt position i frågan."}
+      }
+    },
+    {
+      "id": "r012",
+      "status": "needs-more-evidence",
+      "note": "Att acceptera privata vårdgivare är inte samma sak som att uttryckligen acceptera vinstutdelning. Frågan hålls avstängd tills varje partis syn på själva vinstutdelningen är belagd.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": null, "reason": "Nationell 2026-källa om exakt vinstutdelning i skattefinansierad vård behöver fastställas."},
+        "m": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/battre-utnyttjande-av-privata-vardgivare_hd022928/", "reason": "M-källan stödjer privata vårdgivare men säger inte uttryckligen att utdelning av vinst ska vara tillåten."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt källa om vinstutdelning saknas i granskningen."},
+        "v": {"position": -2, "confidence": "high", "source": "https://www.vansterpartiet.se/var-politik/politik-a-o/vinster-i-valfarden/", "reason": "V vill utreda och införa förbud mot vinster i välfärden och kopplar detta uttryckligen till vård."},
+        "c": {"position": null, "confidence": "unknown", "source": "https://www.centerpartiet.se/centerpartiet-lokalt/vastmanland/region-vastmanland/valet-2026-vastmanland/regionprogram-2026-2030/sjukvard-med-manniskan-i-centrum", "reason": "C värnar privata vårdgivare, men källan är regional och fastställer inte själva rätten till vinstutdelning."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt nationell källa behöver fastställas."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt nationell källa behöver fastställas."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt nationell 2026-källa om vårdvinster behöver fastställas; skolvinster används inte som proxy."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen publicerad exakt 2026-position hittad."}
+      }
+    },
+    {
+      "id": "r013",
+      "recommendedText": "Om en region bedömer att specialistvård inte kan ges inom vårdgarantins tidsgräns bör patienten utan extra kostnad få vård hos en annan godkänd offentligt finansierad vårdgivare.",
+      "status": "reviewed-partial",
+      "note": "Formuleringen har anpassats till 2026 års utredning Behovsstyrd vård, som föreslår just denna skyldighet.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": null, "reason": "Partiets svar på SOU 2026:38 behöver fastställas."},
+        "m": {"position": 2, "confidence": "high", "source": "https://moderaterna.se/var-politik/vardkoer/", "reason": "M vill skärpa vårdgarantin och införa ersättningsskyldighet för vård hos annan vårdgivare när garantin inte uppfylls."},
+        "sd": {"position": 1, "confidence": "medium", "source": "https://www.regeringen.se/pressmeddelanden/2025/10/regeringen-intensifierar-arbetet-mot-vardkoer/", "reason": "SD:s sjukvårdspolitiska företrädare står bakom skärpt vårdgaranti och nationell styrning, men exakt fri utförarrätt behöver en egen partikälla."},
+        "v": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position om rätt till annan godkänd utförare behöver fastställas."},
+        "c": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt nationell position behöver fastställas."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023007/", "reason": "KD driver en skärpt vårdgaranti och stärkt patientmakt."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.regeringen.se/pressmeddelanden/2025/10/regeringen-intensifierar-arbetet-mot-vardkoer/", "reason": "L:s sjukvårdspolitiska företrädare stödjer skärpt vårdgaranti och åtgärder för vård oavsett var i landet den ges."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad position hittad."}
+      }
+    },
+    {
+      "id": "r014",
+      "recommendedText": "Vuxentandvårdens högkostnadsskydd bör stegvis utvecklas så att patientens kostnad på sikt blir mer lik den i övrig hälso- och sjukvård.",
+      "status": "reviewed-strong",
+      "note": "Flera partier uttrycker samma långsiktiga riktning men med olika tempo. Kodning ska därför skilja mellan uttryckligt full likställning (+2) och stegvis/mer begränsad förstärkning (+1).",
+      "positions": {
+        "s": {"position": 1, "confidence": "high", "source": "https://www.socialdemokraterna.se/varpolitik/atillo/tandvard.4.6231cb3619d9a495beb7e50.html", "reason": "S vill stegvis utveckla ett högkostnadsskydd liknande hälso- och sjukvårdens, med start för äldre."},
+        "m": {"position": 1, "confidence": "high", "source": "https://valkompass.svt.se/2026/parti/moderaterna/", "reason": "M säger att tandvården långsiktigt ska likna övrig sjukvård och ser 2026 års reform för äldre som ett steg i riktningen."},
+        "sd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/ett-forstarkt-hogkostnadsskydd-for-tandvard_hd01sou10/", "reason": "SD:s uttalade långsiktiga reformlinje är att vuxna ska få kostnader mer lika läkarbesök; 2026-reformen ses som steg mot detta."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.vansterpartiet.se/val2026/", "reason": "V kopplar tandvård till övrig vård och driver ett generellt starkt högkostnadsskydd."},
+        "c": {"position": 1, "confidence": "medium", "source": "https://data.riksdagen.se/dokument/hd023825", "reason": "C välkomnar förstärkt högkostnadsskydd för äldre men den granskade 2026-källan belägger inte full likställning för alla vuxna."},
+        "kd": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/ett-forstarkt-hogkostnadsskydd-for-tandvard_hd01sou10/", "reason": "KD beskriver 2026 års reform som ett steg mot att tandvården i praktiken ska bli mer lik sjukvården."},
+        "l": {"position": 2, "confidence": "high", "source": "https://data.riksdagen.se/fil/12B0B010-6ED7-4615-835B-04825A011DEB", "reason": "L vill att tandvårdens finansiering gradvis blir allt mer lik övrig hälso- och sjukvård genom ett starkare högkostnadsskydd."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.mp.se/politik/tandvard/", "reason": "MP vill att tandvården ska bygga på samma grundprinciper som övrig vård och utveckla högkostnadsskyddet; aktuellt uppdaterat 2026."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen tillräckligt exakt nationell 2026-position publicerad ännu."}
+      }
+    },
+    {
+      "id": "r015",
+      "status": "reviewed-partial",
+      "note": "Ett större statligt ansvar, statlig finansiering och fullt statligt huvudmannaskap är olika nivåer. Endast uttryckligt huvudmannaskap får ge +2.",
+      "positions": {
+        "s": {"position": 1, "confidence": "high", "source": "https://www.socialdemokraterna.se/var-politik/a-till-o/grundskola", "reason": "S vill öka statens finansiering och styrning men den aktuella sidan säger inte att staten ska bli huvudman för alla grundskolor."},
+        "m": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt 2026-position om fullt statligt huvudmannaskap behöver fastställas."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt 2026-position behöver fastställas."},
+        "v": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/skolan-ska-inte-vara-en-marknad_hd02973/html/", "reason": "V vill att huvudmannaskapsfrågan belyses för hela skolväsendet men källan är inte ett entydigt ja till fullt förstatligande."},
+        "c": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "l": {"position": 2, "confidence": "high", "source": "https://www.liberalerna.se/nyheter/aterstart-for-svensk-skola", "reason": "L vill uttryckligen förstatliga skolan och att staten blir huvudman."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt 2026-position behöver fastställas."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt riksposition publicerad i den granskade delen."}
+      }
+    },
+    {
+      "id": "r016",
+      "status": "needs-more-evidence",
+      "note": "Frågan gäller obligatoriska nationella terminsbetyg från årskurs 4, inte dagens möjlighet för enskilda skolor att sätta betyg från fyran.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": "https://www.socialdemokraterna.se/var-politik/a-till-o/betyg/", "reason": "S vill göra om betygssystemet men sidan fastställer inte obligatoriska nationella terminsbetyg från årskurs 4."},
+        "m": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt 2026-position behöver fastställas."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt 2026-position behöver fastställas."},
+        "v": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt 2026-position behöver fastställas; äldre ställningstaganden används inte ensamma."},
+        "c": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt 2026-position behöver fastställas."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt 2026-position behöver fastställas."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt 2026-position behöver fastställas."},
+        "mp": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop-202526197-ett-likvardigt_hd024058/", "reason": "MP motsätter sig betyg på mellanstadiet och vill inte ens tillåta betyg från årskurs 4."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt position hittad."}
+      }
+    },
+    {
+      "id": "r017",
+      "status": "reviewed-partial",
+      "note": "Frågan gäller ytterligare lagstadgade undantag utöver dagens tre, inte kollektivavtalade turordningslösningar.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "m": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "v": {"position": -2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/en-arbetsratt-for-starka-och-trygga-lontagare_hd022372/html/", "reason": "V vill inskränka arbetsgivares möjlighet till ensidiga undantag, inte utöka dem."},
+        "c": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "Aktuell exakt position behöver fastställas."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt position hittad."}
+      }
+    },
+    {
+      "id": "r018",
+      "recommendedText": "A-kassan bör ge en stark inkomstbaserad ersättning i början av arbetslösheten och därefter trappas ned.",
+      "status": "reviewed-partial",
+      "note": "Den nya formuleringen fångar den faktiska konfliktlinjen bättre än att jämföra mot ett rörligt 'dagens system'.",
+      "positions": {
+        "s": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/stark-a-kassan_hd021381/", "reason": "S betonar inkomstbortfallsprincipen och vill mildra den branta avtrappningen."},
+        "m": {"position": null, "confidence": "unknown", "source": null, "reason": "Regeringens exakta 2026-linje behöver kodas från lag/budget tillsammans med partikälla."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt partiposition behöver fastställas."},
+        "v": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/en-arbetsratt-for-starka-och-trygga-lontagare_hd022372/html/", "reason": "V vill stärka arbetslöshetsförsäkringen och motsätter sig försämringar; tidigare budgetlinje höjer taket särskilt i inledningen."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/en-budget-for-framtiden-fler-jobb-och-lagre_hd023811/html/", "reason": "C säger uttryckligen att a-kassan ska vara tillräckligt stark i början men trappas av snabbare."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt partiposition behöver fastställas."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt partiposition behöver fastställas."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd023525/", "reason": "MP vill göra nedtrappningen mindre brant och därmed behålla en högre ersättning längre."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt position hittad."}
+      }
+    },
+    {
+      "id": "r019",
+      "status": "reviewed-partial",
+      "note": "Frågan är konkret och Centerpartiets 2026-linje är mycket tydlig. För övriga partier krävs exakt stöd/motstånd mot första-anställda-modellen, inte bara allmän syn på arbetsgivaravgifter.",
+      "positions": {
+        "s": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position om första anställningar behöver fastställas."},
+        "m": {"position": 1, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd022505", "reason": "M-ledamöter vill sänka kostnaderna för företag att anställa, men källan är inte exakt första-anställda-stöd."},
+        "sd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "v": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "c": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/med-anledning-av-prop-202526100-2026-ars_hd024110/html/", "reason": "C vill ta bort arbetsgivaravgiften för de tio första anställda i växande småföretag."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "mp": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt position hittad."}
+      }
+    },
+    {
+      "id": "r020",
+      "recommendedText": "Vid upphandling av samhällskritiska varor och teknik bör försörjningssäkerhet och beroendet av högriskländer få väga tyngre än lägsta inköpspris.",
+      "status": "reviewed-partial",
+      "note": "Den ursprungliga formuleringen om att premiera Sverige/EU enbart på grund av geografi riskerar att krocka med EU-rätt och blandar industripolitik med säkerhetspolitik. Den nya formuleringen mäter den källbelagda konfliktlinjen: resiliens och säkerhet kontra lägsta pris.",
+      "positions": {
+        "s": {"position": 2, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd021443/", "reason": "S-ledamöter vill att nationell säkerhet prioriteras vid upphandling som rör känslig och samhällskritisk infrastruktur."},
+        "m": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt partikälla om upphandlingsprioriteringen behöver fastställas."},
+        "sd": {"position": 2, "confidence": "medium", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd02597/", "reason": "SD-ledamot vill ändra reglerna för upphandling av samhällsviktig teknik och mjukvara av säkerhetsskäl."},
+        "v": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "c": {"position": null, "confidence": "unknown", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd02416/", "reason": "C vill förenkla upphandling inom EU-regler men källan besvarar inte säkerhetsprioriteringen."},
+        "kd": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "l": {"position": null, "confidence": "unknown", "source": null, "reason": "Exakt position behöver fastställas."},
+        "mp": {"position": 2, "confidence": "high", "source": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/kina-manskliga-rattigheter-miljo-och-geopolitik_hd023411/html/", "reason": "MP vill att svensk/europeisk upphandling ställer krav på mänskliga rättigheter och miljö och att EU ökar egen produktion av kritiska råvaror och teknologi."},
+        "op": {"position": null, "confidence": "unknown", "source": "https://orebropartiet.se/var-politik/", "reason": "Ingen exakt publicerad position hittad."}
+      }
+    }
+  ]
+}

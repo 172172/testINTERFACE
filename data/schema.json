@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/oppen-valkompass-2026/schema.json",
+  "title": "Öppen valkompass 2026 – datasetkontrakt",
+  "description": "Dokumentation av de viktigaste objekttyperna. De faktiska filerna valideras även av scripts/validate_dataset.py.",
+  "$defs": {
+    "question": {
+      "type": "object",
+      "required": ["id", "area", "text", "scope", "status", "score", "order", "codingRule"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(q|r)[0-9]{3}$" },
+        "area": { "type": "string", "minLength": 1 },
+        "text": { "type": "string", "minLength": 1 },
+        "scope": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["active", "research"] },
+        "score": { "type": "boolean" },
+        "order": { "type": "integer", "minimum": 1 },
+        "reviewStatus": { "type": "string" },
+        "codingRule": {
+          "type": "object",
+          "required": ["+2", "+1", "0", "-1", "-2", "null"],
+          "additionalProperties": { "type": "string" }
+        },
+        "sourceSet": { "type": ["string", "null"] },
+        "sourceQuestionOrdinal": { "type": ["integer", "null"], "minimum": 1 },
+        "sourceQuestionType": { "type": ["string", "null"] },
+        "sourceReference": { "type": ["string", "null"], "format": "uri" },
+        "wordingMethod": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "party": {
+      "type": "object",
+      "required": ["id", "name", "short", "comparisonGroup", "sortOrder"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "short": { "type": "string", "minLength": 1 },
+        "comparisonGroup": { "enum": ["core", "provisional"] },
+        "sortOrder": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "position": {
+      "type": "object",
+      "required": ["party", "question", "position", "confidence", "codingStatus", "comparisonGroup", "verified", "rationale"],
+      "properties": {
+        "party": { "type": "string", "minLength": 1 },
+        "question": { "type": "string", "pattern": "^(q|r)[0-9]{3}$" },
+        "position": { "type": ["integer", "null"], "minimum": -2, "maximum": 2 },
+        "confidence": { "enum": ["high", "medium", "low", "unknown"] },
+        "codingStatus": { "type": "string", "minLength": 1 },
+        "comparisonGroup": { "enum": ["core", "provisional"] },
+        "source": { "type": ["string", "null"], "format": "uri" },
+        "sourceId": { "type": ["string", "null"] },
+        "sourceTitle": { "type": ["string", "null"] },
+        "sourcePublisher": { "type": ["string", "null"] },
+        "sourceDate": { "type": ["string", "null"] },
+        "sourceAnswer": { "type": ["string", "null"] },
+        "verified": { "type": "string", "format": "date" },
+        "evidenceType": { "type": ["string", "null"] },
+        "semanticMatch": { "type": ["string", "null"] },
+        "rationale": { "type": "string", "minLength": 1 },
+        "reviewNotes": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "source": {
+      "type": "object",
+      "required": ["id", "publisher", "title", "url", "sourceType", "verified"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "party": { "type": "string" },
+        "publisher": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "sourceType": { "type": "string", "minLength": 1 },
+        "note": { "type": "string" },
+        "verified": { "type": "string", "format": "date" }
+      },
+      "additionalProperties": true
+    }
+  }
+}
