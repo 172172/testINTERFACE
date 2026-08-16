@@ -316,7 +316,7 @@ function renderHome() {
         <article class="card feature">
           <span class="feature-number">01</span>
           <h2>Samma underlag för åtta partier</h2>
-          <p>De åtta riksdagspartiernas positioner kommer från partiernas egna svar på samma 35 nationella frågor i SVT:s valkompass 2026. Svarsskalan översätts mekaniskt till −2…+2.</p>
+          <p>Den verifierade kärnan använder partiernas egna svar på samma nationella frågor i SVT:s valkompass 2026. Därutöver finns precisionsfrågor som blir aktiva först när partipositionerna är källkodade. Svarsskalan översätts mekaniskt till −2…+2.</p>
         </article>
         <article class="card feature">
           <span class="feature-number">02</span>
@@ -329,6 +329,15 @@ function renderHome() {
           <p>Varje politikområde väger lika i totalmatchningen. Din egen viktning styr prioritetsmatchningen utan att ett område får större vikt bara för att det innehåller fler frågor.</p>
         </article>
       </div>
+    </section>
+
+    <section class="page section-space">
+      <article class="card feature">
+        <div class="eyebrow">Miljöfördjupning</div>
+        <h2>Åtta nya miljöfrågor finns i projektet</h2>
+        <p>De nya frågorna om naturvårdsanslag, Naturvårdsverket, formellt naturskydd, skog och artskydd, våtmarker, bekämpningsmedel, miljöprövning och strandskydd finns i datasetet och i granskningsläget. De påverkar inte poängen förrän partiernas exakta positioner är verifierade.</p>
+        <a class="button secondary" href="#/audit/questions">Visa alla frågor</a>
+      </article>
     </section>
 
     <section class="page section-space split">
@@ -932,11 +941,11 @@ function renderMethod() {
           <div><code>+2</code><span>Mycket bra förslag / mycket mer</span></div>
         </div>
         <p>Den valda svarskategorin är den kodade positionen. Partiets kommentar finns kvar på källsidan för kontroll, men används inte för att ge extra poäng eller flytta partiet ett steg.</p>
-        <div class="callout info"><strong>Varför kompassvar kan vara bättre än ett manifest för just en rad:</strong> officiella manifest och partisidor prioriteras normalt, men en högre källtyp får inte användas om den bara berör ämnet på ett bredare sätt. För kärnmatrisen används partiernas egna svar eftersom alla åtta har besvarat exakt samma 35 sakfrågor på samma skala. Ett manifest används som kontroll eller direktkälla när det faktiskt besvarar den exakta avgränsningen.</div>
+        <div class="callout info"><strong>Varför kompassvar kan vara bättre än ett manifest för just en rad:</strong> officiella manifest och partisidor prioriteras normalt, men en högre källtyp får inte användas om den bara berör ämnet på ett bredare sätt. För kärnmatrisen används partiernas egna svar eftersom 35 kärnfrågor bygger på partiernas egna svar på samma skala. De 8 aktiva miljöfördjupningsfrågorna kodas separat från aktuella primärkällor och riksdagsunderlag med synlig säkerhetsgrad och motivering.</div>
       </section>
 
       <section class="method-section grid two">
-        <article><div class="eyebrow">Frågeurval</div><h2>35 verifierade frågor nu, 25 i forskningskö</h2><p>Den tidigare 64-frågorsversionen innehöll precisa frågor men saknade en färdig jämförbar partimatris. Den här versionen aktiverar bara frågor där alla åtta riksdagspartier kan jämföras på samma underlag. Forskningsfrågorna är kvar öppet och kan aktiveras först efter full källgranskning.</p></article>
+        <article><div class="eyebrow">Frågeurval</div><h2>43 poänggivande frågor nu, 25 i forskningskö</h2><p>Den tidigare 64-frågorsversionen innehöll precisa frågor men saknade en färdig jämförbar partimatris. Den här versionen har 35 frågor från den gemensamma 2026-matrisen plus 8 miljöfördjupningsfrågor som källkodats separat för alla åtta riksdagspartier. Forskningsfrågorna är kvar öppet och påverkar inte resultatet.</p></article>
         <article><div class="eyebrow">Örebropartiet</div><h2>Samma krav, annan täckning</h2><p>ÖP:s officiella nationella program för 2026 publiceras successivt. Just nu är ${meta.readiness.provisionalKnown} av ${activeQuestions.length} aktiva positioner tillräckligt exakt kodade. Övriga är uttryckligen okända, och partiet hålls därför utanför huvudrankningen tills jämförbarheten är tillräcklig. En närliggande ståndpunkt räcker inte: till exempel kodas inte kommunal vindkraftsveto utifrån ett separat förslag om veto för närboende.</p></article>
       </section>
 

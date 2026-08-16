@@ -1,3 +1,9 @@
+# Miljöfördjupning – aktiverad 2026-08-16
+
+De åtta frågorna r026–r033 är nu **poänggivande**. För samtliga åtta riksdagspartier finns en kodad position, källa, verifieringsdatum, motivering och confidence. Örebropartiet ligger fortsatt `null` på dessa rader när exakt nationellt underlag saknas och påverkar inte kärnrankningen.
+
+Två budgetfrågor har preciserats till jämförelse mot regeringens budget för 2026, så att ställningstagandet går att verifiera mot ett fast basår. Kodningen är inte mekanisk från en gemensam valkompass utan en separat primärkällgranskning; detta framgår öppet i `positions.json`.
+
 # Källunderlag – 8 nya miljöfrågor
 
 Dessa åtta frågor har lagts till som **forskningsfrågor** (`score:false`). De har en officiell sakområdeskälla som visar vad frågan avser och gör avgränsningen verifierbar. Sakområdeskällan är **inte** bevis för något partis ståndpunkt. Varje partis position ska därför förbli `null` tills en separat, aktuell partikälla eller annan prioriterad primärkälla verifierar exakt samma påstående.

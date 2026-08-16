@@ -24,9 +24,9 @@ python3 -m http.server 8000
 ## Vad version 0.4 faktiskt innehåller
 
 - 60 preciserade sakfrågor i databasen.
-- 35 aktiva frågor med en komplett gemensam positionsmatris för de åtta riksdagspartierna.
+- 43 aktiva frågor med en komplett gemensam positionsmatris för de åtta riksdagspartierna.
 - 25 öppna forskningsfrågor med `score: false`; de påverkar inte resultatet.
-- 280 av 280 verifierade kärnpositioner: 35 frågor × 8 riksdagspartier.
+- 344 av 344 verifierade kärnpositioner: 43 frågor × 8 riksdagspartier.
 - Örebropartiet med sju exakt källbelagda nationella positioner och övriga positioner som `null`.
 - Separat preliminär ÖP-jämförelse med täckning och bästa–sämsta-fall-intervall, aldrig en falskt jämförbar placering i huvudrankningen.
 - Total matchning, prioritetsmatchning, områdesresultat, fråga-för-fråga-förklaring och källänk för varje använd position.
@@ -34,11 +34,11 @@ python3 -m http.server 8000
 - Lokal lagring i användarens webbläsare; inga svar skickas av appen.
 - En dataspärr i webbläsaren som stoppar rankningen om den jämförbara kärnmatrisen är trasig eller ofullständig.
 
-## Varför bara 35 frågor påverkar poängen
+## Varför 43 frågor påverkar poängen
 
 Det tidigare utkastet hade fler precisa frågor men saknade en färdig, jämförbar och källbelagd position för varje parti i varje fråga. Det kan skapa en skenbart exakt verklighetsbild.
 
-Den aktiva kärnan använder därför 35 sakfrågor där samtliga åtta riksdagspartier har svarat på samma nationella 2026-frågebatteri. Frågorna på webbplatsen är självständiga neutrala parafraser med bevarad riktning och avgränsning. Varje aktiv fråga har ett synligt källfrågenummer och varje parti har en direktlänk till sin källsida.
+Den aktiva kärnan använder 35 sakfrågor från ett gemensamt nationellt 2026-frågebatteri samt 8 miljöfördjupningsfrågor som källkodats separat för samtliga åtta riksdagspartier. Frågorna på webbplatsen är självständiga neutrala parafraser med bevarad riktning och avgränsning. Varje aktiv fråga har ett synligt källfrågenummer och varje parti har en direktlänk till sin källsida.
 
 De ytterligare 33 frågorna ligger kvar öppet för fortsatt granskning, varav åtta nya frågor fördjupar klimat- och miljöområdet. En sådan fråga får inte aktiveras förrän alla partier har kontrollerats mot exakt samma avgränsning.
 
@@ -168,3 +168,8 @@ Applikationskoden kan återanvändas och granskas. Kontrollera alltid rättighet
 ## Pågående precisionsgranskning
 
 `RESEARCH_BATCH_01.md` och `data/research-batch-01.json` innehåller första källgranskningen av r001–r010. Dessa arbetsrader används inte i poängberäkningen förrän en komplett jämförbar kärnmatris finns. Detta förhindrar att närliggande men semantiskt olika partipositioner smygs in som svar.
+
+
+## Miljöfördjupning i v0.4.3
+
+Åtta nya miljöfrågor finns i `data/questions.json` som `r026`–`r033` och visas i granskningsläget. De är avsiktligt markerade `status: research` och `score: false` tills partiernas positioner är verifierade. Detta hindrar att ofullständiga eller gissade positioner påverkar matchningsresultatet. Den fristående filen i detta paket är `valkompass-2026-standalone.html`; äldre standalone-versioner har tagits bort för att undvika att fel fil öppnas.
