@@ -1282,6 +1282,15 @@ function resultMetric(score) {
 }
 
 function resultRow(result, rank) {
+  const primaryMetric =
+    result.priority ??
+    result.total;
+
+  const primaryLabel =
+    result.priority == null
+      ? "Total matchning"
+      : "Prioritetsmatchning";
+
   return `
     <article class="result-row card">
       <div
@@ -1307,12 +1316,12 @@ function resultRow(result, rank) {
       <div class="result-metrics">
         <div>
           <span>
-            Prioritetsmatchning
+            ${primaryLabel}
           </span>
 
           <strong>
             ${formatPercent(
-              result.priority
+              primaryMetric
             )}
           </strong>
         </div>
@@ -1447,6 +1456,15 @@ function renderResults() {
   const top =
     coreResults[0];
 
+  const topMetric =
+    top?.priority ??
+    top?.total;
+
+  const topMetricLabel =
+    top?.priority == null
+      ? "Total matchning"
+      : "Prioritetsmatchning";
+
   $("#app").innerHTML = `
     <section class="page results-page">
       <div class="eyebrow">
@@ -1483,12 +1501,12 @@ function renderResults() {
             ? `
               <div class="top-score card">
                 <span>
-                  Prioritetsmatchning
+                  ${topMetricLabel}
                 </span>
 
                 <strong>
                   ${formatPercent(
-                    top.priority
+                    topMetric
                   )}
                 </strong>
 
