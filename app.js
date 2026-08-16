@@ -6,13 +6,31 @@ import {
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-}[char]));
+
+const escapeHtml = (value) =>
+  String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  }[char]));
+
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-const round = (value) => value == null || !Number.isFinite(value) ? null : Math.round(value);
-const formatPercent = (value) => value == null || !Number.isFinite(value) ? "—" : `${Math.round(value)} %`;
-const formatSigned = (value) => value == null ? "Okänd" : `${value > 0 ? "+" : ""}${value}`;
+
+const round = (value) =>
+  value == null || !Number.isFinite(value) ? null : Math.round(value);
+
+const formatPercent = (value) =>
+  value == null || !Number.isFinite(value)
+    ? "—"
+    : `${Math.round(value)} %`;
+
+const formatSigned = (value) =>
+  value == null
+    ? "Okänd"
+    : `${value > 0 ? "+" : ""}${value}`;
+
 const todayIso = () => new Date().toISOString().slice(0, 10);
 
 const ANSWER_LABELS = {
@@ -22,6 +40,7 @@ const ANSWER_LABELS = {
   "1": "Instämmer delvis",
   "2": "Instämmer helt",
 };
+
 const SHORT_ANSWER_LABELS = {
   "-2": "Helt emot",
   "-1": "Delvis emot",
@@ -29,6 +48,7 @@ const SHORT_ANSWER_LABELS = {
   "1": "Delvis för",
   "2": "Helt för",
 };
+
 const IMPORTANCE_LABELS = {
   0: "Spelar ingen roll",
   1: "Ganska oviktig",
@@ -36,6 +56,7 @@ const IMPORTANCE_LABELS = {
   3: "Mycket viktig",
   5: "Avgörande fråga",
 };
+
 const CONFIDENCE_LABELS = {
   high: "Hög",
   medium: "Medel",
@@ -44,13 +65,34 @@ const CONFIDENCE_LABELS = {
 };
 
 async function loadData() {
-  if (window.__VALKOMPASS_DATA__) return window.__VALKOMPASS_DATA__;
-  const names = ["questions", "parties", "positions", "meta", "source-register"];
-  const loaded = await Promise.all(names.map(async (name) => {
-    const response = await fetch(`data/${name}.json`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`Kunde inte läsa data/${name}.json (${response.status}).`);
-    return response.json();
-  }));
+  if (window.__VALKOMPASS_DATA__) {
+    return window.__VALKOMPASS_DATA__;
+  }
+
+  const names = [
+    "questions",
+    "parties",
+    "positions",
+    "meta",
+    "source-register",
+  ];
+
+  const loaded = await Promise.all(
+    names.map(async (name) => {
+      const response = await fetch(`data/${name}.json`, {
+        cache: "no-store",
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          `Kunde inte läsa data/${name}.json (${response.status}).`
+        );
+      }
+
+      return response.json();
+    })
+  );
+
   return {
     questions: loaded[0],
     parties: loaded[1],
@@ -61,6 +103,7 @@ async function loadData() {
 }
 
 let DATA;
+
 try {
   DATA = await loadData();
 } catch (error) {
@@ -69,85 +112,301 @@ try {
       <div class="callout danger">
         <h1>Webbappen kunde inte läsa sina datafiler</h1>
         <p>${escapeHtml(error.message)}</p>
-        <p>Den modulära versionen måste köras från en webbserver. Öppna i stället filen <code>valkompass-2026-standalone.html</code>, som fungerar direkt genom dubbelklick.</p>
+        <p>
+          Den modulära versionen måste köras från en webbserver.
+          Öppna i stället filen
+          <code>valkompass-2026-standalone.html</code>,
+          som fungerar direkt genom dubbelklick.
+        </p>
       </div>
-    </section>`;
+    </section>
+  `;
+
   throw error;
 }
 
-const { questions, parties, positions, meta, sources } = DATA;
-const activeQuestions = questions.filter((q) => q.status === "active" && q.score === true).sort((a, b) => a.order - b.order);
-const researchQuestions = questions.filter((q) => q.status === "research" || q.score === false).sort((a, b) => a.order - b.order);
-const partyMap = Object.fromEntries(parties.map((party) => [party.id, party]));
-const questionMap = Object.fromEntries(questions.map((question) => [question.id, question]));
+const {
+  questions,
+  parties,
+  positions,
+  meta,
+  sources,
+} = DATA;
+
+const activeQuestions = questions
+  .filter((q) => q.status === "active" && q.score === true)
+  .sort((a, b) => a.order - b.order);
+
+const researchQuestions = questions
+  .filter((q) => q.status === "research" || q.score === false)
+  .sort((a, b) => a.order - b.order);
+
+const partyMap = Object.fromEntries(
+  parties.map((party) => [party.id, party])
+);
+
+const questionMap = Object.fromEntries(
+  questions.map((question) => [question.id, question])
+);
+
 const positionMap = buildPositionMap(positions);
-const sourceMap = Object.fromEntries(sources.map((source) => [source.id, source]));
+
+const sourceMap = Object.fromEntries(
+  sources.map((source) => [source.id, source])
+);
+
 const areaOrder = Object.keys(meta.activeAreaCounts || {});
-const STORAGE_KEY = `oppen-valkompass-${meta.datasetVersion}-${meta.dataFingerprintSha256.slice(0, 16)}`;
+
+const STORAGE_KEY =
+  `oppen-valkompass-${meta.datasetVersion}-` +
+  `${meta.dataFingerprintSha256.slice(0, 16)}`;
 
 function validateRuntimeData() {
   const errors = [];
-  const allowedPositions = new Set([-2, -1, 0, 1, 2, null]);
+
+  const allowedPositions = new Set([
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    null,
+  ]);
+
   const questionIds = questions.map((q) => q.id);
   const partyIds = parties.map((p) => p.id);
-  const sourceIds = new Set(sources.map((source) => source.id));
-  const coreParties = parties.filter((party) => party.comparisonGroup === "core");
-  const provisionalParties = parties.filter((party) => party.comparisonGroup === "provisional");
-  const activeIds = new Set(activeQuestions.map((q) => q.id));
-  const researchIds = new Set(researchQuestions.map((q) => q.id));
+
+  const sourceIds = new Set(
+    sources.map((source) => source.id)
+  );
+
+  const coreParties = parties.filter(
+    (party) => party.comparisonGroup === "core"
+  );
+
+  const provisionalParties = parties.filter(
+    (party) => party.comparisonGroup === "provisional"
+  );
+
+  const activeIds = new Set(
+    activeQuestions.map((q) => q.id)
+  );
+
+  const researchIds = new Set(
+    researchQuestions.map((q) => q.id)
+  );
+
   const seenRows = new Set();
 
-  if (questionIds.length !== new Set(questionIds).size) errors.push("Fråge-ID:n är inte unika.");
-  if (partyIds.length !== new Set(partyIds).size) errors.push("Parti-ID:n är inte unika.");
-  if (sourceIds.size !== sources.length) errors.push("Käll-ID:n är inte unika.");
-  if (questions.length !== meta.totalQuestionCount) errors.push("Antalet frågor stämmer inte med meta.json.");
-  if (activeQuestions.length !== meta.activeQuestionCount) errors.push("Antalet aktiva frågor stämmer inte med meta.json.");
-  if (researchQuestions.length !== meta.researchQuestionCount) errors.push("Antalet forskningsfrågor stämmer inte med meta.json.");
-  if (coreParties.length !== meta.corePartyIds.length) errors.push("Antalet jämförbara partier stämmer inte med meta.json.");
-  if (provisionalParties.length !== meta.provisionalPartyIds.length) errors.push("Antalet preliminära partier stämmer inte med meta.json.");
-  if (positions.length !== questions.length * parties.length) errors.push("Positionsmatrisen har fel antal rader.");
+  if (questionIds.length !== new Set(questionIds).size) {
+    errors.push("Fråge-ID:n är inte unika.");
+  }
+
+  if (partyIds.length !== new Set(partyIds).size) {
+    errors.push("Parti-ID:n är inte unika.");
+  }
+
+  if (sourceIds.size !== sources.length) {
+    errors.push("Käll-ID:n är inte unika.");
+  }
+
+  if (questions.length !== meta.totalQuestionCount) {
+    errors.push(
+      "Antalet frågor stämmer inte med meta.json."
+    );
+  }
+
+  if (activeQuestions.length !== meta.activeQuestionCount) {
+    errors.push(
+      "Antalet aktiva frågor stämmer inte med meta.json."
+    );
+  }
+
+  if (researchQuestions.length !== meta.researchQuestionCount) {
+    errors.push(
+      "Antalet forskningsfrågor stämmer inte med meta.json."
+    );
+  }
+
+  if (coreParties.length !== meta.corePartyIds.length) {
+    errors.push(
+      "Antalet jämförbara partier stämmer inte med meta.json."
+    );
+  }
+
+  if (
+    provisionalParties.length !==
+    meta.provisionalPartyIds.length
+  ) {
+    errors.push(
+      "Antalet preliminära partier stämmer inte med meta.json."
+    );
+  }
+
+  if (
+    positions.length !==
+    questions.length * parties.length
+  ) {
+    errors.push(
+      "Positionsmatrisen har fel antal rader."
+    );
+  }
 
   for (const question of activeQuestions) {
-    if (question.score !== true || !question.sourceReference || !Number.isInteger(question.sourceQuestionOrdinal)) {
-      errors.push(`Den aktiva frågan ${question.id} saknar poäng- eller källmetadata.`);
+    if (
+      question.score !== true ||
+      !question.sourceReference ||
+      !Number.isInteger(question.sourceQuestionOrdinal)
+    ) {
+      errors.push(
+        `Den aktiva frågan ${question.id} saknar poäng- eller källmetadata.`
+      );
     }
   }
+
   for (const question of researchQuestions) {
-    if (question.score !== false) errors.push(`Forskningsfrågan ${question.id} är felaktigt aktiverad.`);
+    if (question.score !== false) {
+      errors.push(
+        `Forskningsfrågan ${question.id} är felaktigt aktiverad.`
+      );
+    }
   }
 
+  /*
+    Kontroll av antal frågor per politikområde.
+
+    VIKTIGT:
+    Det finns ingen maxgräns här.
+
+    Ett område får alltså ha exempelvis:
+    Klimat och miljö = 10 frågor
+
+    Balansen hanteras i scoring.js genom
+    områdesnormalisering, inte genom att
+    förbjuda fler frågor i ett område.
+  */
   const areaCounts = new Map();
-  for (const question of activeQuestions) areaCounts.set(question.area, (areaCounts.get(question.area) || 0) + 1);
+
+  for (const question of activeQuestions) {
+    areaCounts.set(
+      question.area,
+      (areaCounts.get(question.area) || 0) + 1
+    );
+  }
+
   for (const [area, count] of areaCounts) {
-    if (count < 2 || count > 3) errors.push(`Området ${area} har ${count} aktiva frågor; tillåtet är 2–3.`);
+    if (count < 2) {
+      errors.push(
+        `Området ${area} har ${count} aktiva frågor; minst 2 krävs.`
+      );
+    }
+
+    if (meta.activeAreaCounts?.[area] !== count) {
+      errors.push(
+        `Området ${area} har ${count} aktiva frågor men ` +
+        `meta.json anger ` +
+        `${meta.activeAreaCounts?.[area] ?? "saknas"}.`
+      );
+    }
   }
 
   for (const row of positions) {
     const key = `${row.party}:${row.question}`;
-    if (seenRows.has(key)) errors.push(`Dubbel positionsrad: ${key}.`);
-    seenRows.add(key);
-    if (!partyMap[row.party]) errors.push(`Okänt parti i positionsrad: ${row.party}.`);
-    if (!questionMap[row.question]) errors.push(`Okänd fråga i positionsrad: ${row.question}.`);
-    if (!allowedPositions.has(row.position)) errors.push(`Ogiltig position i ${key}.`);
-    if (row.sourceId && !sourceIds.has(row.sourceId)) errors.push(`Okänt käll-ID i ${key}.`);
-    if (row.position != null && (!row.source || !row.sourceId || !row.verified || !row.rationale || row.codingStatus !== "verified")) {
-      errors.push(`Känd position saknar obligatoriskt bevis i ${key}.`);
+
+    if (seenRows.has(key)) {
+      errors.push(`Dubbel positionsrad: ${key}.`);
     }
-    if (researchIds.has(row.question) && row.position != null) errors.push(`Forskningsfrågan ${row.question} har en aktiv position.`);
+
+    seenRows.add(key);
+
+    if (!partyMap[row.party]) {
+      errors.push(
+        `Okänt parti i positionsrad: ${row.party}.`
+      );
+    }
+
+    if (!questionMap[row.question]) {
+      errors.push(
+        `Okänd fråga i positionsrad: ${row.question}.`
+      );
+    }
+
+    if (!allowedPositions.has(row.position)) {
+      errors.push(
+        `Ogiltig position i ${key}.`
+      );
+    }
+
+    if (
+      row.sourceId &&
+      !sourceIds.has(row.sourceId)
+    ) {
+      errors.push(
+        `Okänt käll-ID i ${key}.`
+      );
+    }
+
+    if (
+      row.position != null &&
+      (
+        !row.source ||
+        !row.sourceId ||
+        !row.verified ||
+        !row.rationale ||
+        row.codingStatus !== "verified"
+      )
+    ) {
+      errors.push(
+        `Känd position saknar obligatoriskt bevis i ${key}.`
+      );
+    }
+
+    if (
+      researchIds.has(row.question) &&
+      row.position != null
+    ) {
+      errors.push(
+        `Forskningsfrågan ${row.question} har en aktiv position.`
+      );
+    }
   }
 
   for (const party of coreParties) {
     for (const question of activeQuestions) {
-      const row = positionMap.get(`${party.id}:${question.id}`);
-      if (!row || row.position == null || row.codingStatus !== "verified" || !row.source) {
-        errors.push(`Kärnmatrisen saknar verifierad position för ${party.short}/${question.id}.`);
+      const row = positionMap.get(
+        `${party.id}:${question.id}`
+      );
+
+      if (
+        !row ||
+        row.position == null ||
+        row.codingStatus !== "verified" ||
+        !row.source
+      ) {
+        errors.push(
+          `Kärnmatrisen saknar verifierad position för ` +
+          `${party.short}/${question.id}.`
+        );
       }
     }
   }
 
-  const verifiedCore = positions.filter((row) => activeIds.has(row.question) && meta.corePartyIds.includes(row.party) && row.position != null && row.codingStatus === "verified").length;
-  if (verifiedCore !== meta.readiness.coreMatrixRequired || verifiedCore !== meta.readiness.coreMatrixVerified) {
-    errors.push(`Kärnmatrisens status är inkonsekvent (${verifiedCore}/${meta.readiness.coreMatrixRequired}).`);
+  const verifiedCore = positions.filter(
+    (row) =>
+      activeIds.has(row.question) &&
+      meta.corePartyIds.includes(row.party) &&
+      row.position != null &&
+      row.codingStatus === "verified"
+  ).length;
+
+  if (
+    verifiedCore !== meta.readiness.coreMatrixRequired ||
+    verifiedCore !== meta.readiness.coreMatrixVerified
+  ) {
+    errors.push(
+      `Kärnmatrisens status är inkonsekvent ` +
+      `(${verifiedCore}/${meta.readiness.coreMatrixRequired}).`
+    );
   }
 
   return [...new Set(errors)];
@@ -163,17 +422,32 @@ function emptyState() {
     completed: false,
     startedAt: null,
     completedAt: null,
-    audit: { tab: "positions", party: "all", area: "all", status: "active", query: "" },
+    audit: {
+      tab: "positions",
+      party: "all",
+      area: "all",
+      status: "active",
+      query: "",
+    },
   };
 }
 
 function loadState() {
   try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (saved?.version === meta.datasetVersion) return { ...emptyState(), ...saved };
+    const saved = JSON.parse(
+      localStorage.getItem(STORAGE_KEY)
+    );
+
+    if (saved?.version === meta.datasetVersion) {
+      return {
+        ...emptyState(),
+        ...saved,
+      };
+    }
   } catch (_) {
-    // Invalid local data is ignored deliberately.
+    // Felaktig lokal data ignoreras.
   }
+
   return emptyState();
 }
 
@@ -181,30 +455,46 @@ let state = loadState();
 
 function saveState() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(state)
+    );
   } catch (_) {
-    // The compass still works if storage is blocked.
+    // Kompassen fungerar även om lagring blockeras.
   }
 }
 
 function resetCompass() {
-  state = { ...emptyState(), audit: state.audit || emptyState().audit };
+  state = {
+    ...emptyState(),
+    audit: state.audit || emptyState().audit,
+  };
+
   saveState();
 }
 
 function answeredEntries() {
   return activeQuestions.filter((q) => {
     const answer = state.answers[q.id];
-    return answer && !answer.skipped && Number.isFinite(answer.value);
+
+    return (
+      answer &&
+      !answer.skipped &&
+      Number.isFinite(answer.value)
+    );
   });
 }
 
 function handledCount() {
-  return activeQuestions.filter((q) => state.answers[q.id]).length;
+  return activeQuestions.filter(
+    (q) => state.answers[q.id]
+  ).length;
 }
 
 function skippedCount() {
-  return activeQuestions.filter((q) => state.answers[q.id]?.skipped).length;
+  return activeQuestions.filter(
+    (q) => state.answers[q.id]?.skipped
+  ).length;
 }
 
 function isComplete() {
@@ -212,101 +502,314 @@ function isComplete() {
 }
 
 function answerLabel(value) {
-  return ANSWER_LABELS[String(value)] ?? "Okänd";
+  return (
+    ANSWER_LABELS[String(value)] ??
+    "Okänd"
+  );
 }
 
 function positionBadge(row) {
-  if (!row || row.position == null) return `<span class="status unknown">Okänd</span>`;
-  return `<span class="status position p-${row.position < 0 ? `n${Math.abs(row.position)}` : `p${row.position}`}">${escapeHtml(formatSigned(row.position))} · ${escapeHtml(SHORT_ANSWER_LABELS[String(row.position)])}</span>`;
+  if (!row || row.position == null) {
+    return `<span class="status unknown">Okänd</span>`;
+  }
+
+  const className =
+    row.position < 0
+      ? `n${Math.abs(row.position)}`
+      : `p${row.position}`;
+
+  return `
+    <span class="status position p-${className}">
+      ${escapeHtml(formatSigned(row.position))}
+      ·
+      ${escapeHtml(
+        SHORT_ANSWER_LABELS[String(row.position)]
+      )}
+    </span>
+  `;
 }
 
 function setDocumentTitle(title) {
-  document.title = title ? `${title} – ${meta.title || "Öppen Valkompass 2026"}` : (meta.title || "Öppen Valkompass 2026");
+  document.title = title
+    ? `${title} – ${
+        meta.title || "Öppen Valkompass 2026"
+      }`
+    : (
+        meta.title ||
+        "Öppen Valkompass 2026"
+      );
 }
 
 function setBuildMeta() {
   const element = $("#build-meta");
-  if (element) element.textContent = DATA_ERRORS.length
-    ? `Dataset ${meta.datasetVersion} · dataspärr aktiverad · ${DATA_ERRORS.length} fel`
-    : `Dataset ${meta.datasetVersion} · verifierat ${meta.verifiedThrough} · ${meta.dataFingerprintSha256.slice(0, 12)}…`;
+
+  if (!element) return;
+
+  element.textContent = DATA_ERRORS.length
+    ? `Dataset ${meta.datasetVersion} · ` +
+      `dataspärr aktiverad · ` +
+      `${DATA_ERRORS.length} fel`
+    : `Dataset ${meta.datasetVersion} · ` +
+      `verifierat ${meta.verifiedThrough} · ` +
+      `${meta.dataFingerprintSha256.slice(0, 12)}…`;
 }
 
 function routeParts() {
-  return (location.hash || "#/home").replace(/^#\/?/, "").split("/").filter(Boolean);
+  return (
+    location.hash ||
+    "#/home"
+  )
+    .replace(/^#\/?/, "")
+    .split("/")
+    .filter(Boolean);
 }
 
 function navigate(hash) {
-  if (location.hash === hash) renderRoute();
-  else location.hash = hash;
+  if (location.hash === hash) {
+    renderRoute();
+  } else {
+    location.hash = hash;
+  }
 }
 
 function renderDataFailure() {
   setDocumentTitle("Dataspärr");
+
   $("#app").innerHTML = `
     <section class="page narrow">
-      <div class="eyebrow danger-text">Dataspärr aktiverad</div>
+      <div class="eyebrow danger-text">
+        Dataspärr aktiverad
+      </div>
+
       <h1>Resultatberäkningen har stoppats</h1>
-      <p class="lead">Webbappen hittade fel i den jämförbara positionsmatrisen. Den visar därför ingen ranking i stället för att gissa, ignorera luckor eller låta partier försvinna ur resultatet.</p>
+
+      <p class="lead">
+        Webbappen hittade fel i den jämförbara
+        positionsmatrisen. Den visar därför ingen
+        ranking i stället för att gissa, ignorera
+        luckor eller låta partier försvinna ur
+        resultatet.
+      </p>
+
       <div class="callout danger">
         <strong>Upptäckta fel</strong>
-        <ul>${DATA_ERRORS.map((error) => `<li>${escapeHtml(error)}</li>`).join("")}</ul>
+        <ul>
+          ${DATA_ERRORS
+            .map(
+              (error) =>
+                `<li>${escapeHtml(error)}</li>`
+            )
+            .join("")}
+        </ul>
       </div>
+
       <div class="actions">
-        <a class="button primary" href="#/audit/integrity">Öppna dataintegriteten</a>
-        <a class="button secondary" href="#/audit/positions">Granska positionerna</a>
+        <a
+          class="button primary"
+          href="#/audit/integrity"
+        >
+          Öppna dataintegriteten
+        </a>
+
+        <a
+          class="button secondary"
+          href="#/audit/positions"
+        >
+          Granska positionerna
+        </a>
       </div>
-    </section>`;
+    </section>
+  `;
 }
 
 function updateNavigation(route) {
   $$(".topbar nav a").forEach((link) => {
-    const destination = (link.getAttribute("href") || "").replace(/^#\//, "").split("/")[0];
-    if (destination === route || (route === "party" && destination === "results")) link.setAttribute("aria-current", "page");
-    else link.removeAttribute("aria-current");
+    const destination = (
+      link.getAttribute("href") || ""
+    )
+      .replace(/^#\//, "")
+      .split("/")[0];
+
+    if (
+      destination === route ||
+      (
+        route === "party" &&
+        destination === "results"
+      )
+    ) {
+      link.setAttribute(
+        "aria-current",
+        "page"
+      );
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 }
 
 function renderRoute() {
-  const [route = "home", parameter] = routeParts();
+  const [
+    route = "home",
+    parameter,
+  ] = routeParts();
+
   $("#app").classList.remove("loading");
-  if (DATA_ERRORS.length && !["audit", "method"].includes(route)) renderDataFailure();
-  else if (route === "compass") renderCompass();
-  else if (route === "results") renderResults();
-  else if (route === "party") renderParty(parameter);
-  else if (route === "audit") renderAudit(parameter || state.audit.tab || "positions");
-  else if (route === "method") renderMethod();
-  else renderHome();
+
+  if (
+    DATA_ERRORS.length &&
+    !["audit", "method"].includes(route)
+  ) {
+    renderDataFailure();
+  } else if (route === "compass") {
+    renderCompass();
+  } else if (route === "results") {
+    renderResults();
+  } else if (route === "party") {
+    renderParty(parameter);
+  } else if (route === "audit") {
+    renderAudit(
+      parameter ||
+      state.audit.tab ||
+      "positions"
+    );
+  } else if (route === "method") {
+    renderMethod();
+  } else {
+    renderHome();
+  }
+
   updateNavigation(route);
   setBuildMeta();
-  window.scrollTo({ top: 0, behavior: "auto" });
+
+  window.scrollTo({
+    top: 0,
+    behavior: "auto",
+  });
 }
 
-window.addEventListener("hashchange", renderRoute);
+window.addEventListener(
+  "hashchange",
+  renderRoute
+);
 
 function renderHome() {
   setDocumentTitle("");
+
   const progress = handledCount();
-  const hasProgress = progress > 0 && !state.completed;
-  const knownCore = meta.readiness?.coreMatrixVerified ?? 280;
-  const coreRequired = meta.readiness?.coreMatrixRequired ?? 280;
+
+  const hasProgress =
+    progress > 0 &&
+    !state.completed;
+
+  const knownCore =
+    meta.readiness?.coreMatrixVerified ??
+    344;
+
+  const coreRequired =
+    meta.readiness?.coreMatrixRequired ??
+    344;
+
   $("#app").innerHTML = `
     <section class="hero page">
-      <div class="eyebrow">Riksdagsvalet ${escapeHtml(meta.electionDate)}</div>
+      <div class="eyebrow">
+        Riksdagsvalet ${escapeHtml(meta.electionDate)}
+      </div>
+
       <div class="hero-grid">
         <div>
-          <h1>Du behöver inte lita på kompassen.<br>Du kan kontrollera den.</h1>
-          <p class="lead">En fristående svensk valkompass med öppna data, mekanisk poängberäkning och en synlig källa bakom varje position som används.</p>
+          <h1>
+            Du behöver inte lita på kompassen.
+            <br>
+            Du kan kontrollera den.
+          </h1>
+
+          <p class="lead">
+            En fristående svensk valkompass
+            med öppna data, mekanisk
+            poängberäkning och en synlig
+            källa bakom varje position som
+            används.
+          </p>
+
           <div class="actions">
-            <button class="button primary" id="start-compass">${hasProgress ? `Fortsätt från fråga ${clamp(state.index + 1, 1, activeQuestions.length)}` : "Starta valkompassen"}</button>
-            <a class="button secondary" href="#/audit/positions">Granska alla positioner</a>
+            <button
+              class="button primary"
+              id="start-compass"
+            >
+              ${
+                hasProgress
+                  ? `Fortsätt från fråga ${
+                      clamp(
+                        state.index + 1,
+                        1,
+                        activeQuestions.length
+                      )
+                    }`
+                  : "Starta valkompassen"
+              }
+            </button>
+
+            <a
+              class="button secondary"
+              href="#/audit/positions"
+            >
+              Granska alla positioner
+            </a>
           </div>
-          ${hasProgress ? `<button class="text-button" id="restart-compass">Börja om och radera sparade svar</button>` : ""}
+
+          ${
+            hasProgress
+              ? `
+                <button
+                  class="text-button"
+                  id="restart-compass"
+                >
+                  Börja om och radera sparade svar
+                </button>
+              `
+              : ""
+          }
         </div>
+
         <aside class="hero-status card">
-          <div class="status-line"><strong>${activeQuestions.length}</strong><span>frågor i verifierad kärna</span></div>
-          <div class="status-line"><strong>${knownCore}/${coreRequired}</strong><span>källkodade kärnpositioner</span></div>
-          <div class="status-line"><strong>${researchQuestions.length}</strong><span>precisionsfrågor i forskningskö</span></div>
-          <div class="status-line"><strong>${meta.readiness?.provisionalKnown ?? 0}/${activeQuestions.length}</strong><span>verifierade ÖP-positioner</span></div>
+          <div class="status-line">
+            <strong>
+              ${activeQuestions.length}
+            </strong>
+            <span>
+              frågor i verifierad kärna
+            </span>
+          </div>
+
+          <div class="status-line">
+            <strong>
+              ${knownCore}/${coreRequired}
+            </strong>
+            <span>
+              källkodade kärnpositioner
+            </span>
+          </div>
+
+          <div class="status-line">
+            <strong>
+              ${researchQuestions.length}
+            </strong>
+            <span>
+              precisionsfrågor i forskningskö
+            </span>
+          </div>
+
+          <div class="status-line">
+            <strong>
+              ${
+                meta.readiness?.provisionalKnown ??
+                0
+              }/${activeQuestions.length}
+            </strong>
+            <span>
+              verifierade ÖP-positioner
+            </span>
+          </div>
         </aside>
       </div>
     </section>
@@ -314,52 +817,152 @@ function renderHome() {
     <section class="page section-space">
       <div class="grid three">
         <article class="card feature">
-          <span class="feature-number">01</span>
-          <h2>Samma underlag för åtta partier</h2>
-          <p>Den verifierade kärnan använder partiernas egna svar på samma nationella frågor i SVT:s valkompass 2026. Därutöver finns precisionsfrågor som blir aktiva först när partipositionerna är källkodade. Svarsskalan översätts mekaniskt till −2…+2.</p>
+          <span class="feature-number">
+            01
+          </span>
+
+          <h2>
+            Samma underlag för åtta partier
+          </h2>
+
+          <p>
+            Den verifierade kärnan använder
+            partiernas egna svar på samma
+            nationella frågor och de
+            kompletterande miljöfrågorna
+            använder källkodade positioner
+            enligt samma öppna metod.
+          </p>
         </article>
+
         <article class="card feature">
-          <span class="feature-number">02</span>
-          <h2>Okänd är inte neutral</h2>
-          <p>När en exakt position saknas används <code>null</code>. Den blir aldrig automatiskt 0 och får därför inte låtsas vara en mittenposition.</p>
+          <span class="feature-number">
+            02
+          </span>
+
+          <h2>
+            Okänd är inte neutral
+          </h2>
+
+          <p>
+            När en exakt position saknas
+            används <code>null</code>.
+            Den blir aldrig automatiskt
+            0 och får därför inte låtsas
+            vara en mittenposition.
+          </p>
         </article>
+
         <article class="card feature">
-          <span class="feature-number">03</span>
-          <h2>Områden balanseras</h2>
-          <p>Varje politikområde väger lika i totalmatchningen. Din egen viktning styr prioritetsmatchningen utan att ett område får större vikt bara för att det innehåller fler frågor.</p>
+          <span class="feature-number">
+            03
+          </span>
+
+          <h2>
+            Områden balanseras
+          </h2>
+
+          <p>
+            Varje politikområde väger lika
+            i totalmatchningen. Din egen
+            viktning styr prioritetsmatchningen
+            utan att ett område får större
+            vikt bara för att det innehåller
+            fler frågor.
+          </p>
         </article>
       </div>
     </section>
 
     <section class="page section-space">
       <article class="card feature">
-        <div class="eyebrow">Miljöfördjupning</div>
-        <h2>Åtta nya miljöfrågor finns i projektet</h2>
-        <p>De nya frågorna om naturvårdsanslag, Naturvårdsverket, formellt naturskydd, skog och artskydd, våtmarker, bekämpningsmedel, miljöprövning och strandskydd finns i datasetet och i granskningsläget. De påverkar inte poängen förrän partiernas exakta positioner är verifierade.</p>
-        <a class="button secondary" href="#/audit/questions">Visa alla frågor</a>
+        <div class="eyebrow">
+          Miljöfördjupning
+        </div>
+
+        <h2>
+          Miljöfrågorna är en del av
+          den poänggivande kompassen
+        </h2>
+
+        <p>
+          Klimat och miljö har nu
+          ${meta.activeAreaCounts?.["Klimat och miljö"] ?? 10}
+          aktiva frågor. De räknas i
+          resultatet men området
+          normaliseras så att det inte
+          automatiskt får större
+          totalvikt än andra områden.
+        </p>
+
+        <a
+          class="button secondary"
+          href="#/audit/questions"
+        >
+          Visa alla frågor
+        </a>
       </article>
     </section>
 
     <section class="page section-space split">
       <article>
-        <div class="eyebrow">Publiceringsprincip</div>
-        <h2>Hellre färre kontrollerade frågor än fler påhittade svar</h2>
-        <p>Projektet innehåller totalt ${questions.length} preciserade frågor. ${activeQuestions.length} används just nu i matchningen eftersom de har en komplett jämförbar matris för de åtta riksdagspartierna. De övriga ${researchQuestions.length} är synliga i granskningsläget men påverkar ingen poäng förrän samma beviskrav är uppfyllt.</p>
+        <div class="eyebrow">
+          Publiceringsprincip
+        </div>
+
+        <h2>
+          Hellre kontrollerade frågor
+          än påhittade svar
+        </h2>
+
+        <p>
+          Projektet innehåller totalt
+          ${questions.length}
+          preciserade frågor.
+          ${activeQuestions.length}
+          används just nu i matchningen.
+          De övriga
+          ${researchQuestions.length}
+          är synliga i granskningsläget
+          men påverkar ingen poäng förrän
+          samma beviskrav är uppfyllt.
+        </p>
       </article>
+
       <aside class="callout warning">
-        <strong>Örebropartiet behandlas med samma beviskrav.</strong>
-        <p>Partiets nationella 2026-program publiceras successivt. Därför visas ÖP separat med källtäckning och ett möjligt matchningsintervall, inte som en falskt exakt placering i huvudrankningen.</p>
+        <strong>
+          Örebropartiet behandlas
+          med samma beviskrav.
+        </strong>
+
+        <p>
+          Partiets nationella 2026-program
+          publiceras successivt.
+          Därför visas ÖP separat med
+          källtäckning och ett möjligt
+          matchningsintervall.
+        </p>
       </aside>
-    </section>`;
+    </section>
+  `;
 
   $("#start-compass").onclick = () => {
-    if (!state.startedAt) state.startedAt = new Date().toISOString();
+    if (!state.startedAt) {
+      state.startedAt =
+        new Date().toISOString();
+    }
+
     saveState();
     navigate("#/compass");
   };
+
   if ($("#restart-compass")) {
     $("#restart-compass").onclick = () => {
-      if (confirm("Radera alla sparade svar och börja om?")) {
+      if (
+        confirm(
+          "Radera alla sparade svar och börja om?"
+        )
+      ) {
         resetCompass();
         renderHome();
       }
@@ -369,88 +972,304 @@ function renderHome() {
 
 function renderCompass(message = "") {
   setDocumentTitle("Valkompassen");
-  state.index = clamp(state.index, 0, activeQuestions.length - 1);
-  const question = activeQuestions[state.index];
-  const saved = state.answers[question.id] || null;
-  const currentValue = saved?.skipped ? null : saved?.value;
-  const currentImportance = saved && !saved.skipped ? saved.importance : 2;
-  const progress = ((state.index + 1) / activeQuestions.length) * 100;
-  const handled = handledCount();
+
+  state.index = clamp(
+    state.index,
+    0,
+    activeQuestions.length - 1
+  );
+
+  const question =
+    activeQuestions[state.index];
+
+  const saved =
+    state.answers[question.id] ||
+    null;
+
+  const currentValue =
+    saved?.skipped
+      ? null
+      : saved?.value;
+
+  const currentImportance =
+    saved &&
+    !saved.skipped
+      ? saved.importance
+      : 2;
+
+  const progress =
+    (
+      (state.index + 1) /
+      activeQuestions.length
+    ) * 100;
+
+  const handled =
+    handledCount();
 
   $("#app").innerHTML = `
     <section class="page compass-page">
       <div class="question-topline">
         <div>
-          <span class="eyebrow">${escapeHtml(question.area)}</span>
-          <h1 class="question-count">Fråga ${state.index + 1} av ${activeQuestions.length}</h1>
+          <span class="eyebrow">
+            ${escapeHtml(question.area)}
+          </span>
+
+          <h1 class="question-count">
+            Fråga
+            ${state.index + 1}
+            av
+            ${activeQuestions.length}
+          </h1>
         </div>
-        <div class="progress-stats"><strong>${handled}</strong> hanterade · <strong>${skippedCount()}</strong> hoppade över</div>
+
+        <div class="progress-stats">
+          <strong>${handled}</strong>
+          hanterade
+          ·
+          <strong>
+            ${skippedCount()}
+          </strong>
+          hoppade över
+        </div>
       </div>
-      <div class="progress" aria-label="Framsteg"><span style="width:${progress}%"></span></div>
+
+      <div
+        class="progress"
+        aria-label="Framsteg"
+      >
+        <span
+          style="width:${progress}%"
+        ></span>
+      </div>
 
       <article class="question-card card">
-        <h2>${escapeHtml(question.text)}</h2>
-        <div class="scope-box"><strong>Exakt avgränsning</strong><p>${escapeHtml(question.scope)}</p></div>
+        <h2>
+          ${escapeHtml(question.text)}
+        </h2>
+
+        <div class="scope-box">
+          <strong>
+            Exakt avgränsning
+          </strong>
+
+          <p>
+            ${escapeHtml(question.scope)}
+          </p>
+        </div>
 
         <fieldset class="answer-fieldset">
-          <legend>Vad tycker du?</legend>
+          <legend>
+            Vad tycker du?
+          </legend>
+
           <div class="answer-options">
-            ${[-2, -1, 0, 1, 2].map((value) => `
-              <button type="button" class="choice ${currentValue === value ? "selected" : ""}" data-answer="${value}" aria-pressed="${currentValue === value}">
-                <span class="choice-value">${value > 0 ? "+" : ""}${value}</span>
-                <span>${escapeHtml(ANSWER_LABELS[String(value)])}</span>
-              </button>`).join("")}
+            ${[-2, -1, 0, 1, 2]
+              .map(
+                (value) => `
+                  <button
+                    type="button"
+                    class="choice ${
+                      currentValue === value
+                        ? "selected"
+                        : ""
+                    }"
+                    data-answer="${value}"
+                    aria-pressed="${
+                      currentValue === value
+                    }"
+                  >
+                    <span class="choice-value">
+                      ${value > 0 ? "+" : ""}
+                      ${value}
+                    </span>
+
+                    <span>
+                      ${escapeHtml(
+                        ANSWER_LABELS[
+                          String(value)
+                        ]
+                      )}
+                    </span>
+                  </button>
+                `
+              )
+              .join("")}
           </div>
-          <p class="microcopy"><strong>Neutral</strong> är ett politiskt svar. <strong>Hoppa över</strong> betyder att frågan inte ska räknas alls.</p>
+
+          <p class="microcopy">
+            <strong>Neutral</strong>
+            är ett politiskt svar.
+            <strong>Hoppa över</strong>
+            betyder att frågan inte ska
+            räknas alls.
+          </p>
         </fieldset>
 
-        <fieldset class="importance-fieldset ${saved?.skipped ? "disabled" : ""}">
-          <legend>Hur viktig är frågan för dig?</legend>
+        <fieldset
+          class="importance-fieldset ${
+            saved?.skipped
+              ? "disabled"
+              : ""
+          }"
+        >
+          <legend>
+            Hur viktig är frågan för dig?
+          </legend>
+
           <div class="importance-options">
-            ${meta.scoring.importanceScale.map((value) => `
-              <button type="button" class="importance-choice ${currentImportance === value && !saved?.skipped ? "selected" : ""}" data-importance="${value}" aria-pressed="${currentImportance === value && !saved?.skipped}" ${saved?.skipped ? "disabled" : ""}>
-                <strong>${value}</strong><span>${escapeHtml(IMPORTANCE_LABELS[value])}</span>
-              </button>`).join("")}
+            ${meta.scoring.importanceScale
+              .map(
+                (value) => `
+                  <button
+                    type="button"
+                    class="importance-choice ${
+                      currentImportance === value &&
+                      !saved?.skipped
+                        ? "selected"
+                        : ""
+                    }"
+                    data-importance="${value}"
+                    aria-pressed="${
+                      currentImportance === value &&
+                      !saved?.skipped
+                    }"
+                    ${
+                      saved?.skipped
+                        ? "disabled"
+                        : ""
+                    }
+                  >
+                    <strong>
+                      ${value}
+                    </strong>
+
+                    <span>
+                      ${escapeHtml(
+                        IMPORTANCE_LABELS[value]
+                      )}
+                    </span>
+                  </button>
+                `
+              )
+              .join("")}
           </div>
         </fieldset>
-        ${message ? `<div class="inline-message" role="alert">${escapeHtml(message)}</div>` : ""}
+
+        ${
+          message
+            ? `
+              <div
+                class="inline-message"
+                role="alert"
+              >
+                ${escapeHtml(message)}
+              </div>
+            `
+            : ""
+        }
       </article>
 
       <div class="question-actions">
-        <button class="button secondary" id="previous-question" ${state.index === 0 ? "disabled" : ""}>Föregående</button>
-        <button class="button ghost" id="skip-question">${saved?.skipped ? "Överhoppad" : "Hoppa över"}</button>
-        <button class="button primary" id="next-question">${state.index === activeQuestions.length - 1 ? "Visa resultat" : "Nästa fråga"}</button>
-      </div>
-    </section>`;
+        <button
+          class="button secondary"
+          id="previous-question"
+          ${
+            state.index === 0
+              ? "disabled"
+              : ""
+          }
+        >
+          Föregående
+        </button>
 
-  $$('[data-answer]').forEach((button) => {
-    button.onclick = () => {
-      state.answers[question.id] = {
-        value: Number(button.dataset.answer),
-        importance: saved && !saved.skipped ? saved.importance : 2,
-        skipped: false,
+        <button
+          class="button ghost"
+          id="skip-question"
+        >
+          ${
+            saved?.skipped
+              ? "Överhoppad"
+              : "Hoppa över"
+          }
+        </button>
+
+        <button
+          class="button primary"
+          id="next-question"
+        >
+          ${
+            state.index ===
+            activeQuestions.length - 1
+              ? "Visa resultat"
+              : "Nästa fråga"
+          }
+        </button>
+      </div>
+    </section>
+  `;
+
+  $$("[data-answer]").forEach(
+    (button) => {
+      button.onclick = () => {
+        state.answers[question.id] = {
+          value: Number(
+            button.dataset.answer
+          ),
+          importance:
+            saved &&
+            !saved.skipped
+              ? saved.importance
+              : 2,
+          skipped: false,
+        };
+
+        saveState();
+        renderCompass();
       };
-      saveState();
-      renderCompass();
-    };
-  });
-  $$('[data-importance]').forEach((button) => {
-    button.onclick = () => {
-      const existing = state.answers[question.id];
-      if (!existing || existing.skipped || !Number.isFinite(existing.value)) {
-        renderCompass("Välj först vad du tycker, därefter hur viktig frågan är.");
-        return;
-      }
-      existing.importance = Number(button.dataset.importance);
-      saveState();
-      renderCompass();
-    };
-  });
+    }
+  );
+
+  $$("[data-importance]").forEach(
+    (button) => {
+      button.onclick = () => {
+        const existing =
+          state.answers[question.id];
+
+        if (
+          !existing ||
+          existing.skipped ||
+          !Number.isFinite(
+            existing.value
+          )
+        ) {
+          renderCompass(
+            "Välj först vad du tycker, därefter hur viktig frågan är."
+          );
+          return;
+        }
+
+        existing.importance =
+          Number(
+            button.dataset.importance
+          );
+
+        saveState();
+        renderCompass();
+      };
+    }
+  );
+
   $("#skip-question").onclick = () => {
-    state.answers[question.id] = { value: null, importance: 0, skipped: true };
+    state.answers[question.id] = {
+      value: null,
+      importance: 0,
+      skipped: true,
+    };
+
     saveState();
     renderCompass();
   };
+
   $("#previous-question").onclick = () => {
     if (state.index > 0) {
       state.index -= 1;
@@ -458,575 +1277,2533 @@ function renderCompass(message = "") {
       renderCompass();
     }
   };
+
   $("#next-question").onclick = () => {
     if (!state.answers[question.id]) {
-      renderCompass("Välj ett svar eller använd ”Hoppa över” innan du fortsätter.");
+      renderCompass(
+        "Välj ett svar eller använd ”Hoppa över” innan du fortsätter."
+      );
       return;
     }
-    if (state.index < activeQuestions.length - 1) {
+
+    if (
+      state.index <
+      activeQuestions.length - 1
+    ) {
       state.index += 1;
       saveState();
       renderCompass();
       return;
     }
-    state.completed = isComplete();
-    state.completedAt = new Date().toISOString();
+
+    state.completed =
+      isComplete();
+
+    state.completedAt =
+      new Date().toISOString();
+
     saveState();
     navigate("#/results");
   };
 }
 
 function getScores() {
-  if (DATA_ERRORS.length) throw new Error("Dataspärren hindrar resultatberäkning.");
+  if (DATA_ERRORS.length) {
+    throw new Error(
+      "Dataspärren hindrar resultatberäkning."
+    );
+  }
+
   return calculateAllPartyScores({
     parties,
     questions: activeQuestions,
     answers: state.answers,
     positions,
-    minimumAnswered: meta.minimumAnsweredForResult,
+    minimumAnswered:
+      meta.minimumAnsweredForResult,
   });
 }
 
 function resultMetric(score) {
-  return score.priority ?? score.total ?? -1;
+  return (
+    score.priority ??
+    score.total ??
+    -1
+  );
 }
 
 function resultRow(result, rank) {
   return `
     <article class="result-row card">
-      <div class="rank" aria-label="Placering ${rank}">${rank}</div>
+      <div
+        class="rank"
+        aria-label="Placering ${rank}"
+      >
+        ${rank}
+      </div>
+
       <div class="result-party">
-        <h3>${escapeHtml(result.party.name)}</h3>
-        <span class="muted">${result.knownQuestionCount}/${result.answeredQuestionCount} jämförbara svar</span>
+        <h3>
+          ${escapeHtml(result.party.name)}
+        </h3>
+
+        <span class="muted">
+          ${result.knownQuestionCount}/${
+            result.answeredQuestionCount
+          }
+          jämförbara svar
+        </span>
       </div>
+
       <div class="result-metrics">
-        <div><span>Prioritetsmatchning</span><strong>${formatPercent(result.priority)}</strong></div>
-        <div class="meter"><span style="width:${clamp(result.priority ?? 0, 0, 100)}%"></span></div>
-        <small>Total, områdesbalanserad: ${formatPercent(result.total)}</small>
+        <div>
+          <span>
+            Prioritetsmatchning
+          </span>
+
+          <strong>
+            ${formatPercent(
+              result.priority
+            )}
+          </strong>
+        </div>
+
+        <div class="meter">
+          <span
+            style="width:${
+              clamp(
+                result.priority ?? 0,
+                0,
+                100
+              )
+            }%"
+          ></span>
+        </div>
+
+        <small>
+          Total, områdesbalanserad:
+          ${formatPercent(result.total)}
+        </small>
       </div>
-      <a class="button small secondary" href="#/party/${result.party.id}">Se varför</a>
-    </article>`;
+
+      <a
+        class="button small secondary"
+        href="#/party/${result.party.id}"
+      >
+        Se varför
+      </a>
+    </article>
+  `;
 }
 
 function renderResults() {
   setDocumentTitle("Resultat");
+
   if (!isComplete()) {
-    state.index = activeQuestions.findIndex((q) => !state.answers[q.id]);
-    if (state.index < 0) state.index = 0;
+    state.index =
+      activeQuestions.findIndex(
+        (q) => !state.answers[q.id]
+      );
+
+    if (state.index < 0) {
+      state.index = 0;
+    }
+
     saveState();
     navigate("#/compass");
     return;
   }
-  const answered = answeredEntries().length;
-  const allScores = getScores();
-  const coreResults = allScores
-    .filter((result) => result.party.comparisonGroup === "core" && result.eligibleForRanking)
-    .sort((a, b) => resultMetric(b) - resultMetric(a) || a.party.sortOrder - b.party.sortOrder);
-  const provisional = allScores.find((result) => result.party.id === "op");
 
-  if (answered < meta.minimumAnsweredForResult) {
+  const answered =
+    answeredEntries().length;
+
+  const allScores =
+    getScores();
+
+  const coreResults =
+    allScores
+      .filter(
+        (result) =>
+          result.party.comparisonGroup ===
+            "core" &&
+          result.eligibleForRanking
+      )
+      .sort(
+        (a, b) =>
+          resultMetric(b) -
+            resultMetric(a) ||
+          a.party.sortOrder -
+            b.party.sortOrder
+      );
+
+  const provisional =
+    allScores.find(
+      (result) =>
+        result.party.id === "op"
+    );
+
+  if (
+    answered <
+    meta.minimumAnsweredForResult
+  ) {
     $("#app").innerHTML = `
       <section class="page narrow">
         <div class="callout danger">
-          <h1>För få frågor är besvarade</h1>
-          <p>Du har besvarat ${answered} frågor. Minst ${meta.minimumAnsweredForResult} behövs för att visa ett meningsfullt resultat. Överhoppade frågor räknas inte.</p>
-          <button class="button primary" id="return-to-compass">Gå tillbaka till frågorna</button>
+          <h1>
+            För få frågor är besvarade
+          </h1>
+
+          <p>
+            Du har besvarat
+            ${answered}
+            frågor. Minst
+            ${meta.minimumAnsweredForResult}
+            behövs för att visa ett
+            meningsfullt resultat.
+            Överhoppade frågor räknas inte.
+          </p>
+
+          <button
+            class="button primary"
+            id="return-to-compass"
+          >
+            Gå tillbaka till frågorna
+          </button>
         </div>
-      </section>`;
-    $("#return-to-compass").onclick = () => {
-      const firstSkipped = activeQuestions.findIndex((q) => state.answers[q.id]?.skipped);
-      state.index = firstSkipped >= 0 ? firstSkipped : 0;
-      saveState();
-      navigate("#/compass");
-    };
+      </section>
+    `;
+
+    $("#return-to-compass").onclick =
+      () => {
+        const firstSkipped =
+          activeQuestions.findIndex(
+            (q) =>
+              state.answers[
+                q.id
+              ]?.skipped
+          );
+
+        state.index =
+          firstSkipped >= 0
+            ? firstSkipped
+            : 0;
+
+        saveState();
+        navigate("#/compass");
+      };
+
     return;
   }
 
-  const top = coreResults[0];
+  const top =
+    coreResults[0];
+
   $("#app").innerHTML = `
     <section class="page results-page">
-      <div class="eyebrow">Ditt resultat · ${answered} besvarade frågor</div>
+      <div class="eyebrow">
+        Ditt resultat ·
+        ${answered}
+        besvarade frågor
+      </div>
+
       <div class="results-heading">
         <div>
-          <h1>Din högsta matchning är ${top ? escapeHtml(top.party.name) : "inte beräkningsbar"}</h1>
-          <p class="lead">Det här är en matematisk likhetsmätning, inte en rekommendation. Öppna varje parti för att se exakt vilka frågor, vikter och källor som skapade resultatet.</p>
+          <h1>
+            Din högsta matchning är
+            ${
+              top
+                ? escapeHtml(
+                    top.party.name
+                  )
+                : "inte beräkningsbar"
+            }
+          </h1>
+
+          <p class="lead">
+            Det här är en matematisk
+            likhetsmätning, inte en
+            rekommendation. Öppna varje
+            parti för att se exakt vilka
+            frågor, vikter och källor
+            som skapade resultatet.
+          </p>
         </div>
-        ${top ? `<div class="top-score card"><span>Prioritetsmatchning</span><strong>${formatPercent(top.priority)}</strong><small>Total ${formatPercent(top.total)}</small></div>` : ""}
+
+        ${
+          top
+            ? `
+              <div class="top-score card">
+                <span>
+                  Prioritetsmatchning
+                </span>
+
+                <strong>
+                  ${formatPercent(
+                    top.priority
+                  )}
+                </strong>
+
+                <small>
+                  Total
+                  ${formatPercent(
+                    top.total
+                  )}
+                </small>
+              </div>
+            `
+            : ""
+        }
       </div>
 
       <div class="callout info compact">
-        <strong>Jämförbar huvudranking:</strong> alla åtta partier nedan har positioner på exakt samma besvarade frågor. Inga saknade värden har räknats som neutrala.
+        <strong>
+          Jämförbar huvudranking:
+        </strong>
+        alla åtta partier nedan har
+        positioner på exakt samma
+        besvarade frågor.
       </div>
 
       <div class="results-list">
-        ${coreResults.map((result, index) => resultRow(result, index + 1)).join("")}
+        ${coreResults
+          .map(
+            (result, index) =>
+              resultRow(
+                result,
+                index + 1
+              )
+          )
+          .join("")}
       </div>
 
-      <section class="provisional-section section-space">
+      <section
+        class="provisional-section section-space"
+      >
         <div class="section-heading">
           <div>
-            <div class="eyebrow">Separat, ofullständigt underlag</div>
-            <h2>Örebropartiet</h2>
+            <div class="eyebrow">
+              Separat, ofullständigt underlag
+            </div>
+
+            <h2>
+              Örebropartiet
+            </h2>
           </div>
-          <a class="button small secondary" href="#/party/op">Granska ÖP-underlaget</a>
+
+          <a
+            class="button small secondary"
+            href="#/party/op"
+          >
+            Granska ÖP-underlaget
+          </a>
         </div>
-        <article class="card provisional-result">
+
+        <article
+          class="card provisional-result"
+        >
           <div>
-            <strong>${provisional?.knownQuestionCount ?? 0} av ${provisional?.answeredQuestionCount ?? 0}</strong>
-            <span>av dina besvarade frågor har en verifierad ÖP-position</span>
+            <strong>
+              ${
+                provisional?.knownQuestionCount ??
+                0
+              }
+              av
+              ${
+                provisional?.answeredQuestionCount ??
+                0
+              }
+            </strong>
+
+            <span>
+              av dina besvarade frågor
+              har en verifierad ÖP-position
+            </span>
           </div>
+
           <div>
-            <strong>${formatPercent(provisional?.priority)}</strong>
-            <span>observerad matchning på den kända delmängden</span>
+            <strong>
+              ${formatPercent(
+                provisional?.priority
+              )}
+            </strong>
+
+            <span>
+              observerad matchning på
+              den kända delmängden
+            </span>
           </div>
+
           <div>
-            <strong>${formatPercent(provisional?.priorityLower)}–${formatPercent(provisional?.priorityUpper)}</strong>
-            <span>möjligt intervall när okända svar räknas som värsta respektive bästa fall</span>
+            <strong>
+              ${formatPercent(
+                provisional?.priorityLower
+              )}
+              –
+              ${formatPercent(
+                provisional?.priorityUpper
+              )}
+            </strong>
+
+            <span>
+              möjligt intervall
+            </span>
           </div>
         </article>
-        <p class="muted">ÖP placeras inte i rankingen eftersom ${provisional?.unknownQuestionCount ?? 0} av dina besvarade frågor saknar verifierad position. Ett högt delmängdsresultat skulle annars kunna se mer exakt ut än det är.</p>
       </section>
 
       <div class="actions section-space">
-        <button class="button secondary" id="download-result">Exportera mitt resultat som JSON</button>
-        <button class="button ghost" id="edit-answers">Ändra svar</button>
-        <button class="button ghost danger-text" id="reset-results">Radera och börja om</button>
-      </div>
-    </section>`;
+        <button
+          class="button secondary"
+          id="download-result"
+        >
+          Exportera mitt resultat som JSON
+        </button>
 
-  $("#download-result").onclick = () => exportUserResult(allScores);
-  $("#edit-answers").onclick = () => {
-    state.index = 0;
-    saveState();
-    navigate("#/compass");
-  };
-  $("#reset-results").onclick = () => {
-    if (confirm("Radera alla svar och börja om?")) {
-      resetCompass();
-      navigate("#/home");
-    }
-  };
+        <button
+          class="button ghost"
+          id="edit-answers"
+        >
+          Ändra svar
+        </button>
+
+        <button
+          class="button ghost danger-text"
+          id="reset-results"
+        >
+          Radera och börja om
+        </button>
+      </div>
+    </section>
+  `;
+
+  $("#download-result").onclick =
+    () => exportUserResult(allScores);
+
+  $("#edit-answers").onclick =
+    () => {
+      state.index = 0;
+      saveState();
+      navigate("#/compass");
+    };
+
+  $("#reset-results").onclick =
+    () => {
+      if (
+        confirm(
+          "Radera alla svar och börja om?"
+        )
+      ) {
+        resetCompass();
+        navigate("#/home");
+      }
+    };
 }
 
 function comparisonClass(distance) {
-  if (distance == null) return "unknown";
-  if (distance === 0) return "same";
-  if (distance === 1) return "close";
+  if (distance == null) {
+    return "unknown";
+  }
+
+  if (distance === 0) {
+    return "same";
+  }
+
+  if (distance === 1) {
+    return "close";
+  }
+
   return "different";
 }
 
 function comparisonLabel(distance) {
-  if (distance == null) return "Okänd partiposition";
-  if (distance === 0) return "Samma svar";
-  if (distance === 1) return "Närliggande svar";
-  if (distance === 2) return "Tydlig skillnad";
+  if (distance == null) {
+    return "Okänd partiposition";
+  }
+
+  if (distance === 0) {
+    return "Samma svar";
+  }
+
+  if (distance === 1) {
+    return "Närliggande svar";
+  }
+
+  if (distance === 2) {
+    return "Tydlig skillnad";
+  }
+
   return "Motsatt svar";
 }
 
-function sourceDetails(row, party, question) {
-  if (!row || row.position == null) {
+function sourceDetails(
+  row,
+  party,
+  question
+) {
+  if (
+    !row ||
+    row.position == null
+  ) {
     return `
       <div class="source-panel unknown-source">
-        <strong>Ingen position används</strong>
-        <p>${escapeHtml(row?.rationale || "Tillräckligt exakt underlag saknas.")}</p>
-        ${row?.source ? `<a href="${escapeHtml(row.source)}" target="_blank" rel="noopener noreferrer">Se det material som hittills publicerats ↗</a>` : ""}
-      </div>`;
+        <strong>
+          Ingen position används
+        </strong>
+
+        <p>
+          ${escapeHtml(
+            row?.rationale ||
+            "Tillräckligt exakt underlag saknas."
+          )}
+        </p>
+
+        ${
+          row?.source
+            ? `
+              <a
+                href="${escapeHtml(
+                  row.source
+                )}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Se materialet ↗
+              </a>
+            `
+            : ""
+        }
+      </div>
+    `;
   }
+
+  const typeLabel =
+    row.evidenceType ===
+    "party-self-report-established-compass"
+      ? "Partiets eget kompassvar"
+      : "Officiellt partimaterial";
+
   return `
     <div class="source-panel">
       <div class="source-meta">
-        <span>${escapeHtml(row.evidenceType === "party-self-report-established-compass" ? "Partiets eget kompassvar" : "Officiellt partimaterial")}</span>
-        <span>Verifierad ${escapeHtml(row.verified)}</span>
-        <span>Säkerhet: ${escapeHtml(CONFIDENCE_LABELS[row.confidence] || row.confidence)}</span>
+        <span>
+          ${escapeHtml(typeLabel)}
+        </span>
+
+        <span>
+          Verifierad
+          ${escapeHtml(row.verified)}
+        </span>
+
+        <span>
+          Säkerhet:
+          ${escapeHtml(
+            CONFIDENCE_LABELS[
+              row.confidence
+            ] ||
+            row.confidence
+          )}
+        </span>
       </div>
-      ${question?.sourcePrompt && row.evidenceType === "party-self-report-established-compass" ? `<p><strong>Källans exakta fråga:</strong> ${escapeHtml(question.sourcePrompt)}</p>` : ""}
-      ${question?.sourceQuestionOrdinal && row.evidenceType === "party-self-report-established-compass" ? `<p><strong>Källfråga:</strong> nummer ${question.sourceQuestionOrdinal} i det nationella frågebatteriet.</p>` : ""}
-      ${row.sourceAnswer ? `<p><strong>Källans svar/linje:</strong> ${escapeHtml(row.sourceAnswer)}</p>` : ""}
-      ${row.sourceAnswer && Number.isFinite(row.position) ? `<p><strong>Översättning till kod:</strong> ${escapeHtml(row.sourceAnswer)} → <code>${escapeHtml(formatSigned(row.position))}</code>${row.evidenceType === "party-self-report-established-compass" ? " (mekanisk, utan manuell justering)" : ""}</p>` : ""}
-      <p>${escapeHtml(row.rationale)}</p>
-      <a href="${escapeHtml(row.source)}" target="_blank" rel="noopener noreferrer">Visa källa: ${escapeHtml(row.sourceTitle || party.name)} ↗</a>
-    </div>`;
+
+      ${
+        question?.sourcePrompt &&
+        row.evidenceType ===
+          "party-self-report-established-compass"
+          ? `
+            <p>
+              <strong>
+                Källans exakta fråga:
+              </strong>
+              ${escapeHtml(
+                question.sourcePrompt
+              )}
+            </p>
+          `
+          : ""
+      }
+
+      ${
+        question?.sourceQuestionOrdinal &&
+        row.evidenceType ===
+          "party-self-report-established-compass"
+          ? `
+            <p>
+              <strong>
+                Källfråga:
+              </strong>
+              nummer
+              ${question.sourceQuestionOrdinal}
+            </p>
+          `
+          : ""
+      }
+
+      ${
+        row.sourceAnswer
+          ? `
+            <p>
+              <strong>
+                Källans svar/linje:
+              </strong>
+              ${escapeHtml(
+                row.sourceAnswer
+              )}
+            </p>
+          `
+          : ""
+      }
+
+      <p>
+        ${escapeHtml(row.rationale)}
+      </p>
+
+      <a
+        href="${escapeHtml(row.source)}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visa källa:
+        ${escapeHtml(
+          row.sourceTitle ||
+          party.name
+        )}
+        ↗
+      </a>
+    </div>
+  `;
 }
 
-function comparisonCard(comparison, party) {
-  const row = comparison.position;
-  const status = comparisonClass(comparison.distance);
+function comparisonCard(
+  comparison,
+  party
+) {
+  const row =
+    comparison.position;
+
+  const status =
+    comparisonClass(
+      comparison.distance
+    );
+
   return `
-    <details class="comparison-card ${status}">
+    <details
+      class="comparison-card ${status}"
+    >
       <summary>
-        <span class="comparison-status">${escapeHtml(comparisonLabel(comparison.distance))}</span>
-        <span class="comparison-question">${escapeHtml(comparison.question.text)}</span>
-        <span class="comparison-score">${comparison.similarity == null ? "—" : `${round(comparison.similarity)} %`}</span>
+        <span class="comparison-status">
+          ${escapeHtml(
+            comparisonLabel(
+              comparison.distance
+            )
+          )}
+        </span>
+
+        <span class="comparison-question">
+          ${escapeHtml(
+            comparison.question.text
+          )}
+        </span>
+
+        <span class="comparison-score">
+          ${
+            comparison.similarity == null
+              ? "—"
+              : `${round(
+                  comparison.similarity
+                )} %`
+          }
+        </span>
       </summary>
+
       <div class="comparison-body">
         <div class="comparison-grid">
-          <div><span>Du</span><strong>${escapeHtml(answerLabel(comparison.answer.value))}</strong><small>Vikt ${comparison.answer.importance} · ${escapeHtml(IMPORTANCE_LABELS[comparison.answer.importance])}</small></div>
-          <div><span>${escapeHtml(party.short)}</span><strong>${row?.position == null ? "Okänd" : escapeHtml(answerLabel(row.position))}</strong><small>${row?.position == null ? "Räknas inte" : `Kod ${formatSigned(row.position)}`}</small></div>
+          <div>
+            <span>Du</span>
+
+            <strong>
+              ${escapeHtml(
+                answerLabel(
+                  comparison.answer.value
+                )
+              )}
+            </strong>
+
+            <small>
+              Vikt
+              ${
+                comparison.answer.importance
+              }
+              ·
+              ${escapeHtml(
+                IMPORTANCE_LABELS[
+                  comparison.answer.importance
+                ]
+              )}
+            </small>
+          </div>
+
+          <div>
+            <span>
+              ${escapeHtml(party.short)}
+            </span>
+
+            <strong>
+              ${
+                row?.position == null
+                  ? "Okänd"
+                  : escapeHtml(
+                      answerLabel(
+                        row.position
+                      )
+                    )
+              }
+            </strong>
+
+            <small>
+              ${
+                row?.position == null
+                  ? "Räknas inte"
+                  : `Kod ${formatSigned(
+                      row.position
+                    )}`
+              }
+            </small>
+          </div>
         </div>
-        <p class="scope-inline"><strong>Avgränsning:</strong> ${escapeHtml(comparison.question.scope)}</p>
-        ${sourceDetails(row, party, comparison.question)}
+
+        <p class="scope-inline">
+          <strong>
+            Avgränsning:
+          </strong>
+
+          ${escapeHtml(
+            comparison.question.scope
+          )}
+        </p>
+
+        ${sourceDetails(
+          row,
+          party,
+          comparison.question
+        )}
       </div>
-    </details>`;
+    </details>
+  `;
 }
 
 function renderParty(partyId) {
-  const party = partyMap[partyId];
+  const party =
+    partyMap[partyId];
+
   if (!party) {
     navigate("#/results");
     return;
   }
-  setDocumentTitle(party.name);
-  const score = calculatePartyScore({
-    partyId,
-    questions: activeQuestions,
-    answers: state.answers,
-    positionMap,
-    minimumAnswered: meta.minimumAnsweredForResult,
-  });
-  const provisional = party.comparisonGroup === "provisional";
-  const comparisons = Object.values(score.areaScores).flatMap((area) => area.comparisons);
-  const orderedComparisons = [...comparisons].sort((a, b) => {
-    if (a.distance == null && b.distance != null) return 1;
-    if (a.distance != null && b.distance == null) return -1;
-    return (b.distance ?? -1) - (a.distance ?? -1) || b.answer.importance - a.answer.importance;
-  });
-  const areas = Object.entries(score.areaScores).sort(([a], [b]) => {
-    const ai = areaOrder.indexOf(a); const bi = areaOrder.indexOf(b);
-    return (ai < 0 ? 999 : ai) - (bi < 0 ? 999 : bi) || a.localeCompare(b, "sv");
-  });
+
+  setDocumentTitle(
+    party.name
+  );
+
+  const score =
+    calculatePartyScore({
+      partyId,
+      questions: activeQuestions,
+      answers: state.answers,
+      positionMap,
+      minimumAnswered:
+        meta.minimumAnsweredForResult,
+    });
+
+  const provisional =
+    party.comparisonGroup ===
+    "provisional";
+
+  const comparisons =
+    Object.values(
+      score.areaScores
+    ).flatMap(
+      (area) =>
+        area.comparisons
+    );
+
+  const orderedComparisons =
+    [...comparisons].sort(
+      (a, b) => {
+        if (
+          a.distance == null &&
+          b.distance != null
+        ) {
+          return 1;
+        }
+
+        if (
+          a.distance != null &&
+          b.distance == null
+        ) {
+          return -1;
+        }
+
+        return (
+          (b.distance ?? -1) -
+            (a.distance ?? -1) ||
+          b.answer.importance -
+            a.answer.importance
+        );
+      }
+    );
+
+  const areas =
+    Object.entries(
+      score.areaScores
+    ).sort(
+      ([a], [b]) => {
+        const ai =
+          areaOrder.indexOf(a);
+
+        const bi =
+          areaOrder.indexOf(b);
+
+        return (
+          (
+            ai < 0
+              ? 999
+              : ai
+          ) -
+            (
+              bi < 0
+                ? 999
+                : bi
+            ) ||
+          a.localeCompare(
+            b,
+            "sv"
+          )
+        );
+      }
+    );
 
   $("#app").innerHTML = `
     <section class="page party-page">
-      <a class="back-link" href="#/results">← Tillbaka till resultatet</a>
+      <a
+        class="back-link"
+        href="#/results"
+      >
+        ← Tillbaka till resultatet
+      </a>
+
       <div class="party-heading">
         <div>
-          <div class="eyebrow">${provisional ? "Preliminärt källunderlag" : "Fullständigt jämförbar kärna"}</div>
-          <h1>${escapeHtml(party.name)}</h1>
+          <div class="eyebrow">
+            ${
+              provisional
+                ? "Preliminärt källunderlag"
+                : "Fullständigt jämförbar kärna"
+            }
+          </div>
+
+          <h1>
+            ${escapeHtml(party.name)}
+          </h1>
         </div>
-        ${provisional ? `<span class="status unknown">Inte rangordnat</span>` : `<span class="status verified">100 % källtäckning på kärnan</span>`}
+
+        ${
+          provisional
+            ? `
+              <span class="status unknown">
+                Inte rangordnat
+              </span>
+            `
+            : `
+              <span class="status verified">
+                100 % källtäckning
+              </span>
+            `
+        }
       </div>
 
-      <div class="score-cards grid ${provisional ? "four" : "three"}">
-        <article class="card score-card"><span>${provisional ? "Observerad prioritetsmatchning" : "Prioritetsmatchning"}</span><strong>${formatPercent(score.priority)}</strong><small>${provisional ? "Endast kända positioner" : "Din viktning, områdesbalanserad"}</small></article>
-        <article class="card score-card"><span>Total matchning</span><strong>${formatPercent(score.total)}</strong><small>Alla besvarade frågor, områdesbalanserat</small></article>
-        <article class="card score-card"><span>Källtäckning</span><strong>${formatPercent(score.priorityCoverage * 100)}</strong><small>${score.knownQuestionCount}/${score.answeredQuestionCount} frågor kända</small></article>
-        ${provisional ? `<article class="card score-card"><span>Möjligt intervall</span><strong>${formatPercent(score.priorityLower)}–${formatPercent(score.priorityUpper)}</strong><small>Okända svar: värsta–bästa fall</small></article>` : ""}
-      </div>
+      <div
+        class="score-cards grid ${
+          provisional
+            ? "four"
+            : "three"
+        }"
+      >
+        <article class="card score-card">
+          <span>
+            ${
+              provisional
+                ? "Observerad prioritetsmatchning"
+                : "Prioritetsmatchning"
+            }
+          </span>
 
-      ${provisional ? `<div class="callout warning"><strong>Varför ÖP inte rankas:</strong> den observerade procenten gäller bara den kända delmängden och kan därför inte jämföras rakt av med partier som har svar på alla frågor. Intervallet visar hur stort osäkerhetsutrymmet faktiskt är.</div>` : ""}
+          <strong>
+            ${formatPercent(
+              score.priority
+            )}
+          </strong>
+
+          <small>
+            ${
+              provisional
+                ? "Endast kända positioner"
+                : "Din viktning, områdesbalanserad"
+            }
+          </small>
+        </article>
+
+        <article class="card score-card">
+          <span>
+            Total matchning
+          </span>
+
+          <strong>
+            ${formatPercent(
+              score.total
+            )}
+          </strong>
+
+          <small>
+            Alla besvarade frågor
+          </small>
+        </article>
+
+        <article class="card score-card">
+          <span>
+            Källtäckning
+          </span>
+
+          <strong>
+            ${formatPercent(
+              score.priorityCoverage *
+              100
+            )}
+          </strong>
+
+          <small>
+            ${score.knownQuestionCount}/${
+              score.answeredQuestionCount
+            }
+            frågor kända
+          </small>
+        </article>
+
+        ${
+          provisional
+            ? `
+              <article class="card score-card">
+                <span>
+                  Möjligt intervall
+                </span>
+
+                <strong>
+                  ${formatPercent(
+                    score.priorityLower
+                  )}
+                  –
+                  ${formatPercent(
+                    score.priorityUpper
+                  )}
+                </strong>
+
+                <small>
+                  Okända svar:
+                  värsta–bästa fall
+                </small>
+              </article>
+            `
+            : ""
+        }
+      </div>
 
       <section class="section-space">
-        <div class="section-heading"><div><div class="eyebrow">Områdesanalys</div><h2>Matchning per politikområde</h2></div></div>
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">
+              Områdesanalys
+            </div>
+
+            <h2>
+              Matchning per politikområde
+            </h2>
+          </div>
+        </div>
+
         <div class="area-table card">
-          ${areas.map(([area, areaScore]) => {
-            const display = areaScore.priorityObserved ?? areaScore.totalObserved;
-            return `<div class="area-row">
-              <div><strong>${escapeHtml(area)}</strong><small>${areaScore.knownCount}/${areaScore.answeredCount} kända positioner</small></div>
-              <div class="meter"><span style="width:${clamp(display ?? 0, 0, 100)}%"></span></div>
-              <strong>${formatPercent(display)}</strong>
-            </div>`;
-          }).join("")}
+          ${areas
+            .map(
+              ([area, areaScore]) => {
+                const display =
+                  areaScore.priorityObserved ??
+                  areaScore.totalObserved;
+
+                return `
+                  <div class="area-row">
+                    <div>
+                      <strong>
+                        ${escapeHtml(area)}
+                      </strong>
+
+                      <small>
+                        ${areaScore.knownCount}/${
+                          areaScore.answeredCount
+                        }
+                        kända positioner
+                      </small>
+                    </div>
+
+                    <div class="meter">
+                      <span
+                        style="width:${
+                          clamp(
+                            display ?? 0,
+                            0,
+                            100
+                          )
+                        }%"
+                      ></span>
+                    </div>
+
+                    <strong>
+                      ${formatPercent(
+                        display
+                      )}
+                    </strong>
+                  </div>
+                `;
+              }
+            )
+            .join("")}
         </div>
       </section>
 
       <section class="section-space">
         <div class="section-heading">
-          <div><div class="eyebrow">Fråga för fråga</div><h2>Se exakt varför</h2></div>
-          <div class="legend"><span class="dot same"></span>Samma <span class="dot close"></span>Nära <span class="dot different"></span>Olika <span class="dot unknown"></span>Okänd</div>
+          <div>
+            <div class="eyebrow">
+              Fråga för fråga
+            </div>
+
+            <h2>
+              Se exakt varför
+            </h2>
+          </div>
+
+          <div class="legend">
+            <span class="dot same"></span>
+            Samma
+
+            <span class="dot close"></span>
+            Nära
+
+            <span class="dot different"></span>
+            Olika
+
+            <span class="dot unknown"></span>
+            Okänd
+          </div>
         </div>
-        <div class="comparison-list">${orderedComparisons.map((comparison) => comparisonCard(comparison, party)).join("")}</div>
+
+        <div class="comparison-list">
+          ${orderedComparisons
+            .map(
+              (comparison) =>
+                comparisonCard(
+                  comparison,
+                  party
+                )
+            )
+            .join("")}
+        </div>
       </section>
-    </section>`;
+    </section>
+  `;
 }
 
 function auditTabs(activeTab) {
   const tabs = [
-    ["positions", "Partipositioner"],
-    ["questions", "Alla 68 frågor"],
-    ["sources", "Källregister"],
-    ["integrity", "Dataintegritet"],
+    [
+      "positions",
+      "Partipositioner",
+    ],
+    [
+      "questions",
+      `Alla ${questions.length} frågor`,
+    ],
+    [
+      "sources",
+      "Källregister",
+    ],
+    [
+      "integrity",
+      "Dataintegritet",
+    ],
   ];
-  return `<nav class="tabs" aria-label="Granskningsvyer">${tabs.map(([id, label]) => `<a class="${activeTab === id ? "active" : ""}" href="#/audit/${id}">${escapeHtml(label)}</a>`).join("")}</nav>`;
+
+  return `
+    <nav
+      class="tabs"
+      aria-label="Granskningsvyer"
+    >
+      ${tabs
+        .map(
+          ([id, label]) => `
+            <a
+              class="${
+                activeTab === id
+                  ? "active"
+                  : ""
+              }"
+              href="#/audit/${id}"
+            >
+              ${escapeHtml(label)}
+            </a>
+          `
+        )
+        .join("")}
+    </nav>
+  `;
 }
 
 function exportButtons() {
-  return `<div class="export-buttons">
-    <button class="button small secondary" data-export="dataset-json">Hela datasetet · JSON</button>
-    <button class="button small secondary" data-export="positions-csv">Positioner · CSV</button>
-    <button class="button small secondary" data-export="questions-csv">Frågor · CSV</button>
-  </div>`;
+  return `
+    <div class="export-buttons">
+      <button
+        class="button small secondary"
+        data-export="dataset-json"
+      >
+        Hela datasetet · JSON
+      </button>
+
+      <button
+        class="button small secondary"
+        data-export="positions-csv"
+      >
+        Positioner · CSV
+      </button>
+
+      <button
+        class="button small secondary"
+        data-export="questions-csv"
+      >
+        Frågor · CSV
+      </button>
+    </div>
+  `;
 }
 
-function renderAudit(tab = "positions") {
-  state.audit.tab = ["positions", "questions", "sources", "integrity"].includes(tab) ? tab : "positions";
+function renderAudit(
+  tab = "positions"
+) {
+  state.audit.tab =
+    [
+      "positions",
+      "questions",
+      "sources",
+      "integrity",
+    ].includes(tab)
+      ? tab
+      : "positions";
+
   saveState();
-  setDocumentTitle("Granska kompassen");
+
+  setDocumentTitle(
+    "Granska kompassen"
+  );
+
   let content = "";
-  if (state.audit.tab === "questions") content = renderAuditQuestions();
-  else if (state.audit.tab === "sources") content = renderAuditSources();
-  else if (state.audit.tab === "integrity") content = renderAuditIntegrity();
-  else content = renderAuditPositions();
+
+  if (
+    state.audit.tab ===
+    "questions"
+  ) {
+    content =
+      renderAuditQuestions();
+  } else if (
+    state.audit.tab ===
+    "sources"
+  ) {
+    content =
+      renderAuditSources();
+  } else if (
+    state.audit.tab ===
+    "integrity"
+  ) {
+    content =
+      renderAuditIntegrity();
+  } else {
+    content =
+      renderAuditPositions();
+  }
 
   $("#app").innerHTML = `
     <section class="page audit-page">
-      <div class="eyebrow">Full insyn</div>
+      <div class="eyebrow">
+        Full insyn
+      </div>
+
       <div class="audit-heading">
-        <div><h1>Granska kompassen</h1><p class="lead">Frågor, positioner, källor, verifieringsdatum, osäkerheter och exportfiler ligger öppet här.</p></div>
+        <div>
+          <h1>
+            Granska kompassen
+          </h1>
+
+          <p class="lead">
+            Frågor, positioner, källor,
+            verifieringsdatum,
+            osäkerheter och exportfiler
+            ligger öppet här.
+          </p>
+        </div>
+
         ${exportButtons()}
       </div>
-      ${auditTabs(state.audit.tab)}
+
+      ${auditTabs(
+        state.audit.tab
+      )}
+
       ${content}
-    </section>`;
+    </section>
+  `;
+
   bindAuditEvents();
 }
 
 function renderAuditPositions() {
-  const areas = [...new Set(activeQuestions.map((q) => q.area))].sort((a, b) => a.localeCompare(b, "sv"));
-  const filter = state.audit;
-  const rows = positions.filter((row) => {
-    const q = questionMap[row.question];
-    if (!q) return false;
-    if (filter.status === "active" && q.status !== "active") return false;
-    if (filter.status === "research" && q.status !== "research") return false;
-    if (filter.status === "known" && row.position == null) return false;
-    if (filter.status === "unknown" && row.position != null) return false;
-    if (filter.party !== "all" && row.party !== filter.party) return false;
-    if (filter.area !== "all" && q.area !== filter.area) return false;
-    if (filter.query) {
-      const haystack = `${q.text} ${q.scope} ${partyMap[row.party]?.name} ${row.rationale || ""}`.toLocaleLowerCase("sv");
-      if (!haystack.includes(filter.query.toLocaleLowerCase("sv"))) return false;
-    }
-    return true;
-  });
+  const areas =
+    [
+      ...new Set(
+        activeQuestions.map(
+          (q) => q.area
+        )
+      ),
+    ].sort(
+      (a, b) =>
+        a.localeCompare(
+          b,
+          "sv"
+        )
+    );
+
+  const filter =
+    state.audit;
+
+  const rows =
+    positions.filter(
+      (row) => {
+        const q =
+          questionMap[
+            row.question
+          ];
+
+        if (!q) {
+          return false;
+        }
+
+        if (
+          filter.status ===
+            "active" &&
+          q.status !==
+            "active"
+        ) {
+          return false;
+        }
+
+        if (
+          filter.status ===
+            "research" &&
+          q.status !==
+            "research"
+        ) {
+          return false;
+        }
+
+        if (
+          filter.status ===
+            "known" &&
+          row.position == null
+        ) {
+          return false;
+        }
+
+        if (
+          filter.status ===
+            "unknown" &&
+          row.position != null
+        ) {
+          return false;
+        }
+
+        if (
+          filter.party !==
+            "all" &&
+          row.party !==
+            filter.party
+        ) {
+          return false;
+        }
+
+        if (
+          filter.area !==
+            "all" &&
+          q.area !==
+            filter.area
+        ) {
+          return false;
+        }
+
+        if (filter.query) {
+          const haystack =
+            `${q.text} ${q.scope} ` +
+            `${partyMap[row.party]?.name} ` +
+            `${row.rationale || ""}`;
+
+          if (
+            !haystack
+              .toLocaleLowerCase("sv")
+              .includes(
+                filter.query
+                  .toLocaleLowerCase("sv")
+              )
+          ) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+    );
 
   return `
     <section class="audit-content">
       <div class="audit-summary grid four">
-        <article class="card stat"><strong>${meta.readiness.coreMatrixVerified}/${meta.readiness.coreMatrixRequired}</strong><span>verifierade kärnpositioner</span></article>
-        <article class="card stat"><strong>${meta.readiness.provisionalKnown}/${activeQuestions.length}</strong><span>verifierade ÖP-positioner</span></article>
-        <article class="card stat"><strong>${activeQuestions.length}</strong><span>frågor som påverkar poäng</span></article>
-        <article class="card stat"><strong>${researchQuestions.length}</strong><span>forskningsfrågor, avstängda</span></article>
+        <article class="card stat">
+          <strong>
+            ${
+              meta.readiness
+                .coreMatrixVerified
+            }/${
+              meta.readiness
+                .coreMatrixRequired
+            }
+          </strong>
+
+          <span>
+            verifierade kärnpositioner
+          </span>
+        </article>
+
+        <article class="card stat">
+          <strong>
+            ${
+              meta.readiness
+                .provisionalKnown
+            }/${activeQuestions.length}
+          </strong>
+
+          <span>
+            verifierade ÖP-positioner
+          </span>
+        </article>
+
+        <article class="card stat">
+          <strong>
+            ${activeQuestions.length}
+          </strong>
+
+          <span>
+            frågor som påverkar poäng
+          </span>
+        </article>
+
+        <article class="card stat">
+          <strong>
+            ${researchQuestions.length}
+          </strong>
+
+          <span>
+            forskningsfrågor, avstängda
+          </span>
+        </article>
       </div>
+
       <div class="filters card">
-        <label>Parti<select id="audit-party"><option value="all">Alla partier</option>${parties.map((p) => `<option value="${p.id}" ${filter.party === p.id ? "selected" : ""}>${escapeHtml(p.name)}</option>`).join("")}</select></label>
-        <label>Område<select id="audit-area"><option value="all">Alla områden</option>${areas.map((area) => `<option value="${escapeHtml(area)}" ${filter.area === area ? "selected" : ""}>${escapeHtml(area)}</option>`).join("")}</select></label>
-        <label>Status<select id="audit-status">
-          <option value="active" ${filter.status === "active" ? "selected" : ""}>Aktiva frågor</option>
-          <option value="research" ${filter.status === "research" ? "selected" : ""}>Forskningsfrågor</option>
-          <option value="known" ${filter.status === "known" ? "selected" : ""}>Endast kända</option>
-          <option value="unknown" ${filter.status === "unknown" ? "selected" : ""}>Endast okända</option>
-          <option value="all" ${filter.status === "all" ? "selected" : ""}>Alla rader</option>
-        </select></label>
-        <label>Sök<input id="audit-query" type="search" value="${escapeHtml(filter.query)}" placeholder="Fråga, parti eller motivering"></label>
+        <label>
+          Parti
+
+          <select id="audit-party">
+            <option value="all">
+              Alla partier
+            </option>
+
+            ${parties
+              .map(
+                (p) => `
+                  <option
+                    value="${p.id}"
+                    ${
+                      filter.party === p.id
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    ${escapeHtml(
+                      p.name
+                    )}
+                  </option>
+                `
+              )
+              .join("")}
+          </select>
+        </label>
+
+        <label>
+          Område
+
+          <select id="audit-area">
+            <option value="all">
+              Alla områden
+            </option>
+
+            ${areas
+              .map(
+                (area) => `
+                  <option
+                    value="${escapeHtml(
+                      area
+                    )}"
+                    ${
+                      filter.area === area
+                        ? "selected"
+                        : ""
+                    }
+                  >
+                    ${escapeHtml(
+                      area
+                    )}
+                  </option>
+                `
+              )
+              .join("")}
+          </select>
+        </label>
+
+        <label>
+          Status
+
+          <select id="audit-status">
+            <option
+              value="active"
+              ${
+                filter.status ===
+                "active"
+                  ? "selected"
+                  : ""
+              }
+            >
+              Aktiva frågor
+            </option>
+
+            <option
+              value="research"
+              ${
+                filter.status ===
+                "research"
+                  ? "selected"
+                  : ""
+              }
+            >
+              Forskningsfrågor
+            </option>
+
+            <option
+              value="known"
+              ${
+                filter.status ===
+                "known"
+                  ? "selected"
+                  : ""
+              }
+            >
+              Endast kända
+            </option>
+
+            <option
+              value="unknown"
+              ${
+                filter.status ===
+                "unknown"
+                  ? "selected"
+                  : ""
+              }
+            >
+              Endast okända
+            </option>
+
+            <option
+              value="all"
+              ${
+                filter.status ===
+                "all"
+                  ? "selected"
+                  : ""
+              }
+            >
+              Alla rader
+            </option>
+          </select>
+        </label>
+
+        <label>
+          Sök
+
+          <input
+            id="audit-query"
+            type="search"
+            value="${escapeHtml(
+              filter.query
+            )}"
+            placeholder="Fråga, parti eller motivering"
+          >
+        </label>
       </div>
-      <p class="muted table-count">Visar ${rows.length} rader.</p>
+
+      <p class="muted table-count">
+        Visar ${rows.length} rader.
+      </p>
+
       <div class="table-wrap card">
         <table class="audit-table">
-          <thead><tr><th>Fråga</th><th>Område</th><th>Parti</th><th>Position</th><th>Underlag</th><th>Verifierad</th></tr></thead>
-          <tbody>${rows.map((row) => {
-            const q = questionMap[row.question]; const party = partyMap[row.party];
-            return `<tr>
-              <td><strong>${escapeHtml(q.text)}</strong><details><summary>Avgränsning, källfråga och motivering</summary><p><strong>Avgränsning:</strong> ${escapeHtml(q.scope)}</p>${q.sourcePrompt ? `<p><strong>Källans exakta fråga:</strong> ${escapeHtml(q.sourcePrompt)}</p>` : ""}${row.sourceAnswer ? `<p><strong>Källans svar:</strong> ${escapeHtml(row.sourceAnswer)}${Number.isFinite(row.position) ? ` → <code>${escapeHtml(formatSigned(row.position))}</code>` : ""}</p>` : ""}<p><strong>Motivering:</strong> ${escapeHtml(row.rationale)}</p>${row.reviewNotes ? `<p class="muted"><strong>Granskningsnotering:</strong> ${escapeHtml(row.reviewNotes)}</p>` : ""}</details></td>
-              <td>${escapeHtml(q.area)}<br><span class="status ${q.status === "active" ? "verified" : "research"}">${q.status === "active" ? "Poängsatt" : "Forskningskö"}</span></td>
-              <td>${escapeHtml(party.name)}</td>
-              <td>${positionBadge(row)}<br><small>Säkerhet: ${escapeHtml(CONFIDENCE_LABELS[row.confidence] || row.confidence)}</small></td>
-              <td>${row.source ? `<a href="${escapeHtml(row.source)}" target="_blank" rel="noopener noreferrer">${escapeHtml(row.sourceTitle || "Visa källa")} ↗</a>${q.sourceQuestionOrdinal ? `<br><small>Kärnfråga ${q.sourceQuestionOrdinal}</small>` : ""}` : `<span class="muted">Ingen källa ännu</span>`}</td>
-              <td>${escapeHtml(row.verified || "—")}</td>
-            </tr>`;
-          }).join("")}</tbody>
+          <thead>
+            <tr>
+              <th>Fråga</th>
+              <th>Område</th>
+              <th>Parti</th>
+              <th>Position</th>
+              <th>Underlag</th>
+              <th>Verifierad</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            ${rows
+              .map(
+                (row) => {
+                  const q =
+                    questionMap[
+                      row.question
+                    ];
+
+                  const party =
+                    partyMap[
+                      row.party
+                    ];
+
+                  return `
+                    <tr>
+                      <td>
+                        <strong>
+                          ${escapeHtml(
+                            q.text
+                          )}
+                        </strong>
+
+                        <details>
+                          <summary>
+                            Avgränsning och motivering
+                          </summary>
+
+                          <p>
+                            <strong>
+                              Avgränsning:
+                            </strong>
+
+                            ${escapeHtml(
+                              q.scope
+                            )}
+                          </p>
+
+                          <p>
+                            <strong>
+                              Motivering:
+                            </strong>
+
+                            ${escapeHtml(
+                              row.rationale
+                            )}
+                          </p>
+                        </details>
+                      </td>
+
+                      <td>
+                        ${escapeHtml(
+                          q.area
+                        )}
+
+                        <br>
+
+                        <span
+                          class="status ${
+                            q.status ===
+                            "active"
+                              ? "verified"
+                              : "research"
+                          }"
+                        >
+                          ${
+                            q.status ===
+                            "active"
+                              ? "Poängsatt"
+                              : "Forskningskö"
+                          }
+                        </span>
+                      </td>
+
+                      <td>
+                        ${escapeHtml(
+                          party.name
+                        )}
+                      </td>
+
+                      <td>
+                        ${positionBadge(
+                          row
+                        )}
+
+                        <br>
+
+                        <small>
+                          Säkerhet:
+                          ${escapeHtml(
+                            CONFIDENCE_LABELS[
+                              row.confidence
+                            ] ||
+                            row.confidence
+                          )}
+                        </small>
+                      </td>
+
+                      <td>
+                        ${
+                          row.source
+                            ? `
+                              <a
+                                href="${escapeHtml(
+                                  row.source
+                                )}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                ${escapeHtml(
+                                  row.sourceTitle ||
+                                  "Visa källa"
+                                )}
+                                ↗
+                              </a>
+                            `
+                            : `
+                              <span class="muted">
+                                Ingen källa ännu
+                              </span>
+                            `
+                        }
+                      </td>
+
+                      <td>
+                        ${escapeHtml(
+                          row.verified ||
+                          "—"
+                        )}
+                      </td>
+                    </tr>
+                  `;
+                }
+              )
+              .join("")}
+          </tbody>
         </table>
       </div>
-    </section>`;
+    </section>
+  `;
 }
 
 function renderAuditQuestions() {
   return `
     <section class="audit-content">
-      <div class="callout info"><strong>${activeQuestions.length} publicerade + ${researchQuestions.length} i forskningskö = ${questions.length} frågor.</strong> Forskningsfrågorna är synliga och exporteras, men de har <code>score: false</code> och kan inte påverka en matchning.</div>
-      <div class="question-audit-list">
-        ${questions.map((q) => `<article class="card audit-question">
-          <div class="audit-question-head"><span class="status ${q.status === "active" ? "verified" : "research"}">${q.status === "active" ? "Aktiv" : "Forskningskö"}</span><span>${escapeHtml(q.area)}</span><code>${escapeHtml(q.id)}</code></div>
-          <h3>${escapeHtml(q.text)}</h3>
-          <p><strong>Avgränsning:</strong> ${escapeHtml(q.scope)}</p>
-          <details><summary>Kodningsregel</summary>${Object.entries(q.codingRule || {}).map(([key, value]) => `<p><code>${escapeHtml(key)}</code> ${escapeHtml(value)}</p>`).join("")}</details>
-          ${q.sourceQuestionOrdinal ? `<p class="muted"><strong>Källkoppling:</strong> nationell källfråga ${q.sourceQuestionOrdinal}. ${escapeHtml(q.wordingMethod || "")}</p>` : ""}
-          ${q.sourceReference ? `<a href="${escapeHtml(q.sourceReference)}" target="_blank" rel="noopener noreferrer">Öppna frågekällan ↗</a>` : `<p class="muted">Ingen partimatris kopplad ännu.</p>`}
-        </article>`).join("")}
+      <div class="callout info">
+        <strong>
+          ${activeQuestions.length}
+          publicerade +
+          ${researchQuestions.length}
+          i forskningskö =
+          ${questions.length}
+          frågor.
+        </strong>
+
+        Forskningsfrågorna är synliga
+        och exporteras, men de har
+        <code>score: false</code>
+        och påverkar inte matchningen.
       </div>
-    </section>`;
+
+      <div class="question-audit-list">
+        ${questions
+          .map(
+            (q) => `
+              <article
+                class="card audit-question"
+              >
+                <div
+                  class="audit-question-head"
+                >
+                  <span
+                    class="status ${
+                      q.status ===
+                      "active"
+                        ? "verified"
+                        : "research"
+                    }"
+                  >
+                    ${
+                      q.status ===
+                      "active"
+                        ? "Aktiv"
+                        : "Forskningskö"
+                    }
+                  </span>
+
+                  <span>
+                    ${escapeHtml(q.area)}
+                  </span>
+
+                  <code>
+                    ${escapeHtml(q.id)}
+                  </code>
+                </div>
+
+                <h3>
+                  ${escapeHtml(q.text)}
+                </h3>
+
+                <p>
+                  <strong>
+                    Avgränsning:
+                  </strong>
+
+                  ${escapeHtml(q.scope)}
+                </p>
+
+                <details>
+                  <summary>
+                    Kodningsregel
+                  </summary>
+
+                  ${Object.entries(
+                    q.codingRule || {}
+                  )
+                    .map(
+                      ([key, value]) => `
+                        <p>
+                          <code>
+                            ${escapeHtml(key)}
+                          </code>
+
+                          ${escapeHtml(value)}
+                        </p>
+                      `
+                    )
+                    .join("")}
+                </details>
+
+                ${
+                  q.sourceReference
+                    ? `
+                      <a
+                        href="${escapeHtml(
+                          q.sourceReference
+                        )}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Öppna frågekällan ↗
+                      </a>
+                    `
+                    : `
+                      <p class="muted">
+                        Ingen partimatris
+                        kopplad ännu.
+                      </p>
+                    `
+                }
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
 }
 
 function renderAuditSources() {
   return `
     <section class="audit-content">
       <div class="source-register">
-        ${sources.map((source) => `<article class="card source-card">
-          <div class="source-card-head"><span class="status verified">${escapeHtml(source.sourceType)}</span><span>Verifierad ${escapeHtml(source.verified)}</span></div>
-          <h3>${escapeHtml(source.title)}</h3>
-          <p><strong>${escapeHtml(source.publisher)}</strong></p>
-          <p>${escapeHtml(source.note || "")}</p>
-          <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">Öppna källan ↗</a>
-        </article>`).join("")}
+        ${sources
+          .map(
+            (source) => `
+              <article
+                class="card source-card"
+              >
+                <div class="source-card-head">
+                  <span class="status verified">
+                    ${escapeHtml(
+                      source.sourceType
+                    )}
+                  </span>
+
+                  <span>
+                    Verifierad
+                    ${escapeHtml(
+                      source.verified
+                    )}
+                  </span>
+                </div>
+
+                <h3>
+                  ${escapeHtml(
+                    source.title
+                  )}
+                </h3>
+
+                <p>
+                  <strong>
+                    ${escapeHtml(
+                      source.publisher
+                    )}
+                  </strong>
+                </p>
+
+                <p>
+                  ${escapeHtml(
+                    source.note ||
+                    ""
+                  )}
+                </p>
+
+                <a
+                  href="${escapeHtml(
+                    source.url
+                  )}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Öppna källan ↗
+                </a>
+              </article>
+            `
+          )
+          .join("")}
       </div>
-    </section>`;
+    </section>
+  `;
 }
 
 function renderAuditIntegrity() {
   return `
-    <section class="audit-content narrow-content">
+    <section
+      class="audit-content narrow-content"
+    >
       <div class="grid two">
-        <article class="card"><div class="eyebrow">Fingeravtryck</div><h2>SHA-256 för datasetet</h2><p class="hash">${escapeHtml(meta.dataFingerprintSha256)}</p><p>Fingeravtrycket beräknas från frågor, partier, positioner och källregister i kanonisk JSON-form. Ändras en enda kodad position ändras fingeravtrycket.</p></article>
-        <article class="card"><div class="eyebrow">Automatisk validering</div><h2>Kontroller som måste passera</h2><p>Projektets valideringsskript kräver bland annat unika ID:n, exakt 280 verifierade kärnpositioner, 2–3 aktiva frågor per område, giltiga skalvärden och fullständig källa för varje känd position.</p></article>
+        <article class="card">
+          <div class="eyebrow">
+            Fingeravtryck
+          </div>
+
+          <h2>
+            SHA-256 för datasetet
+          </h2>
+
+          <p class="hash">
+            ${escapeHtml(
+              meta.dataFingerprintSha256
+            )}
+          </p>
+
+          <p>
+            Fingeravtrycket beräknas från
+            frågor, partier, positioner och
+            källregister.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">
+            Automatisk validering
+          </div>
+
+          <h2>
+            Kontroller som måste passera
+          </h2>
+
+          <p>
+            Projektets webbläsarvalidering
+            kräver bland annat unika ID:n,
+            komplett kärnmatris, giltiga
+            skalvärden och fullständig
+            källinformation.
+          </p>
+
+          <p>
+            Det finns ingen övre gräns
+            för antal frågor i ett
+            politikområde. Balansen
+            hanteras av poängmodellen.
+          </p>
+        </article>
       </div>
-      <article class="card section-space">
-        <h2>Nuvarande status</h2>
+
+      <article
+        class="card section-space"
+      >
+        <h2>
+          Nuvarande status
+        </h2>
+
         <dl class="integrity-list">
-          <div><dt>Datasetversion</dt><dd>${escapeHtml(meta.datasetVersion)}</dd></div>
-          <div><dt>Verifierad till och med</dt><dd>${escapeHtml(meta.verifiedThrough)}</dd></div>
-          <div><dt>Kärnmatris</dt><dd>${meta.readiness.coreMatrixVerified}/${meta.readiness.coreMatrixRequired} godkända</dd></div>
-          <div><dt>Forskningsfrågor i poäng</dt><dd>${meta.readiness.researchIncludedInScoring ? "Ja – fel" : "Nej"}</dd></div>
-          <div><dt>Okänd representation</dt><dd><code>null</code>, aldrig <code>0</code></dd></div>
-          <div><dt>Webbläsarens dataspärr</dt><dd>${DATA_ERRORS.length ? `${DATA_ERRORS.length} fel` : "Godkänd"}</dd></div>
+          <div>
+            <dt>
+              Datasetversion
+            </dt>
+
+            <dd>
+              ${escapeHtml(
+                meta.datasetVersion
+              )}
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Verifierad till och med
+            </dt>
+
+            <dd>
+              ${escapeHtml(
+                meta.verifiedThrough
+              )}
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Kärnmatris
+            </dt>
+
+            <dd>
+              ${
+                meta.readiness
+                  .coreMatrixVerified
+              }/${
+                meta.readiness
+                  .coreMatrixRequired
+              }
+              godkända
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Aktiva frågor
+            </dt>
+
+            <dd>
+              ${activeQuestions.length}
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Klimat och miljö
+            </dt>
+
+            <dd>
+              ${
+                meta.activeAreaCounts?.[
+                  "Klimat och miljö"
+                ] ?? "—"
+              }
+              aktiva frågor
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Okänd representation
+            </dt>
+
+            <dd>
+              <code>null</code>,
+              aldrig
+              <code>0</code>
+            </dd>
+          </div>
+
+          <div>
+            <dt>
+              Webbläsarens dataspärr
+            </dt>
+
+            <dd>
+              ${
+                DATA_ERRORS.length
+                  ? `${DATA_ERRORS.length} fel`
+                  : "Godkänd"
+              }
+            </dd>
+          </div>
         </dl>
       </article>
-      ${DATA_ERRORS.length ? `<div class="callout danger section-space"><strong>Dataspärren har stoppat rankningen:</strong><ul>${DATA_ERRORS.map((error) => `<li>${escapeHtml(error)}</li>`).join("")}</ul></div>` : `<div class="callout info section-space"><strong>Webbläsarkontroll godkänd:</strong> den aktiva kärnmatrisen är komplett och inga forskningsfrågor påverkar poängen.</div>`}
-  <div class="callout warning section-space"><strong>Viktigt:</strong> ett tekniskt godkänt dataset betyder att strukturen och de uttalade reglerna följs. Politisk sakgranskning måste fortfarande fortsätta när partier publicerar nytt material eller ändrar ståndpunkt.</div>
-    </section>`;
+
+      ${
+        DATA_ERRORS.length
+          ? `
+            <div
+              class="callout danger section-space"
+            >
+              <strong>
+                Dataspärren har stoppat
+                rankningen:
+              </strong>
+
+              <ul>
+                ${DATA_ERRORS
+                  .map(
+                    (error) => `
+                      <li>
+                        ${escapeHtml(error)}
+                      </li>
+                    `
+                  )
+                  .join("")}
+              </ul>
+            </div>
+          `
+          : `
+            <div
+              class="callout info section-space"
+            >
+              <strong>
+                Webbläsarkontroll godkänd:
+              </strong>
+
+              den aktiva kärnmatrisen
+              är komplett.
+            </div>
+          `
+      }
+    </section>
+  `;
 }
 
 function bindAuditEvents() {
-  $$('[data-export]').forEach((button) => {
-    button.onclick = () => {
-      if (button.dataset.export === "dataset-json") exportDatasetJson();
-      else if (button.dataset.export === "positions-csv") exportPositionsCsv();
-      else if (button.dataset.export === "questions-csv") exportQuestionsCsv();
-    };
-  });
+  $$("[data-export]").forEach(
+    (button) => {
+      button.onclick = () => {
+        if (
+          button.dataset.export ===
+          "dataset-json"
+        ) {
+          exportDatasetJson();
+        } else if (
+          button.dataset.export ===
+          "positions-csv"
+        ) {
+          exportPositionsCsv();
+        } else if (
+          button.dataset.export ===
+          "questions-csv"
+        ) {
+          exportQuestionsCsv();
+        }
+      };
+    }
+  );
+
   if ($("#audit-party")) {
-    $("#audit-party").onchange = (event) => { state.audit.party = event.target.value; saveState(); renderAudit("positions"); };
-    $("#audit-area").onchange = (event) => { state.audit.area = event.target.value; saveState(); renderAudit("positions"); };
-    $("#audit-status").onchange = (event) => { state.audit.status = event.target.value; saveState(); renderAudit("positions"); };
+    $("#audit-party").onchange =
+      (event) => {
+        state.audit.party =
+          event.target.value;
+
+        saveState();
+        renderAudit(
+          "positions"
+        );
+      };
+
+    $("#audit-area").onchange =
+      (event) => {
+        state.audit.area =
+          event.target.value;
+
+        saveState();
+        renderAudit(
+          "positions"
+        );
+      };
+
+    $("#audit-status").onchange =
+      (event) => {
+        state.audit.status =
+          event.target.value;
+
+        saveState();
+        renderAudit(
+          "positions"
+        );
+      };
+
     let timer;
-    $("#audit-query").oninput = (event) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => { state.audit.query = event.target.value.trim(); saveState(); renderAudit("positions"); }, 180);
-    };
+
+    $("#audit-query").oninput =
+      (event) => {
+        clearTimeout(timer);
+
+        timer =
+          setTimeout(
+            () => {
+              state.audit.query =
+                event.target.value.trim();
+
+              saveState();
+
+              renderAudit(
+                "positions"
+              );
+            },
+            180
+          );
+      };
   }
 }
 
 function renderMethod() {
-  setDocumentTitle("Om metoden");
+  setDocumentTitle(
+    "Om metoden"
+  );
+
   $("#app").innerHTML = `
     <section class="page method-page">
-      <div class="eyebrow">Metod version ${escapeHtml(meta.questionDesignVersion)}</div>
-      <h1>Exakt så fungerar kompassen</h1>
-      <p class="lead">Inga dolda bonuspoäng, inga partivisa korrigeringar och ingen AI som fyller i luckor.</p>
+      <div class="eyebrow">
+        Metod version
+        ${escapeHtml(
+          meta.questionDesignVersion
+        )}
+      </div>
 
-      <section class="method-section grid two">
-        <article class="card"><h2>1. Samma skala</h2><p>Ditt svar och partiets position kodas som −2, −1, 0, +1 eller +2. Likheten i en fråga är:</p><pre><code>sᵢ = 1 − |uᵢ − pᵢ| / 4</code></pre><p>Samma svar ger 100 %, ett stegs skillnad 75 %, två steg 50 %, tre steg 25 % och motsatta ytterlägen 0 %.</p></article>
-        <article class="card"><h2>2. Områdesbalansering</h2><p>Om ett område har <code>nₐ</code> besvarade frågor får varje sådan fråga grundfaktorn <code>1/nₐ</code>. Därför väger ett område inte mer bara för att det innehåller tre frågor i stället för två.</p><pre><code>Total = 100 × Σ[(1/nₐ)·sᵢ] / Σ(1/nₐ)</code></pre></article>
-        <article class="card"><h2>3. Din prioritering</h2><p>Vikten kan vara 0, 1, 2, 3 eller 5. Den områdesbalanserade prioritetsmatchningen är:</p><pre><code>Prioritet = 100 × Σ[(wᵢ/nₐ)·sᵢ] / Σ(wᵢ/nₐ)</code></pre><p>Vikt 0 påverkar inte prioritetsresultatet. Det politiska svaret finns ändå kvar i totalmatchningen.</p></article>
-        <article class="card"><h2>4. Okända positioner</h2><p><code>null</code> betyder att en säker position saknas. Den räknas varken som 0 eller som en halv träff. För ett ofullständigt parti visas observerad delmängd, källtäckning samt ett bästa–sämsta-fall-intervall.</p></article>
+      <h1>
+        Exakt så fungerar kompassen
+      </h1>
+
+      <p class="lead">
+        Inga dolda bonuspoäng,
+        inga partivisa korrigeringar
+        och ingen AI som fyller
+        i luckor.
+      </p>
+
+      <section
+        class="method-section grid two"
+      >
+        <article class="card">
+          <h2>
+            1. Samma skala
+          </h2>
+
+          <p>
+            Ditt svar och partiets
+            position kodas som
+            −2, −1, 0, +1 eller +2.
+          </p>
+
+          <pre><code>sᵢ = 1 − |uᵢ − pᵢ| / 4</code></pre>
+        </article>
+
+        <article class="card">
+          <h2>
+            2. Områdesbalansering
+          </h2>
+
+          <p>
+            Om ett område har
+            <code>nₐ</code>
+            besvarade frågor får varje
+            sådan fråga grundfaktorn
+            <code>1/nₐ</code>.
+          </p>
+
+          <pre><code>Total = 100 × Σ[(1/nₐ)·sᵢ] / Σ(1/nₐ)</code></pre>
+
+          <p>
+            Därför väger inte klimat
+            och miljö automatiskt mer
+            bara för att området har
+            fler frågor.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>
+            3. Din prioritering
+          </h2>
+
+          <p>
+            Vikten kan vara
+            0, 1, 2, 3 eller 5.
+          </p>
+
+          <pre><code>Prioritet = 100 × Σ[(wᵢ/nₐ)·sᵢ] / Σ(wᵢ/nₐ)</code></pre>
+        </article>
+
+        <article class="card">
+          <h2>
+            4. Okända positioner
+          </h2>
+
+          <p>
+            <code>null</code>
+            betyder att en säker
+            position saknas.
+            Den räknas aldrig
+            som neutral.
+          </p>
+        </article>
       </section>
 
       <section class="method-section">
-        <div class="eyebrow">Positionsmatris</div>
-        <h2>Var svaren kommer ifrån</h2>
-        <p>För de åtta riksdagspartierna används partiernas egna valda svar i SVT Valkompass 2026. Alternativen översätts utan tolkande bonus:</p>
-        <div class="mapping-table card">
-          <div><code>−2</code><span>Mycket dåligt förslag / mycket mindre</span></div>
-          <div><code>−1</code><span>Ganska dåligt förslag / lite mindre</span></div>
-          <div><code>0</code><span>Samma som i dag</span></div>
-          <div><code>+1</code><span>Ganska bra förslag / lite mer</span></div>
-          <div><code>+2</code><span>Mycket bra förslag / mycket mer</span></div>
+        <div class="eyebrow">
+          Frågeurval
         </div>
-        <p>Den valda svarskategorin är den kodade positionen. Partiets kommentar finns kvar på källsidan för kontroll, men används inte för att ge extra poäng eller flytta partiet ett steg.</p>
-        <div class="callout info"><strong>Varför kompassvar kan vara bättre än ett manifest för just en rad:</strong> officiella manifest och partisidor prioriteras normalt, men en högre källtyp får inte användas om den bara berör ämnet på ett bredare sätt. För kärnmatrisen används partiernas egna svar eftersom 35 kärnfrågor bygger på partiernas egna svar på samma skala. De 8 aktiva miljöfördjupningsfrågorna kodas separat från aktuella primärkällor och riksdagsunderlag med synlig säkerhetsgrad och motivering.</div>
+
+        <h2>
+          ${activeQuestions.length}
+          poänggivande frågor
+        </h2>
+
+        <p>
+          Klimat och miljö kan ha fler
+          frågor än andra områden eftersom
+          poängmodellen normaliserar
+          varje politikområde.
+        </p>
+
+        <p>
+          Det innebär att användaren får
+          möjlighet att uttrycka mer
+          detaljerade miljöpreferenser
+          utan att miljöområdet
+          automatiskt får större
+          matematisk vikt.
+        </p>
       </section>
 
-      <section class="method-section grid two">
-        <article><div class="eyebrow">Frågeurval</div><h2>43 poänggivande frågor nu, 25 i forskningskö</h2><p>Den tidigare 64-frågorsversionen innehöll precisa frågor men saknade en färdig jämförbar partimatris. Den här versionen har 35 frågor från den gemensamma 2026-matrisen plus 8 miljöfördjupningsfrågor som källkodats separat för alla åtta riksdagspartier. Forskningsfrågorna är kvar öppet och påverkar inte resultatet.</p></article>
-        <article><div class="eyebrow">Örebropartiet</div><h2>Samma krav, annan täckning</h2><p>ÖP:s officiella nationella program för 2026 publiceras successivt. Just nu är ${meta.readiness.provisionalKnown} av ${activeQuestions.length} aktiva positioner tillräckligt exakt kodade. Övriga är uttryckligen okända, och partiet hålls därför utanför huvudrankningen tills jämförbarheten är tillräcklig. En närliggande ståndpunkt räcker inte: till exempel kodas inte kommunal vindkraftsveto utifrån ett separat förslag om veto för närboende.</p></article>
-      </section>
+      <div class="callout info">
+        <strong>
+          Integritet:
+        </strong>
 
-      <section class="method-section card">
-        <h2>Uppdateringsregler</h2>
-        <ol class="method-list">
-          <li>Ändra datafilerna eller det öppna genereringsskriptet, inte poängformeln för ett enskilt parti.</li>
-          <li>Spara källa, källtyp, datum, källans eget svar, motivering och säkerhetsgrad på varje känd position.</li>
-          <li>Lämna positionen <code>null</code> när källan inte täcker den exakta avgränsningen.</li>
-          <li>Kör datasetvalidering och tester. Publicera ett nytt SHA-256-fingeravtryck.</li>
-          <li>Redovisa ändringen i README eller versionshistorik.</li>
-        </ol>
-      </section>
+        ${escapeHtml(meta.note)}
 
-      <div class="callout info"><strong>Integritet:</strong> ${escapeHtml(meta.note)} Alla personliga svar och beräkningar stannar lokalt i webbläsaren.</div>
-    </section>`;
+        Alla personliga svar och
+        beräkningar stannar lokalt
+        i webbläsaren.
+      </div>
+    </section>
+  `;
 }
 
 function csvCell(value) {
-  const text = value == null ? "" : String(value);
-  return `"${text.replaceAll('"', '""')}"`;
+  const text =
+    value == null
+      ? ""
+      : String(value);
+
+  return `"${text.replaceAll(
+    '"',
+    '""'
+  )}"`;
 }
 
-function downloadBlob(filename, content, type) {
-  const blob = new Blob([content], { type });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = filename;
-  document.body.append(anchor);
+function downloadBlob(
+  filename,
+  content,
+  type
+) {
+  const blob =
+    new Blob(
+      [content],
+      { type }
+    );
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+  const anchor =
+    document.createElement(
+      "a"
+    );
+
+  anchor.href =
+    url;
+
+  anchor.download =
+    filename;
+
+  document.body.append(
+    anchor
+  );
+
   anchor.click();
   anchor.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 500);
+
+  setTimeout(
+    () =>
+      URL.revokeObjectURL(
+        url
+      ),
+    500
+  );
 }
 
 function exportDatasetJson() {
-  downloadBlob(`valkompass-dataset-${meta.datasetVersion}.json`, JSON.stringify({ meta, questions, parties, positions, sources }, null, 2), "application/json;charset=utf-8");
+  downloadBlob(
+    `valkompass-dataset-${meta.datasetVersion}.json`,
+    JSON.stringify(
+      {
+        meta,
+        questions,
+        parties,
+        positions,
+        sources,
+      },
+      null,
+      2
+    ),
+    "application/json;charset=utf-8"
+  );
 }
 
 function exportQuestionsCsv() {
-  const headers = ["id", "status", "score", "order", "area", "question", "scope", "source_prompt", "source_reference"];
-  const rows = questions.map((q) => [q.id, q.status, q.score, q.order, q.area, q.text, q.scope, q.sourcePrompt, q.sourceReference]);
-  const csv = `\uFEFF${[headers, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n")}`;
-  downloadBlob(`valkompass-fragor-${meta.datasetVersion}.csv`, csv, "text/csv;charset=utf-8");
+  const headers = [
+    "id",
+    "status",
+    "score",
+    "order",
+    "area",
+    "question",
+    "scope",
+    "source_prompt",
+    "source_reference",
+  ];
+
+  const rows =
+    questions.map(
+      (q) => [
+        q.id,
+        q.status,
+        q.score,
+        q.order,
+        q.area,
+        q.text,
+        q.scope,
+        q.sourcePrompt,
+        q.sourceReference,
+      ]
+    );
+
+  const csv =
+    `\uFEFF${
+      [
+        headers,
+        ...rows,
+      ]
+        .map(
+          (row) =>
+            row
+              .map(csvCell)
+              .join(",")
+        )
+        .join("\r\n")
+    }`;
+
+  downloadBlob(
+    `valkompass-fragor-${meta.datasetVersion}.csv`,
+    csv,
+    "text/csv;charset=utf-8"
+  );
 }
 
 function exportPositionsCsv() {
-  const headers = ["party_id", "party", "question_id", "question", "source_prompt", "area", "question_status", "position", "confidence", "coding_status", "source_answer", "source_title", "source_url", "verified", "semantic_match", "rationale", "review_notes"];
-  const rows = positions.map((row) => {
-    const q = questionMap[row.question]; const party = partyMap[row.party];
-    return [row.party, party?.name, row.question, q?.text, q?.sourcePrompt, q?.area, q?.status, row.position, row.confidence, row.codingStatus, row.sourceAnswer, row.sourceTitle, row.source, row.verified, row.semanticMatch, row.rationale, row.reviewNotes];
-  });
-  const csv = `\uFEFF${[headers, ...rows].map((row) => row.map(csvCell).join(",")).join("\r\n")}`;
-  downloadBlob(`valkompass-positioner-${meta.datasetVersion}.csv`, csv, "text/csv;charset=utf-8");
+  const headers = [
+    "party_id",
+    "party",
+    "question_id",
+    "question",
+    "source_prompt",
+    "area",
+    "question_status",
+    "position",
+    "confidence",
+    "coding_status",
+    "source_answer",
+    "source_title",
+    "source_url",
+    "verified",
+    "semantic_match",
+    "rationale",
+    "review_notes",
+  ];
+
+  const rows =
+    positions.map(
+      (row) => {
+        const q =
+          questionMap[
+            row.question
+          ];
+
+        const party =
+          partyMap[
+            row.party
+          ];
+
+        return [
+          row.party,
+          party?.name,
+          row.question,
+          q?.text,
+          q?.sourcePrompt,
+          q?.area,
+          q?.status,
+          row.position,
+          row.confidence,
+          row.codingStatus,
+          row.sourceAnswer,
+          row.sourceTitle,
+          row.source,
+          row.verified,
+          row.semanticMatch,
+          row.rationale,
+          row.reviewNotes,
+        ];
+      }
+    );
+
+  const csv =
+    `\uFEFF${
+      [
+        headers,
+        ...rows,
+      ]
+        .map(
+          (row) =>
+            row
+              .map(csvCell)
+              .join(",")
+        )
+        .join("\r\n")
+    }`;
+
+  downloadBlob(
+    `valkompass-positioner-${meta.datasetVersion}.csv`,
+    csv,
+    "text/csv;charset=utf-8"
+  );
 }
 
 function exportUserResult(scores) {
   const payload = {
-    exportedAt: new Date().toISOString(),
-    datasetVersion: meta.datasetVersion,
-    dataFingerprintSha256: meta.dataFingerprintSha256,
-    answers: activeQuestions.map((q) => ({ question: q.id, text: q.text, area: q.area, ...(state.answers[q.id] || {}) })),
-    scores: scores.map((score) => ({
-      party: score.party.id,
-      partyName: score.party.name,
-      comparisonGroup: score.party.comparisonGroup,
-      priority: score.priority,
-      total: score.total,
-      priorityLower: score.priorityLower,
-      priorityUpper: score.priorityUpper,
-      countCoverage: score.countCoverage,
-      knownQuestionCount: score.knownQuestionCount,
-      answeredQuestionCount: score.answeredQuestionCount,
-      eligibleForRanking: score.eligibleForRanking,
-    })),
+    exportedAt:
+      new Date().toISOString(),
+
+    datasetVersion:
+      meta.datasetVersion,
+
+    dataFingerprintSha256:
+      meta.dataFingerprintSha256,
+
+    answers:
+      activeQuestions.map(
+        (q) => ({
+          question: q.id,
+          text: q.text,
+          area: q.area,
+          ...(
+            state.answers[q.id] ||
+            {}
+          ),
+        })
+      ),
+
+    scores:
+      scores.map(
+        (score) => ({
+          party:
+            score.party.id,
+
+          partyName:
+            score.party.name,
+
+          comparisonGroup:
+            score.party
+              .comparisonGroup,
+
+          priority:
+            score.priority,
+
+          total:
+            score.total,
+
+          priorityLower:
+            score.priorityLower,
+
+          priorityUpper:
+            score.priorityUpper,
+
+          countCoverage:
+            score.countCoverage,
+
+          knownQuestionCount:
+            score.knownQuestionCount,
+
+          answeredQuestionCount:
+            score.answeredQuestionCount,
+
+          eligibleForRanking:
+            score.eligibleForRanking,
+        })
+      ),
   };
-  downloadBlob(`mitt-valkompassresultat-${todayIso()}.json`, JSON.stringify(payload, null, 2), "application/json;charset=utf-8");
+
+  downloadBlob(
+    `mitt-valkompassresultat-${todayIso()}.json`,
+    JSON.stringify(
+      payload,
+      null,
+      2
+    ),
+    "application/json;charset=utf-8"
+  );
 }
 
 renderRoute();
-window.__VALKOMPASS_READY__ = true;
+
+window.__VALKOMPASS_READY__ =
+  true;
+
 window.__VALKOMPASS_TEST__ = {
   meta,
   questions,
@@ -1034,7 +3811,8 @@ window.__VALKOMPASS_TEST__ = {
   researchQuestions,
   parties,
   positions,
-  dataErrors: DATA_ERRORS,
+  dataErrors:
+    DATA_ERRORS,
   calculatePartyScore,
   calculateAllPartyScores,
   getScores,
