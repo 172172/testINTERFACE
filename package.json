@@ -1,0 +1,18 @@
+{
+  "name": "oppen-valkompass-2026",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Fristående, transparent svensk valkompass inför riksdagsvalet 2026.",
+  "scripts": {
+    "generate:data": "python3 scripts/generate_dataset.py",
+    "validate:data": "python3 scripts/validate_dataset.py",
+    "build": "node scripts/build-standalone.mjs",
+    "test:scoring": "node scripts/test-scoring.mjs",
+    "test:static": "python3 scripts/smoke_test.py",
+    "test:browser": "python3 scripts/browser_smoke_test.py",
+    "test": "npm run validate:data && npm run test:data-quality && npm run audit:sources && npm run test:scoring && npm run build && npm run test:static",
+    "test:data-quality": "python3 scripts/test_critical_cases.py",
+    "audit:sources": "python3 scripts/generate_source_audit.py"
+  }
+}

@@ -1,0 +1,42 @@
+ÖPPEN VALKOMPASS 2026 – SLUTKONTROLL v0.4
+====================================================
+Datasetversion: 0.4.0-source-audit
+Verifierad t.o.m.: 2026-08-16
+Datafingeravtryck: a921f5e3edf9bdd8c2140cf21530b946ffff836196d22edc2f086b61a59ac85d
+
+TESTER
+------
+Datasetvalidering: GODKÄND
+JavaScript-syntax: GODKÄND
+Poängmodell: GODKÄND
+Statisk standalone-smoke test: GODKÄND
+Kritiska datakvalitetstester: GODKÄNDA
+Webbläsartest desktop: GODKÄNT
+Webbläsartest mobil: GODKÄNT (0 px horisontell overflow)
+Dataspärr/manipulationstest: GODKÄNT
+
+DATA
+----
+60 frågor totalt
+35 aktiva frågor i jämförbar kärna
+25 forskningsfrågor avstängda från poäng
+8 riksdagspartier med komplett 35x8-matris = 280/280 verifierade positioner
+Örebropartiet visas separat/preliminärt; endast direkt belagda positioner används
+Okänd position = null; null får aldrig tolkas som neutral
+
+SHA-256
+-------
+8695b031d4c742669541adc855b3f0dfba3d7fac40a035427cb57acdbe52633f  index.html
+538e36f971ef9b874bc71fc849629a3ea825bd8f5988eb636067a594d0efb2ef  styles.css
+d70a8e6b3c6f8ef028ef3ad1e4ade0726e5293fb53d6980b1bdc73e3e2f1469e  app.js
+df73d7a29b9d2a8d7d75e6e95192725823efcd804949283fc3b92b9986b63d79  scoring.js
+0bc304858fb63d5c3ec002e1cc97fd018dded3f8b499feeabd30ca5659be01c9  README.md
+43917d46806910dd834f3b7866380cc61a8c0fb38d5fe6c0c7d913dca8f4ddaf  SOURCE_AUDIT.md
+dbecccf62b455abeb034d6d53b188acb130611b7c3e65e94a7689992a33b02e2  data/questions.json
+33809909511f9814c2a5a34648e4aff92308ece4f699d3cb9c44bdf035459000  data/parties.json
+e71323d9f1973b99af0086012b40b8b8ad306bb4cdc6dd6479818ffda1efaa08  data/positions.json
+210e4a3fc16052c3e26367843c05f72109f1380a3f77e519793e512f2cdef2b2  data/source-register.json
+4f78db82101aa23009459bcfbc2e0c591eaa3a3dead9d93857d721592e3f17e2  data/meta.json
+c0c8b994e568626c6dd294d9c384490f3aa8785bd6392bd91e6a52d53956e846  data/schema.json
+372c170d0c524eb48c9cbee725c2759810b5c91eecf2b2f36824741a3b66a625  valkompass-2026-standalone.html
+372c170d0c524eb48c9cbee725c2759810b5c91eecf2b2f36824741a3b66a625  valkompass-2026-standalone-v0.4.html

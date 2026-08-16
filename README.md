@@ -1,92 +1,170 @@
-# Valkompass 2026 – precisionsversion 0.2
+# Öppen valkompass 2026
 
-En fristående svensk valkompass byggd för principen: **du behöver inte lita på skaparen – du ska kunna kontrollera allt själv.**
+En fristående svensk valkompass byggd för att kunna granskas, exporteras och räknas om utan att användaren behöver lita på skaparen.
 
-## Viktigt om version 0.2
+## Öppna webbplatsen
 
-Frågebanken har byggts om efter att en för bred skattefråga visade ett metodproblem: partier kan stödja samma allmänna rubrik men rikta politiken till helt olika grupper eller använda helt olika styrmedel.
+Det enklaste alternativet är filen:
 
-Därför följer alla 64 frågor nu dessa regler:
+```text
+valkompass-2026-standalone-v0.4.html
+```
 
-1. En fråga mäter en huvudsaklig politisk dimension.
-2. Målgrupp, instrument eller rättighet anges när det är avgörande för innebörden.
-3. Varje fråga har ett `scope` som anger vad som ingår och inte ingår.
-4. Ett parti får inte kodas utifrån en närliggande slogan eller allmän inriktning.
-5. Avsaknad av en säker källa blir `position: null`, aldrig `0`.
-6. +2/+1/0/-1/-2 måste motiveras mot den exakta formuleringen.
-7. När en fråga ändras semantiskt nollställs tidigare partipositioner tills de har källgranskats igen.
+Den innehåller HTML, CSS, JavaScript och hela datasetet i en enda fil och kan öppnas genom dubbelklick.
 
-## Status
+Den modulära projektversionen körs lokalt så här:
 
-- 64 frågor
-- 16 politikområden
-- 4 frågor per område
-- 9 partier
-- 576 möjliga parti–fråga-kombinationer
-- Samtliga 576 positioner är i version 0.2 markerade `requires-reverification`
+```bash
+cd valkompass-2026-v0.4
+python3 -m http.server 8000
+```
 
-Det sista är avsiktligt. Gamla poäng får inte följa med när frågornas innebörd har blivit mer precis.
+Öppna sedan `http://localhost:8000/` i webbläsaren. Att dubbelklicka på projektets `index.html` fungerar normalt inte, eftersom webbläsare brukar blockera inläsning av lokala JSON-filer från `file://`.
 
-## Datafiler
+## Vad version 0.4 faktiskt innehåller
 
-- `data/questions.json` – frågor, avgränsningar och kodningsregler
-- `data/parties.json` – partier
-- `data/positions.json` – partipositioner, källor, verifieringsstatus och motivering
-- `data/source-register.json` – officiella källingångar inför valet 2026
-- `data/meta.json` – datasetversion och metodinställningar
+- 60 preciserade sakfrågor i databasen.
+- 35 aktiva frågor med en komplett gemensam positionsmatris för de åtta riksdagspartierna.
+- 25 öppna forskningsfrågor med `score: false`; de påverkar inte resultatet.
+- 280 av 280 verifierade kärnpositioner: 35 frågor × 8 riksdagspartier.
+- Örebropartiet med sju exakt källbelagda nationella positioner och övriga positioner som `null`.
+- Separat preliminär ÖP-jämförelse med täckning och bästa–sämsta-fall-intervall, aldrig en falskt jämförbar placering i huvudrankningen.
+- Total matchning, prioritetsmatchning, områdesresultat, fråga-för-fråga-förklaring och källänk för varje använd position.
+- JSON- och CSV-export.
+- Lokal lagring i användarens webbläsare; inga svar skickas av appen.
+- En dataspärr i webbläsaren som stoppar rankningen om den jämförbara kärnmatrisen är trasig eller ofullständig.
 
-## Kodningsregel
+## Varför bara 35 frågor påverkar poängen
 
-För varje parti och fråga:
+Det tidigare utkastet hade fler precisa frågor men saknade en färdig, jämförbar och källbelagd position för varje parti i varje fråga. Det kan skapa en skenbart exakt verklighetsbild.
 
-- `+2`: partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version
-- `+1`: stödjer riktningen men med snävare villkor/lägre ambitionsnivå
-- `0`: uttrycklig mellanposition eller i huvudsak status quo
-- `-1`: motsätter sig riktningen delvis eller driver en mildare motsatt linje
-- `-2`: motsätter sig uttryckligen reformen och driver tydligt motsatt ordning
-- `null`: källan räcker inte för säker kodning
+Den aktiva kärnan använder därför 35 sakfrågor där samtliga åtta riksdagspartier har svarat på samma nationella 2026-frågebatteri. Frågorna på webbplatsen är självständiga neutrala parafraser med bevarad riktning och avgränsning. Varje aktiv fråga har ett synligt källfrågenummer och varje parti har en direktlänk till sin källsida.
 
-**0 får aldrig användas som ersättning för ”vi hittade inget”.**
+De ytterligare 25 frågorna ligger kvar öppet för fortsatt granskning. En sådan fråga får inte aktiveras förrän alla partier har kontrollerats mot exakt samma avgränsning.
+
+## Positionsskala
+
+| Kod | Betydelse |
+|---:|---|
+| `+2` | Instämmer helt / mycket bra förslag / mycket mer |
+| `+1` | Instämmer delvis / ganska bra förslag / lite mer |
+| `0` | Verklig neutral eller uttryckligen dagens nivå |
+| `-1` | Tar delvis avstånd / ganska dåligt förslag / lite mindre |
+| `-2` | Tar helt avstånd / mycket dåligt förslag / mycket mindre |
+| `null` | Positionen är inte tillräckligt exakt belagd |
+
+`null` får aldrig ersättas med `0`. Okänt är inte samma sak som politiskt neutralt.
 
 ## Poängmodell
 
-Användare och parti kodas på skalan -2 till +2.
+För fråga `i` är användarens svar `uᵢ`, partiets position `pᵢ` och användarens vikt `wᵢ`.
 
-Avstånd per fråga:
-
-`d_i = |u_i - p_i|`
-
-Total matchning:
-
-`100 × (1 - Σd_i / (4 × N))`
-
-Prioritetsmatchning:
-
-`100 × (1 - Σ(w_i × d_i) / (4 × Σw_i))`
-
-En okänd partiposition ingår inte i beräkningen. Källtäckningen visas separat och normal ranking kräver minst den täckning som anges i `meta.json`.
-
-## Lokal körning
-
-Eftersom sidan hämtar JSON-filer bör den köras via en lokal webbserver i stället för att enbart dubbelklicka på `index.html`.
-
-Exempel med Python:
-
-```bash
-cd valkompass-2026
-python3 -m http.server 8080
+```text
+sᵢ = 1 − |uᵢ − pᵢ| / 4
 ```
 
-Öppna därefter `http://localhost:8080`.
+Likheten är därmed 100 procent vid samma svar, 75 procent vid ett stegs skillnad, 50 procent vid två steg, 25 procent vid tre steg och 0 procent vid motsatta ytterlägen.
 
-## Nästa forskningssteg
+För att ett område med fler frågor inte automatiskt ska väga mer får varje besvarad fråga grundfaktorn `1/nₐ`, där `nₐ` är antalet besvarade frågor i politikområde `a`.
 
-Varje av de 576 partipositionerna ska nu kodas om mot den precisa frågan. Prioritetsordning för källa:
+```text
+Total = 100 × Σ[(1/nₐ) × sᵢ] / Σ(1/nₐ)
+```
 
-1. Officiellt valmanifest/valplattform 2026
-2. Officiell sakpolitisk sida
-3. Partiets egna svar i etablerad valkompass
-4. Proposition/motion/votering
-5. Tydligt aktuellt uttalande från partiledning eller behörig företrädare
+Prioritetsmatchningen använder användarens vikt 0, 1, 2, 3 eller 5:
 
-En källa som bara visar att partiet exempelvis ”vill sänka skatten” räcker **inte** för en fråga om huruvida höginkomsttagare över brytpunkten ska omfattas.
+```text
+Prioritet = 100 × Σ[(wᵢ/nₐ) × sᵢ] / Σ(wᵢ/nₐ)
+```
+
+Vikt 0 påverkar inte prioritetsmatchningen men frågan finns kvar i totalmatchningen. Att hoppa över en fråga är ett separat val och tar bort frågan från båda beräkningarna.
+
+Den exakta implementationen finns i `scoring.js`.
+
+## Källprincip
+
+Prioriteringsordningen är:
+
+1. Officiellt valmanifest eller partiprogram.
+2. Partiets officiella webbplats.
+3. Partiets egna svar i en etablerad valkompass.
+4. Propositioner, motioner och voteringar.
+5. Tydliga uttalanden från partiledning eller officiella företrädare.
+
+För den kompletta åttapartikärnan används partiernas egna 2026-svar i SVT:s nationella valkompass. Det ger samma frågor, samma svarsskala och samma insamlingsform för samtliga åtta riksdagspartier. Kodningen görs mekaniskt; kommentarer används som kontrollunderlag men ger inga dolda extrapoäng.
+
+Örebropartiets kända positioner kommer från partiets officiella nationella 2026-program. Eftersom programmet publiceras successivt hålls partiet utanför huvudrankningen tills ett tillräckligt komplett gemensamt underlag finns.
+
+## Projektstruktur
+
+```text
+valkompass-2026-v0.4/
+├── index.html
+├── styles.css
+├── app.js
+├── scoring.js
+├── README.md
+├── data/
+│   ├── questions.json
+│   ├── parties.json
+│   ├── positions.json
+│   ├── source-register.json
+│   ├── meta.json
+│   └── schema.json
+└── scripts/
+    ├── generate_dataset.py
+    ├── validate_dataset.py
+    ├── build_standalone.py
+    └── browser_smoke_test.py
+```
+
+## Uppdatera politiken utan att skriva om appen
+
+1. Ändra `scripts/generate_dataset.py` eller de separata JSON-filerna.
+2. Lämna en position som `null` när källan inte täcker frågans exakta avgränsning.
+3. Spara källa, källtyp, verifieringsdatum, källans svar eller linje, motivering och säkerhetsgrad.
+4. Kör valideringen:
+
+```bash
+python3 scripts/validate_dataset.py
+```
+
+5. Bygg om den fristående filen:
+
+```bash
+python3 scripts/build_standalone.py
+```
+
+6. Kör webbläsartestet:
+
+```bash
+python3 scripts/browser_smoke_test.py
+```
+
+En dataändring ger ett nytt SHA-256-fingeravtryck i `data/meta.json`. Gamla lokalt sparade användarsvar separeras även med hjälp av fingeravtrycket.
+
+## Vad valideringen kontrollerar
+
+- unika fråge-, parti- och käll-ID:n;
+- exakt en positionsrad per parti och fråga;
+- giltiga värden `-2…+2` eller `null`;
+- fullständig källa för varje känd position;
+- exakt 280 verifierade kärnpositioner;
+- att forskningsfrågor inte har aktiva positioner och har `score: false`;
+- två till tre aktiva frågor per politikområde;
+- att datasetets SHA-256-fingeravtryck stämmer;
+- att appens webbläsarspärr är godkänd och att hela frågeflödet kan slutföras.
+
+## Begränsningar som ska stå kvar öppet
+
+En matchningsprocent visar likhet i de frågor som ingår. Den bedömer inte regeringsalternativ, förtroende, historiskt agerande, genomförbarhet eller alla politiska frågor som kan påverka ett partival.
+
+Partier kan också ändra eller precisera sin politik när nya valmanifest publiceras. `verified` anger därför när raden senast kontrollerades. En tekniskt godkänd databas ersätter inte återkommande politisk sakgranskning.
+
+## Licens och vidarepublicering
+
+Applikationskoden kan återanvändas och granskas. Kontrollera alltid rättigheter och citeringsvillkor för externa källor. Datasetet återger kategoriserade partipositioner, korta källbeteckningar och självständigt formulerade frågor; externa källsidor ägs av respektive utgivare.
+
+## Pågående precisionsgranskning
+
+`RESEARCH_BATCH_01.md` och `data/research-batch-01.json` innehåller första källgranskningen av r001–r010. Dessa arbetsrader används inte i poängberäkningen förrän en komplett jämförbar kärnmatris finns. Detta förhindrar att närliggande men semantiskt olika partipositioner smygs in som svar.

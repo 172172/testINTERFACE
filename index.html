@@ -1,26 +1,40 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="En öppen, verifierbar svensk valkompass inför riksdagsvalet 2026." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="En öppen, källgranskad och reproducerbar svensk valkompass inför riksdagsvalet 2026.">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
   <title>Öppen Valkompass 2026</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#app">Hoppa till innehållet</a>
   <header class="topbar">
-    <a class="brand" href="#/">Öppen Valkompass <span>2026</span></a>
-    <nav>
+    <a class="brand" href="#/home" aria-label="Öppen Valkompass 2026, startsida">
+      <span class="brand-mark">ÖV</span>
+      <span>Öppen Valkompass <strong>2026</strong></span>
+    </a>
+    <nav aria-label="Huvudmeny">
       <a href="#/compass">Valkompassen</a>
-      <a href="#/audit">Granska kompassen</a>
-      <a href="#/method">Om metoden</a>
+      <a href="#/audit/positions">Granska</a>
+      <a href="#/method">Metoden</a>
     </nav>
   </header>
-  <main id="app" class="app" aria-live="polite"></main>
-  <footer>
-    <p>Princip: <strong>Du behöver inte lita på oss. Du kan kontrollera allt själv.</strong></p>
+
+  <main id="app" class="app loading" aria-live="polite">
+    <section class="page narrow"><p>Läser det verifierade datasetet…</p></section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Du behöver inte lita på oss. Du kan kontrollera allt själv.</strong>
+      <p>Fristående webbapp · inga personliga svar skickas till en server.</p>
+    </div>
     <p id="build-meta"></p>
   </footer>
+
   <script type="module" src="app.js"></script>
 </body>
 </html>
