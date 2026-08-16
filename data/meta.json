@@ -1,12 +1,12 @@
 {
   "title": "Öppen Valkompass 2026",
-  "datasetVersion": "0.4.2-env-depth",
-  "questionDesignVersion": "3.3",
+  "datasetVersion": "0.5-env-active",
+  "questionDesignVersion": "3.4",
   "verifiedThrough": "2026-08-16",
   "electionDate": "2026-09-13",
-  "dataFingerprintSha256": "e22fc177e07a115419ff442a3cc5c56586c3a6bc2f20c5eac51146f032f51f74",
-  "activeQuestionCount": 35,
-  "researchQuestionCount": 33,
+  "dataFingerprintSha256": "f1ac92e2dbf4e44a028ceaf4986c7aecf66526e570c98cd7879407cddc5818ee",
+  "activeQuestionCount": 43,
+  "researchQuestionCount": 25,
   "totalQuestionCount": 68,
   "corePartyIds": [
     "s",
@@ -28,7 +28,7 @@
     "Bostäder": 3,
     "Ekonomi och skatter": 3,
     "Företagande och industri": 2,
-    "Klimat och miljö": 2,
+    "Klimat och miljö": 10,
     "Migration och integration": 2,
     "Försvar och säkerhet": 2,
     "Demokrati, medier och kultur": 2,
@@ -58,16 +58,16 @@
     "unknown": "Okända positioner påverkar inte poängen och får aldrig kodas som 0."
   },
   "readiness": {
-    "coreMatrixRequired": 280,
-    "coreMatrixVerified": 280,
+    "coreMatrixRequired": 344,
+    "coreMatrixVerified": 344,
     "provisionalKnown": 6,
     "researchIncludedInScoring": false
   },
   "review": {
-    "coreMatrix": "Mekanisk översättning av partiernas egna svar på samma 35 nationella 2026-frågor; inga manuella poängjusteringar.",
+    "coreMatrix": "35 frågor kodas mekaniskt från partiernas egna SVT-svar. Åtta miljöfördjupningsfrågor kodas separat och transparent från aktuella primärkällor/riksdagsunderlag, med synlig confidence och motivering; inga dolda bonuspoäng används.",
     "precisionQuestions": "33 frågor är fail-closed och score:false tills en komplett exakt källmatris finns.",
     "provisionalParty": "Örebropartiet kodas endast när publicerat nationellt 2026-material direkt täcker frågans avgränsning; närliggande politik räcker inte.",
     "secondReview": "Politisk dubbelgranskning av varje rad är ett fortsatt kvalitetssteg och redovisas inte som genomförd innan den faktiskt är klar."
   },
-  "note": "Den publika kärnan använder 35 sakfrågor med en komplett och jämförbar matris av partiernas egna 2026-svar för samtliga åtta riksdagspartier. Samma kod betyder samma svarskategori på det exakta påståendet, inte att partiernas övriga politik, motiv eller genomförande är identiska. Ytterligare 33 precisionsfrågor finns i forskningskön men påverkar inte resultatet. Örebropartiet visas separat och preliminärt; endast direkt belagda positioner kodas och närliggande politik lämnas null."
+  "note": "Den publika kärnan använder 43 poänggivande frågor. 35 bygger på en gemensam 2026-kompassmatris och 8 miljöfördjupningsfrågor bygger på separat primärkällkodning för samtliga åtta riksdagspartier. Örebropartiet visas separat och preliminärt där källor saknas."
 }

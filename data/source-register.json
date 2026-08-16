@@ -216,5 +216,213 @@
     "sourceType": "official-policy-background",
     "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
     "verified": "2026-08-16"
+  },
+  {
+    "id": "s-biodiv-2026",
+    "publisher": "Socialdemokraterna",
+    "title": "Biologisk mångfald",
+    "url": "https://www.socialdemokraterna.se/var-politik/a-till-o/biologisk-mangfald",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "s-env-2026",
+    "publisher": "Socialdemokraterna",
+    "title": "Klimat och miljö",
+    "url": "https://www.socialdemokraterna.se/var-politik/a-till-o/klimat-och-miljo",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "m-green-2026",
+    "publisher": "Moderaterna",
+    "title": "Gröna näringar, landsbygd och jakt",
+    "url": "https://moderaterna.se/var-politik/grona-naringar-landsbygd-och-jakt/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "m-forest-2026",
+    "publisher": "Moderaterna",
+    "title": "Skog",
+    "url": "https://moderaterna.se/var-politik/skog/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "m-shore-2026",
+    "publisher": "Moderaterna",
+    "title": "Det ska vara enkelt att bygga och bo nära vatten",
+    "url": "https://moderaterna.se/nyhet/det-ska-vara-enkelt-att-bygga-och-bo-nara-vatten/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "sd-2026",
+    "publisher": "Sverigedemokraterna",
+    "title": "Vad vi vill",
+    "url": "https://www.sd.se/vad-vi-vill/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "sd-shore-2026",
+    "publisher": "Sverigedemokraterna",
+    "title": "Strandskydd",
+    "url": "https://www.sd.se/a-till-o/strandskydd/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "v-env-2026",
+    "publisher": "Vänsterpartiet",
+    "title": "Miljö",
+    "url": "https://www.vansterpartiet.se/var-politik/politik-a-o/miljo/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "v-biodiv-motion-2026",
+    "publisher": "Sveriges riksdag",
+    "title": "Biologisk mångfald – motion 2025/26:2784 (V)",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/biologisk-mangfald_hd022784/",
+    "sourceType": "parliamentary-motion",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "v-budget-env-2026",
+    "publisher": "Sveriges riksdag",
+    "title": "Utgiftsområde 20 – motion 2025/26:3173 (V)",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/utgiftsomrade-20-klimat-miljo-och-natur_hd023173/html/",
+    "sourceType": "parliamentary-motion",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "c-biodiv-2026",
+    "publisher": "Centerpartiet",
+    "title": "Biologisk mångfald",
+    "url": "https://www.centerpartiet.se/centerpartiets-politik/centerpartiets-politik-a-o/miljo/biologisk-mangfald",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "c-env-2026",
+    "publisher": "Centerpartiet",
+    "title": "Miljö",
+    "url": "https://www.centerpartiet.se/centerpartiets-politik/centerpartiets-politik-a-o/miljo",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "c-biodiv-motion-2026",
+    "publisher": "Sveriges riksdag",
+    "title": "Natur och biologisk mångfald – motion 2025/26:2824 (C)",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/_hd022824",
+    "sourceType": "parliamentary-motion",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "kd-env-2026",
+    "publisher": "Kristdemokraterna",
+    "title": "Miljöpolitik",
+    "url": "https://kristdemokraterna.se/var-politik/politik-a-till-o/miljopolitik",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "kd-forest-2026",
+    "publisher": "Kristdemokraterna",
+    "title": "Jord & skogsbruk",
+    "url": "https://kristdemokraterna.se/var-politik/politikomraden/jord--skogsbruk",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "kd-shore-2026",
+    "publisher": "Kristdemokraterna",
+    "title": "Strandskydd",
+    "url": "https://kristdemokraterna.se/var-politik/politik-a-till-o/strandskydd",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "l-env-2026",
+    "publisher": "Liberalerna",
+    "title": "Miljö och natur",
+    "url": "https://www.liberalerna.se/politik/miljo-och-natur",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "l-forest-2026",
+    "publisher": "Liberalerna",
+    "title": "Skogen",
+    "url": "https://www.liberalerna.se/politik/skogen",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "l-biodiv-2026",
+    "publisher": "Liberalerna",
+    "title": "Biologisk mångfald",
+    "url": "https://www.liberalerna.se/politik/biologisk-mangfald",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "l-shore-2026",
+    "publisher": "Liberalerna",
+    "title": "Strandskydd",
+    "url": "https://www.liberalerna.se/politik/strandskydd",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "mp-biodiv-2026",
+    "publisher": "Miljöpartiet",
+    "title": "Biologisk mångfald",
+    "url": "https://www.mp.se/politik/biologisk-mangfald/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "mp-shore-2026",
+    "publisher": "Miljöpartiet",
+    "title": "Strandskydd",
+    "url": "https://www.mp.se/politik/strandskydd/",
+    "sourceType": "official-party-policy",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "mp-friluft-motion-2026",
+    "publisher": "Sveriges riksdag",
+    "title": "Friluftspolitik – motion 2025/26:3776 (MP)",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/friluftspolitik_hd023776/html/",
+    "sourceType": "parliamentary-motion",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "riksdag-shore-vote-2025",
+    "publisher": "Sveriges riksdag",
+    "title": "Lättnader i strandskyddet – omröstning 2025-05-15",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/omrostning/omrostning-betankande-202425mju16-lattnader-i_hc19mju16p1/",
+    "sourceType": "parliamentary-vote",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "riksdag-forest-2026",
+    "publisher": "Sveriges riksdag",
+    "title": "Skogspolitik – betänkande 2025/26:MJU6",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/skogspolitik_hd01mju6/",
+    "sourceType": "parliamentary-record",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "gov-budget-env-2026",
+    "publisher": "Sveriges riksdag",
+    "title": "Budgetpropositionen för 2026 – utgiftsområde 20",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/budgetpropositionen-for-2026-utgiftsomrade-20_hd031d22/html/",
+    "sourceType": "government-budget",
+    "verified": "2026-08-16"
   }
 ]
