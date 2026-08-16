@@ -1396,12 +1396,12 @@
   {
     "id": "r026",
     "area": "Klimat och miljö",
-    "text": "Statens anslag till skydd och skötsel av värdefull natur bör öka jämfört med 2026 års nivå.",
-    "scope": "Avser statliga anslag för skydd, skötsel, restaurering och bevarande av värdefull natur och biologisk mångfald, inte Naturvårdsverkets hela myndighetsbudget.",
-    "status": "research",
-    "score": false,
+    "text": "Statens anslag till skydd och skötsel av värdefull natur bör vara högre än nivån i regeringens budget för 2026.",
+    "scope": "Avser statliga anslag för skydd, skötsel, restaurering och bevarande av värdefull natur och biologisk mångfald jämfört med regeringens 2026-budget, inte Naturvårdsverkets hela myndighetsbudget.",
+    "status": "active",
+    "score": true,
     "order": 61,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1410,22 +1410,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 36,
     "sourceQuestionType": "proposition",
-    "sourcePrompt": "Statens anslag till skydd och skötsel av värdefull natur bör öka jämfört med 2026 års nivå.",
-    "sourceReference": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/budgetpropositionen-for-2026-utgiftsomrade-20_hd031d22/html/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourcePrompt": "Statens anslag till skydd och skötsel av värdefull natur bör vara högre än nivån i regeringens budget för 2026.",
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r027",
     "area": "Klimat och miljö",
-    "text": "Naturvårdsverket bör få större statliga resurser för arbete med biologisk mångfald, miljöövervakning och naturskydd.",
-    "scope": "Avser myndighetens resurser för dessa uppgifter, inte ett generellt ställningstagande till fler statligt anställda eller hela miljöbudgeten.",
-    "status": "research",
-    "score": false,
+    "text": "Naturvårdsverket bör få större statliga resurser än i regeringens budget för 2026 för biologisk mångfald, miljöövervakning och naturskydd.",
+    "scope": "Avser resurser för Naturvårdsverkets arbete med biologisk mångfald, miljöövervakning och naturskydd jämfört med regeringens 2026-budget, inte ett generellt ställningstagande till fler statligt anställda.",
+    "status": "active",
+    "score": true,
     "order": 62,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1434,22 +1434,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 37,
     "sourceQuestionType": "proposition",
-    "sourcePrompt": "Naturvårdsverket bör få större statliga resurser för arbete med biologisk mångfald, miljöövervakning och naturskydd.",
-    "sourceReference": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/utgiftsomrade-20-klimat-miljo-och-natur_hd023506/html/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourcePrompt": "Naturvårdsverket bör få större statliga resurser än i regeringens budget för 2026 för biologisk mångfald, miljöövervakning och naturskydd.",
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r028",
     "area": "Klimat och miljö",
     "text": "En större andel av Sveriges land- och sötvattensområden bör få långsiktigt formellt naturskydd än i dag.",
     "scope": "Avser formellt och långsiktigt områdesskydd, exempelvis naturreservat, nationalparker och biotopskydd, inte endast frivilliga hänsyn utan rättsligt skydd.",
-    "status": "research",
-    "score": false,
+    "status": "active",
+    "score": true,
     "order": 63,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1458,22 +1458,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 38,
     "sourceQuestionType": "proposition",
     "sourcePrompt": "En större andel av Sveriges land- och sötvattensområden bör få långsiktigt formellt naturskydd än i dag.",
-    "sourceReference": "https://www.naturvardsverket.se/amnesomraden/skyddad-natur/mal-for-skyddad-natur/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r029",
     "area": "Klimat och miljö",
     "text": "Skogsägare bör få större möjlighet än i dag att avverka skog med höga naturvärden när artskydd eller andra naturvårdsregler annars begränsar avverkningen.",
     "scope": "Avser en förändring som stärker möjligheten att avverka i konfliktfall med höga naturvärden. Frågan gäller inte vanlig produktionsskog utan särskilt naturvärdesrika områden.",
-    "status": "research",
-    "score": false,
+    "status": "active",
+    "score": true,
     "order": 64,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1482,22 +1482,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 39,
     "sourceQuestionType": "proposition",
     "sourcePrompt": "Skogsägare bör få större möjlighet än i dag att avverka skog med höga naturvärden när artskydd eller andra naturvårdsregler annars begränsar avverkningen.",
-    "sourceReference": "https://www.skogsstyrelsen.se/nyhetslista/tre-domar-ersattning-i-speciella-fall-nar-artskyddsregler-hindrat-avverkning/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r030",
     "area": "Klimat och miljö",
     "text": "Staten bör lägga mer pengar än i dag på att restaurera och återväta våtmarker.",
     "scope": "Avser statlig finansiering av restaurering och återvätning av våtmarker, inte endast skydd av redan intakta våtmarker.",
-    "status": "research",
-    "score": false,
+    "status": "active",
+    "score": true,
     "order": 65,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1506,22 +1506,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 40,
     "sourceQuestionType": "proposition",
     "sourcePrompt": "Staten bör lägga mer pengar än i dag på att restaurera och återväta våtmarker.",
-    "sourceReference": "https://www.naturvardsverket.se/amnesomraden/vatmark/resultat-vatmarksarbete/vatmarkssatsningen-2025/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r031",
     "area": "Klimat och miljö",
     "text": "Sverige bör införa striktare regler för användning av kemiska bekämpningsmedel när de kan skada biologisk mångfald.",
     "scope": "Avser skärpta svenska regler eller villkor för användning av kemiska växtskydds- och bekämpningsmedel av miljöskäl, inte ett totalförbud mot alla bekämpningsmedel.",
-    "status": "research",
-    "score": false,
+    "status": "active",
+    "score": true,
     "order": 66,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1530,22 +1530,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 41,
     "sourceQuestionType": "proposition",
     "sourcePrompt": "Sverige bör införa striktare regler för användning av kemiska bekämpningsmedel när de kan skada biologisk mångfald.",
-    "sourceReference": "https://www.kemi.se/lagar-och-regler/introduktion-till-kemikaliereglerna/kort-om-reglerna-for-bekampningsmedel",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r032",
     "area": "Klimat och miljö",
     "text": "Miljökrav i tillståndsprövningen bör kunna stoppa eller fördröja stora industri- och infrastrukturprojekt även när projekten väntas skapa många arbetstillfällen.",
     "scope": "Avser hur miljökrav ska väga när de står i direkt konflikt med snabb etablering och sysselsättning. Frågan gäller inte om miljöprövning ska finnas alls.",
-    "status": "research",
-    "score": false,
+    "status": "active",
+    "score": true,
     "order": 67,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1554,22 +1554,22 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 42,
     "sourceQuestionType": "proposition",
     "sourcePrompt": "Miljökrav i tillståndsprövningen bör kunna stoppa eller fördröja stora industri- och infrastrukturprojekt även när projekten väntas skapa många arbetstillfällen.",
-    "sourceReference": "https://www.naturvardsverket.se/amnesomraden/miljoprovningar/vad-innebar-miljoprovning-enligt-miljobalken/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   },
   {
     "id": "r033",
     "area": "Klimat och miljö",
     "text": "Kommunernas möjligheter att ge dispens från strandskyddet bör begränsas jämfört med dagens regler.",
     "scope": "Avser kommunala dispenser och lättnader från strandskyddet. Ett ja innebär ett stramare strandskydd; ett nej innebär större eller oförändrat lokalt utrymme för dispens.",
-    "status": "research",
-    "score": false,
+    "status": "active",
+    "score": true,
     "order": 68,
-    "reviewStatus": "awaiting-common-matrix",
+    "reviewStatus": "verified-multi-primary-source-matrix",
     "codingRule": {
       "+2": "Tydligt stöd för påståendet eller en starkare version.",
       "+1": "Stöd för riktningen men med tydliga begränsningar eller lägre ambitionsnivå.",
@@ -1578,11 +1578,11 @@
       "-2": "Tydligt motstånd mot påståendet eller stöd för en motsatt ordning.",
       "null": "Otillräckligt exakt eller aktuellt underlag. Positionen påverkar då inget resultat."
     },
-    "sourceSet": "official-background-source",
-    "sourceQuestionOrdinal": null,
+    "sourceSet": "party-primary-sources-and-parliamentary-record-2025-2026",
+    "sourceQuestionOrdinal": 43,
     "sourceQuestionType": "proposition",
     "sourcePrompt": "Kommunernas möjligheter att ge dispens från strandskyddet bör begränsas jämfört med dagens regler.",
-    "sourceReference": "https://www.naturvardsverket.se/amnesomraden/skyddad-natur/olika-former-av-naturskydd/strandskydd/",
-    "wordingMethod": "Egen precisionsfråga baserad på ett aktuellt, officiellt sakunderlag. Källan styr frågans avgränsning men är inte i sig bevis för ett partis position; varje parti måste verifieras separat innan frågan aktiveras."
+    "sourceReference": "https://www.riksdagen.se/",
+    "wordingMethod": "Självständig precisionsfråga. Varje partiposition har kodats separat från aktuell officiell partikälla, riksdagsmotion, votering eller regeringsunderlag där partiet uttryckligen står bakom linjen."
   }
 ]
