@@ -1,0 +1,83 @@
+[
+  {
+    "party":"s",
+    "title":"Socialdemokraterna – Val 2026: Plan för Sverige",
+    "url":"https://www.socialdemokraterna.se/val-2026",
+    "type":"official-election-platform",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Primär ingång för partiets nationella 2026-politik. Enskilda positioner måste ändå beläggas med den sida eller det dokument som uttryckligen behandlar sakfrågan."
+  },
+  {
+    "party":"m",
+    "title":"Moderaterna – Vallöften 2026",
+    "url":"https://moderaterna.se/valloften-2026/",
+    "type":"official-election-promises",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Officiell 2026-sida. Kompletteras med partiets sakpolitiska sidor och senare valmanifest när det krävs för en exakt fråga."
+  },
+  {
+    "party":"sd",
+    "title":"Sverigedemokraterna – Val 2026",
+    "url":"https://val2026.sd.se/",
+    "type":"official-election-platform",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Officiell 2026-valsida. Partiets dokumentarkiv och valplattform används som primärkälla för detaljkodning."
+  },
+  {
+    "party":"v",
+    "title":"Vänsterpartiet – Val 2026",
+    "url":"https://www.vansterpartiet.se/val2026/",
+    "type":"official-election-platform",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Officiell valsida med länk till partiets valplattform 2026."
+  },
+  {
+    "party":"c",
+    "title":"Centerpartiet – Valmanifest 2026: Sverige kan mer",
+    "url":"https://val2026.centerpartiet.se/",
+    "type":"official-election-manifesto",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Officiellt nationellt valmanifest 2026 med konkreta reformförslag."
+  },
+  {
+    "party":"kd",
+    "title":"Kristdemokraterna – Vår politik / valåret 2026",
+    "url":"https://kristdemokraterna.se/var-politik/",
+    "type":"official-policy-hub",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Ingen enda komplett nationell 2026-manifestsida har använts som universalkälla. Exakta positioner måste beläggas med aktuell officiell KD-källa, exempelvis sakpolitisk sida, budgetförslag eller 2026-uttalande."
+  },
+  {
+    "party":"l",
+    "title":"Liberalerna – Valmanifest 2026: För din frihet",
+    "url":"https://www.liberalerna.se/nyheter/liberalerna-presenterar-valmanifest-2026-for-din-frihet",
+    "type":"official-election-manifesto",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Officiell presentation och ingång till Liberalernas valmanifest 2026."
+  },
+  {
+    "party":"mp",
+    "title":"Miljöpartiet – Politiskt handlingsprogram 2026–2030",
+    "url":"https://www.mp.se/politik/politiskt-handlingsprogram-2026/",
+    "type":"official-policy-program",
+    "status":"active",
+    "verified":"2026-08-16",
+    "note":"Officiellt politiskt handlingsprogram för mandatperioden 2026–2030."
+  },
+  {
+    "party":"op",
+    "title":"Örebropartiet – Valprogram 2026",
+    "url":"https://orebropartiet.se/var-politik/",
+    "type":"official-election-program",
+    "status":"developing",
+    "verified":"2026-08-16",
+    "note":"Partiet uppger självt att valprogrammet publiceras successivt och kan kompletteras fram till valdagen. Därför ska saknade rikspositioner lämnas okända tills relevant programdel publicerats."
+  }
+]
