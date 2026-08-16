@@ -1,13 +1,13 @@
 {
   "title": "Öppen Valkompass 2026",
-  "datasetVersion": "0.4.0-source-audit",
-  "questionDesignVersion": "3.2",
+  "datasetVersion": "0.4.2-env-depth",
+  "questionDesignVersion": "3.3",
   "verifiedThrough": "2026-08-16",
   "electionDate": "2026-09-13",
-  "dataFingerprintSha256": "a921f5e3edf9bdd8c2140cf21530b946ffff836196d22edc2f086b61a59ac85d",
+  "dataFingerprintSha256": "e22fc177e07a115419ff442a3cc5c56586c3a6bc2f20c5eac51146f032f51f74",
   "activeQuestionCount": 35,
-  "researchQuestionCount": 25,
-  "totalQuestionCount": 60,
+  "researchQuestionCount": 33,
+  "totalQuestionCount": 68,
   "corePartyIds": [
     "s",
     "m",
@@ -65,9 +65,9 @@
   },
   "review": {
     "coreMatrix": "Mekanisk översättning av partiernas egna svar på samma 35 nationella 2026-frågor; inga manuella poängjusteringar.",
-    "precisionQuestions": "25 frågor är fail-closed och score:false tills en komplett exakt källmatris finns.",
+    "precisionQuestions": "33 frågor är fail-closed och score:false tills en komplett exakt källmatris finns.",
     "provisionalParty": "Örebropartiet kodas endast när publicerat nationellt 2026-material direkt täcker frågans avgränsning; närliggande politik räcker inte.",
     "secondReview": "Politisk dubbelgranskning av varje rad är ett fortsatt kvalitetssteg och redovisas inte som genomförd innan den faktiskt är klar."
   },
-  "note": "Den publika kärnan använder 35 sakfrågor med en komplett och jämförbar matris av partiernas egna 2026-svar för samtliga åtta riksdagspartier. Samma kod betyder samma svarskategori på det exakta påståendet, inte att partiernas övriga politik, motiv eller genomförande är identiska. Ytterligare 25 precisionsfrågor finns i forskningskön men påverkar inte resultatet. Örebropartiet visas separat och preliminärt; endast direkt belagda positioner kodas och närliggande politik lämnas null."
+  "note": "Den publika kärnan använder 35 sakfrågor med en komplett och jämförbar matris av partiernas egna 2026-svar för samtliga åtta riksdagspartier. Samma kod betyder samma svarskategori på det exakta påståendet, inte att partiernas övriga politik, motiv eller genomförande är identiska. Ytterligare 33 precisionsfrågor finns i forskningskön men påverkar inte resultatet. Örebropartiet visas separat och preliminärt; endast direkt belagda positioner kodas och närliggande politik lämnas null."
 }

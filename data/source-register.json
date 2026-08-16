@@ -136,5 +136,85 @@
     "sourceType": "official-election-program",
     "note": "Officiell programdel om asyl, medborgarskap, uppehållstillstånd och återvandring.",
     "verified": "2026-08-16"
+  },
+  {
+    "id": "nv-2026-budget-nature",
+    "party": null,
+    "publisher": "Sveriges riksdag",
+    "title": "Budgetpropositionen för 2026 – Utgiftsområde 20 Klimat, miljö och natur",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/budgetpropositionen-for-2026-utgiftsomrade-20_hd031d22/html/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "nv-2026-naturvardsverket-resources",
+    "party": null,
+    "publisher": "Sveriges riksdag",
+    "title": "Utgiftsområde 20 Klimat, miljö och natur – anslag till Naturvårdsverket och miljöövervakning",
+    "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/motion/utgiftsomrade-20-klimat-miljo-och-natur_hd023506/html/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "nv-protected-nature-targets",
+    "party": null,
+    "publisher": "Naturvårdsverket",
+    "title": "Mål för skyddad natur",
+    "url": "https://www.naturvardsverket.se/amnesomraden/skyddad-natur/mal-for-skyddad-natur/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "skog-2026-high-nature-values",
+    "party": null,
+    "publisher": "Skogsstyrelsen",
+    "title": "Tre domar: ersättning i speciella fall när artskyddsregler hindrat avverkning",
+    "url": "https://www.skogsstyrelsen.se/nyhetslista/tre-domar-ersattning-i-speciella-fall-nar-artskyddsregler-hindrat-avverkning/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "nv-2026-wetlands",
+    "party": null,
+    "publisher": "Naturvårdsverket",
+    "title": "Våtmarkssatsningen 2025",
+    "url": "https://www.naturvardsverket.se/amnesomraden/vatmark/resultat-vatmarksarbete/vatmarkssatsningen-2025/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "kemi-pesticides-biodiversity",
+    "party": null,
+    "publisher": "Kemikalieinspektionen",
+    "title": "Kort om reglerna för bekämpningsmedel",
+    "url": "https://www.kemi.se/lagar-och-regler/introduktion-till-kemikaliereglerna/kort-om-reglerna-for-bekampningsmedel",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "nv-2026-environmental-permits",
+    "party": null,
+    "publisher": "Naturvårdsverket",
+    "title": "Vad innebär miljöprövning enligt miljöbalken?",
+    "url": "https://www.naturvardsverket.se/amnesomraden/miljoprovningar/vad-innebar-miljoprovning-enligt-miljobalken/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
+  },
+  {
+    "id": "nv-2026-strandskydd",
+    "party": null,
+    "publisher": "Naturvårdsverket",
+    "title": "Strandskydd",
+    "url": "https://www.naturvardsverket.se/amnesomraden/skyddad-natur/olika-former-av-naturskydd/strandskydd/",
+    "sourceType": "official-policy-background",
+    "note": "Officiellt sakunderlag för frågans avgränsning och relevans. Ska inte användas som bevis för ett partis position; partipositioner kräver separata partipolitiska källor.",
+    "verified": "2026-08-16"
   }
 ]
