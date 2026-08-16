@@ -40,7 +40,7 @@ Det tidigare utkastet hade fler precisa frågor men saknade en färdig, jämför
 
 Den aktiva kärnan använder därför 35 sakfrågor där samtliga åtta riksdagspartier har svarat på samma nationella 2026-frågebatteri. Frågorna på webbplatsen är självständiga neutrala parafraser med bevarad riktning och avgränsning. Varje aktiv fråga har ett synligt källfrågenummer och varje parti har en direktlänk till sin källsida.
 
-De ytterligare 25 frågorna ligger kvar öppet för fortsatt granskning. En sådan fråga får inte aktiveras förrän alla partier har kontrollerats mot exakt samma avgränsning.
+De ytterligare 33 frågorna ligger kvar öppet för fortsatt granskning, varav åtta nya frågor fördjupar klimat- och miljöområdet. En sådan fråga får inte aktiveras förrän alla partier har kontrollerats mot exakt samma avgränsning.
 
 ## Positionsskala
 

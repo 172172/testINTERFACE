@@ -1,8 +1,8 @@
 # Källmatris – Öppen Valkompass 2026
 
-Dataset: `0.4.0-source-audit`  
+Dataset: `0.4.2-env-depth`  
 Verifierad t.o.m.: `2026-08-16`  
-SHA-256-fingeravtryck: `a921f5e3edf9bdd8c2140cf21530b946ffff836196d22edc2f086b61a59ac85d`
+SHA-256-fingeravtryck: `e22fc177e07a115419ff442a3cc5c56586c3a6bc2f20c5eac51146f032f51f74`
 
 Detta dokument visar **källfråga → partiets eget källsvar → numerisk kod** för den jämförbara kärnan. Kodningen för de åtta riksdagspartierna är mekanisk. Ingen kommentar får flytta ett parti upp eller ned på skalan.
 

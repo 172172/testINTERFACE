@@ -733,7 +733,7 @@ function renderParty(partyId) {
 function auditTabs(activeTab) {
   const tabs = [
     ["positions", "Partipositioner"],
-    ["questions", "Alla 60 frågor"],
+    ["questions", "Alla 68 frågor"],
     ["sources", "Källregister"],
     ["integrity", "Dataintegritet"],
   ];
