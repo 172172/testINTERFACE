@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 OUTPUT = ROOT / "valkompass-2026-standalone.html"
-VERSIONED_OUTPUT = ROOT / "valkompass-2026-standalone-v0.4.html"
+VERSIONED_OUTPUT = ROOT / "valkompass-2026-standalone-v0.4.3.html"
 
 
 def read_json(name: str):

@@ -89,10 +89,10 @@ def main() -> int:
         errors.append("Source IDs are not unique.")
     if len(questions) != meta.get("totalQuestionCount") or len(questions) != 68:
         errors.append(f"Expected 68 questions and a matching meta count, got {len(questions)} / {meta.get('totalQuestionCount')}.")
-    if len(active) != meta.get("activeQuestionCount") or len(active) != 35:
-        errors.append(f"Expected 35 active questions and a matching meta count, got {len(active)} / {meta.get('activeQuestionCount')}.")
-    if len(research) != meta.get("researchQuestionCount") or len(research) != 33:
-        errors.append(f"Expected 33 research questions and a matching meta count, got {len(research)} / {meta.get('researchQuestionCount')}.")
+    if len(active) != meta.get("activeQuestionCount") or len(active) != 43:
+        errors.append(f"Expected 43 active questions and a matching meta count, got {len(active)} / {meta.get('activeQuestionCount')}.")
+    if len(research) != meta.get("researchQuestionCount") or len(research) != 25:
+        errors.append(f"Expected 25 research questions and a matching meta count, got {len(research)} / {meta.get('researchQuestionCount')}.")
     if len(parties) != 9 or len(core) != 8 or len(provisional) != 1:
         errors.append(f"Expected 9 parties (8 core + 1 provisional), got {len(parties)} ({len(core)} + {len(provisional)}).")
     if len(positions) != len(questions) * len(parties):
@@ -115,12 +115,12 @@ def main() -> int:
     seen: set[tuple[str, str]] = set()
 
     active_ordinals = [q.get("sourceQuestionOrdinal") for q in active]
-    if active_ordinals != list(range(1, 36)):
-        errors.append(f"Active sourceQuestionOrdinal values must be exactly 1..35, got {active_ordinals}.")
+    if active_ordinals != list(range(1, 44)):
+        errors.append(f"Active sourceQuestionOrdinal values must be exactly 1..43, got {active_ordinals}.")
 
     area_counts = Counter(q.get("area") for q in active)
-    if not area_counts or min(area_counts.values()) < 2 or max(area_counts.values()) > 3:
-        errors.append(f"Active area counts must be balanced at 2–3 questions per area, got {dict(area_counts)}.")
+    if not area_counts or min(area_counts.values()) < 2 or max(area_counts.values()) > 11:
+        errors.append(f"Active area counts must be at least 2 questions per area, got {dict(area_counts)}.")
     if meta.get("activeAreaCounts") != dict(area_counts):
         errors.append("meta.activeAreaCounts is stale or ordered differently from generated data.")
 

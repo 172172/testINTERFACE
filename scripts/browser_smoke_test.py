@@ -35,14 +35,14 @@ def run_app_flow_test(browser) -> dict:
 
     data_errors = page.evaluate("window.__VALKOMPASS_TEST__.dataErrors")
     assert_equal(data_errors, [], "Webbläsarens dataspärr")
-    assert_equal(page.evaluate("window.__VALKOMPASS_TEST__.activeQuestions.length"), 35, "Antal aktiva frågor")
+    assert_equal(page.evaluate("window.__VALKOMPASS_TEST__.activeQuestions.length"), 43, "Antal aktiva frågor")
     assert_equal(page.locator(".hero-status .status-line").count(), 4, "Statusrader på startsidan")
 
     page.locator("#start-compass").click()
     page.wait_for_selector(".question-card")
 
     skipped = 0
-    for index in range(35):
+    for index in range(43):
         if index == 7:
             page.locator("#skip-question").click()
             skipped += 1
@@ -70,7 +70,7 @@ def run_app_flow_test(browser) -> dict:
     assert_true(first_detail_href and first_detail_href.startswith("#/party/"), "Partidetaljlänk saknas")
     page.locator(".result-row a").first.click()
     page.wait_for_selector(".comparison-list")
-    assert_equal(page.locator(".comparison-card").count(), 35 - skipped, "Fråga-för-fråga-rader på partidetaljen")
+    assert_equal(page.locator(".comparison-card").count(), 43 - skipped, "Fråga-för-fråga-rader på partidetaljen")
     page.locator(".comparison-card").first.locator("summary").click()
     assert_true(page.locator(".comparison-card").first.locator(".source-panel a").count() == 1, "Källänk saknas i partidetaljen")
 
@@ -86,7 +86,7 @@ def run_app_flow_test(browser) -> dict:
 
     assert_equal(console_errors, [], "JavaScript-fel i konsolen")
     context.close()
-    return {"answered": 35 - skipped, "skipped": skipped, "screenshot": str(SCREENSHOT)}
+    return {"answered": 43 - skipped, "skipped": skipped, "screenshot": str(SCREENSHOT)}
 
 
 def run_standalone_test(browser) -> dict:
