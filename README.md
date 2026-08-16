@@ -1,58 +1,92 @@
-# Öppen Valkompass 2026
+# Valkompass 2026 – precisionsversion 0.2
 
-En fristående statisk svensk valkompass för riksdagsvalet 2026. Ingen server eller ChatGPT krävs för att köra webbplatsen.
+En fristående svensk valkompass byggd för principen: **du behöver inte lita på skaparen – du ska kunna kontrollera allt själv.**
 
-## Kör lokalt
+## Viktigt om version 0.2
 
-På grund av JSON-filerna bör sidan serveras via en enkel lokal webbserver:
+Frågebanken har byggts om efter att en för bred skattefråga visade ett metodproblem: partier kan stödja samma allmänna rubrik men rikta politiken till helt olika grupper eller använda helt olika styrmedel.
+
+Därför följer alla 64 frågor nu dessa regler:
+
+1. En fråga mäter en huvudsaklig politisk dimension.
+2. Målgrupp, instrument eller rättighet anges när det är avgörande för innebörden.
+3. Varje fråga har ett `scope` som anger vad som ingår och inte ingår.
+4. Ett parti får inte kodas utifrån en närliggande slogan eller allmän inriktning.
+5. Avsaknad av en säker källa blir `position: null`, aldrig `0`.
+6. +2/+1/0/-1/-2 måste motiveras mot den exakta formuleringen.
+7. När en fråga ändras semantiskt nollställs tidigare partipositioner tills de har källgranskats igen.
+
+## Status
+
+- 64 frågor
+- 16 politikområden
+- 4 frågor per område
+- 9 partier
+- 576 möjliga parti–fråga-kombinationer
+- Samtliga 576 positioner är i version 0.2 markerade `requires-reverification`
+
+Det sista är avsiktligt. Gamla poäng får inte följa med när frågornas innebörd har blivit mer precis.
+
+## Datafiler
+
+- `data/questions.json` – frågor, avgränsningar och kodningsregler
+- `data/parties.json` – partier
+- `data/positions.json` – partipositioner, källor, verifieringsstatus och motivering
+- `data/source-register.json` – officiella källingångar inför valet 2026
+- `data/meta.json` – datasetversion och metodinställningar
+
+## Kodningsregel
+
+För varje parti och fråga:
+
+- `+2`: partiet stödjer uttryckligen den exakta reformen eller en tydligt starkare version
+- `+1`: stödjer riktningen men med snävare villkor/lägre ambitionsnivå
+- `0`: uttrycklig mellanposition eller i huvudsak status quo
+- `-1`: motsätter sig riktningen delvis eller driver en mildare motsatt linje
+- `-2`: motsätter sig uttryckligen reformen och driver tydligt motsatt ordning
+- `null`: källan räcker inte för säker kodning
+
+**0 får aldrig användas som ersättning för ”vi hittade inget”.**
+
+## Poängmodell
+
+Användare och parti kodas på skalan -2 till +2.
+
+Avstånd per fråga:
+
+`d_i = |u_i - p_i|`
+
+Total matchning:
+
+`100 × (1 - Σd_i / (4 × N))`
+
+Prioritetsmatchning:
+
+`100 × (1 - Σ(w_i × d_i) / (4 × Σw_i))`
+
+En okänd partiposition ingår inte i beräkningen. Källtäckningen visas separat och normal ranking kräver minst den täckning som anges i `meta.json`.
+
+## Lokal körning
+
+Eftersom sidan hämtar JSON-filer bör den köras via en lokal webbserver i stället för att enbart dubbelklicka på `index.html`.
+
+Exempel med Python:
 
 ```bash
 cd valkompass-2026
 python3 -m http.server 8080
 ```
 
-Öppna sedan `http://localhost:8080`.
+Öppna därefter `http://localhost:8080`.
 
-## Struktur
+## Nästa forskningssteg
 
-- `index.html` – skalet
-- `styles.css` – mobilanpassad presentation
-- `app.js` – navigation, frågeflöde, scoring, export och granskning
-- `data/questions.json` – 64 frågor, fyra per politikområde
-- `data/parties.json` – nio partier
-- `data/positions.json` – en rad per parti/fråga, inklusive `null` för okänd position
-- `data/meta.json` – datasetversion och täckningströskel
+Varje av de 576 partipositionerna ska nu kodas om mot den precisa frågan. Prioritetsordning för källa:
 
-## Datamodell för partiposition
+1. Officiellt valmanifest/valplattform 2026
+2. Officiell sakpolitisk sida
+3. Partiets egna svar i etablerad valkompass
+4. Proposition/motion/votering
+5. Tydligt aktuellt uttalande från partiledning eller behörig företrädare
 
-```json
-{
-  "party": "m",
-  "question": "q01",
-  "position": null,
-  "confidence": "unknown",
-  "source": null,
-  "sourceTitle": null,
-  "sourceDate": null,
-  "verified": "2026-08-16",
-  "rationale": "..."
-}
-```
-
-`position` får bara vara `-2`, `-1`, `0`, `1`, `2` eller `null`. Använd `null` hellre än en uppskattning.
-
-## Poängmodell
-
-Total matchning:
-
-`100 × (1 − Σ|uᵢ − pᵢ| / (4 × N))`
-
-Prioritetsmatchning:
-
-`100 × (1 − Σ wᵢ|uᵢ − pᵢ| / (4 × Σwᵢ))`
-
-Okända partipositioner exkluderas från båda formlerna. Källtäckningen redovisas separat och full ranking kräver för närvarande minst 70 % viktad täckning.
-
-## Viktigt före publik lansering
-
-Den medföljande positionsdatabasen är en **research preview**, inte en färdig politisk kodning. Endast ett mindre antal positioner har seedats med källor. Fyll på och dubbelgranska samtliga parti–fråga-kombinationer före skarp lansering. Det är avsiktligt att resten står som okända.
+En källa som bara visar att partiet exempelvis ”vill sänka skatten” räcker **inte** för en fråga om huruvida höginkomsttagare över brytpunkten ska omfattas.
